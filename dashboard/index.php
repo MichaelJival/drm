@@ -1,108 +1,80 @@
-<?php
-//////////////////////////////////////////////////
-include ("../ufw.php");
-echo $client_ip;
-//////////////////////////////////////////////////
-
+<?php 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-include("../campus/conexion.php");
-// Iniciar sesión
+
 session_start();
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $usuario = $_POST['usuario'];
-    $password = $_POST['password'];
-
-    // Consulta SQL para verificar las credenciales
-    $sql = "SELECT * FROM admin WHERE usuario = '$usuario' AND password = '$password'";
-    $result = $conexion->query($sql);
-
-    if ($result->num_rows == 1) {
-        // Usuario autenticado, guardar información de sesión
-        $row = $result->fetch_assoc();
-        $_SESSION['id'] = $row['id'];
-        $_SESSION['usuario'] = $row['usuario'];
-        $_SESSION['nombre'] = $row['nombre']; // Guardar el nombre en la variable de sesión
-        $_SESSION['csrf_token'] = "1234567890";  
-        
-        $user_authenticated = true;
-       if($user_authenticated){$_SESSION['authorized']=true;}else{$_SESSION['authorized'] = false;}  
-
-        // Redirigir a la página de inicio o a cualquier otra página del inicio de sesión
-        header("location: panel.php");}
+if (!isset($_SESSION['id'])) {
+    header("location: ../login.php");
+    exit;
 }
-$conexion->close();
+include("/home/drm/public_html/conexion/conexion.php");
+$h = date('YmdHis');
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <!-- Required meta tags -->
+    <title>DASHBOARD</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="keywords" content="">
-
-    <!-- Title Page -->
-    <title>Entrar -1449</title>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Font special for pages -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-    <!-- Estilos CSS -->
-    <link href="css/estilos.css?v=<?php echo $h ?>" rel="stylesheet">   
-
-    <!-- Bootstrap Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-</head>
-
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-light.css">
+    <link rel="stylesheet" type="text/css" href="https://drm.eweo.com/dashboard/css/styles.css?v=<?php echo $h ?>"> 
     
-<div class="d-flex justify-content-center">
-        <div class="pt-5">
-            <div class="container">
-                <div class="card-login shadow">
-                    <div class="card-body mr-5 ml-5 pb-5">
-                        <h2 class="title text-center mb-4"> Admin</h2>
-                        <hr>
-                        <form method="POST" action="">
-                            <div class="form-group">
-                                <div class="input-wrapper">
-                                   <label for="usuario" class="d-flex align-items-center">Email:</label>
-                                    <input class="form-control inputs" type="text" name="usuario" value="michaeljival@gmail.com" id="usuario" placeholder="Tu Email">
-                                </div>
-                               
-                            </div>
-                            <div class="form-group">
-                                <div class="input-wrapper">
-                                      <label for="password" class="d-flex align-items-center">Contraseña:</label>
-                                    <input class="form-control inputs" type="password" name="password" id="password" placeholder="Tu Contraseña">
-                                </div>
-                              
-                            </div>
-                            <div class="text-center mt-4">
-                                <button class="btn btn-primary btn-block" type="submit">ENTRAR</button>
-                            </div>
-                        </form>
-                    </div>
+        
+</head>
+<body>
+    <div class="sidebar">
+        <a href="videos"><i class="fa-regular fa-circle-play"></i><span class="">Videos</span></a>
+        <a href="usuarios.php"><i class="fa-regular fa-shield-check"></i><span class="">Security</span></a>
+        <a href="drm.php"><i class="fa-light fa-database"></i><span class="">Storage</span></a>
+        <a href="drm.php"><i class="fa-light fa-display-chart-up"></i><span class="">Analytics</span></a>
+        <a href="drm.php"><i class="fa-regular fa-clapperboard-play"></i><span class="">Custom Player</span></a>
+        <a href="#"><i class="fa-regular fa-gear"></i><span class="">Configurations</span></a>
+    </div>
+    
+    <div class="main-content">
+        <div class="top-bar">
+            <div class="user-menu">
+                <div class="user-icon" onclick="toggleDropdown()">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="dropdown-menu" id="userDropdown">
+                    <a href="#"><i class="fas fa-user-circle"></i> Perfil</a>
+                    <a href="#"><i class="fas fa-cog"></i> Configuración</a>
+                    <a href="../campus/cerrar.php"><i class="fas fa-sign-out-alt"></i> Salir</a>
                 </div>
             </div>
         </div>
+        <div class="content">
+            <!-- Aquí va el contenido principal del dashboard -->
+            <h1>Bienvenido al Dashboard</h1>
+            <!-- Puedes añadir más contenido aquí -->
+        </div>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById("userDropdown");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
 
-    
+        // Cerrar el dropdown si se hace clic fuera de él
+        window.onclick = function(event) {
+            if (!event.target.matches('.user-icon')) {
+                var dropdown = document.getElementById("userDropdown");
+                if (dropdown.style.display === "block") {
+                    dropdown.style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
-
 </html>

@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        if($user_authenticated){$_SESSION['authorized']=true;}else{$_SESSION['authorized'] = false;}  
 
         // Redirigir a la página de inicio o a cualquier otra página del inicio de sesión
-        header("location: ../dashboard.php");}
+        header("location: ../dashboard/");}
 }
 $conexion->close();
 ?>
