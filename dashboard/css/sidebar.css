@@ -1,0 +1,26 @@
+.sidebar {
+    padding-top: 100px;
+    width: 250px;
+    background-color: #FFF;
+    color: #000;
+    border-right: 1px solid #E5E3F3;
+}
+
+.sidebar a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-left: 0;
+}
+
+.sidebar a:hover {
+    background-color: #E5E3F3;
+}
+
+.sidebar i {
+    font-size: 1.5em;
+    margin-right: 10px;
+}

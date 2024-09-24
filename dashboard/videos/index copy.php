@@ -785,6 +785,33 @@ if ($result->num_rows > 0) {
             
         }
 
+            /*function displayVideoItem(file) {
+            const template = document.getElementById('video-item-template');
+            if (!template) {
+                console.error('Video item template not found');
+                return;
+            }
+            const clone = template.cloneNode(true);
+            clone.removeAttribute('id');
+            clone.style.display = 'flex';
+            clone.querySelector('.file-name').textContent = file.fileName;
+            clone.querySelector('.upload-date').textContent = file.uploadDate;
+            clone.querySelector('.btn-video-list-delete').setAttribute('data-video-id', file.videoId);
+            clone.querySelector('.btn-video-list-archive').setAttribute('data-video-id', file.videoId);
+            clone.querySelector('.btn-video-list-conf').setAttribute('data-video-id', file.videoId);
+
+            const badge = clone.querySelector('.badge');
+            badge.textContent = 'Ready';
+            badge.classList.add('badge-ready');
+            badge.classList.remove('processing-badge');
+            
+            const videosContainer = document.querySelector('.videos');
+            if (videosContainer) {
+                videosContainer.appendChild(clone);
+            } else {
+                console.error('Videos container not found');
+            }
+        }*/
 
         window.onload = function() {
             fetch('get_videos.php')
@@ -968,6 +995,11 @@ document.getElementById('confirmDeleteBtn').addEventListener('click', function()
 
 
 
+
+
+
+
+
 let videoIdToArchive; // Variable para almacenar el ID del video a archivar
 
 // Event listener para el botón "Archive"
@@ -1021,16 +1053,7 @@ document.getElementById('archiveVideoBtn').addEventListener('click', function() 
 
 
 
-
-
-
-
-
-
-
-/********************************************************************************* */
-
-//document.addEventListener('DOMContentLoaded', function() {
+/*document.addEventListener('DOMContentLoaded', function() {
     const containerFolders = document.getElementById('container-folders');
     if (containerFolders) {
         containerFolders.addEventListener('click', function(e) {
@@ -1047,11 +1070,61 @@ document.getElementById('archiveVideoBtn').addEventListener('click', function() 
     } else {
         console.error('Container folders not found');
     }
+});*/
 
-//});
 
 
-    function loadVideosForFolder(folderId) {
+/*function loadVideosForFolder(folderId) {
+    const videoContainer = document.querySelector('.videos');
+    videoContainer.innerHTML = '<p>Loading videos...</p>'; // Indicador de carga
+
+    fetch('get_folder_videos.php?folderId=' + encodeURIComponent(folderId))
+        .then(response => response.json())
+        .then(videos => {
+            videoContainer.innerHTML = ''; // Limpiar el indicador de carga
+            if (videos.length === 0) {
+                videoContainer.innerHTML = '<p>No videos found in this folder.</p>';
+            } else {
+                videos.forEach(video => {
+                    displayVideoItem({
+                        fileName: video.nombre_video,
+                        uploadDate: video.fecha,
+                        videoId: video.id_video,
+                        status: 'success'
+                    });
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            videoContainer.innerHTML = '<p>Error loading videos. Please try again.</p>';
+        });
+}*/
+
+
+
+/********************************************************************************* */
+
+document.addEventListener('DOMContentLoaded', function() {
+    const containerFolders = document.getElementById('container-folders');
+    if (containerFolders) {
+        containerFolders.addEventListener('click', function(e) {
+            if (e.target && e.target.classList.contains('folder-name')) {
+                e.preventDefault();
+                const folderId = e.target.getAttribute('data-folder-id');
+                if (folderId) {
+                    loadVideosForFolder(folderId);
+                } else {
+                    console.error('Folder ID not found');
+                }
+            }
+        });
+    } else {
+        console.error('Container folders not found');
+    }
+});
+
+function loadVideosForFolder(folderId) {
     const videoContainer = document.querySelector('.videos');
     videoContainer.innerHTML = '<p>Loading videos...</p>'; // Indicador de carga
 
@@ -1077,12 +1150,6 @@ document.getElementById('archiveVideoBtn').addEventListener('click', function() 
             videoContainer.innerHTML = '<p>Error loading videos. Please try again.</p>';
         });
 }
-
-
-
-
-
-
 
 function displayVideoItem(file) {
     // Mueve la declaración del template dentro de la función para asegurar que 
@@ -1113,6 +1180,7 @@ function displayVideoItem(file) {
         console.error('Videos container not found');
     }
 }
+
 
 
 
