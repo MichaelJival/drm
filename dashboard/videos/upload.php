@@ -4,6 +4,9 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 session_start();
 
+ini_set('max_execution_time', 900); // 15 minutos
+ini_set('memory_limit', '1024M');
+
 // conexion
 include("/home/drm/public_html/conexion/conexion.php");
 
@@ -26,72 +29,68 @@ function generateVideoId() {
 $response = array();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
-        $fileTmpPath = $_FILES['file']['tmp_name'];
-        $fileName = $_FILES['file']['name'];
-        $fileSize = $_FILES['file']['size'];
-        $fileType = $_FILES['file']['type'];
-        $fileNameCmps = explode(".", $fileName);
-        $fileExtension = strtolower(end($fileNameCmps));
+    $fileName = isset($_POST['fileName']) ? $_POST['fileName'] : '';
+    $chunkNumber = isset($_POST['chunkNumber']) ? intval($_POST['chunkNumber']) : 0;
+    $totalChunks = isset($_POST['totalChunks']) ? intval($_POST['totalChunks']) : 0;
+
+    $uploadFileDir = 'uploaded_files/';
+    if (!is_dir($uploadFileDir)) {
+        mkdir($uploadFileDir, 0777, true);
+    }
+
+    $tempFilePath = $uploadFileDir . $fileName . '.part';
+
+    if (isset($_FILES['chunk']) && $_FILES['chunk']['error'] === UPLOAD_ERR_OK) {
+        $chunkData = file_get_contents($_FILES['chunk']['tmp_name']);
         
-        $allowedfileExtensions = array('mp4');
-        
-        if (in_array($fileExtension, $allowedfileExtensions)) {
-            $uploadFileDir = 'uploaded_files/';
-            if (!is_dir($uploadFileDir)) {
-                mkdir($uploadFileDir, 0777, true);
-            }
-            $dest_path = $uploadFileDir . $fileName;
-
-            if (move_uploaded_file($fileTmpPath, $dest_path)) {
-                $videoId = generateVideoId();
-                $nombreVideo = $fileName;
-                $urlVideo = $dest_path;
-                $fechaSubida = date("Y-m-d H:i:s");
-
-                $sql = "INSERT INTO videos (id_video, nombre_video, url_video, fecha) VALUES (?, ?, ?, ?)";
-                $stmt = $conexion->prepare($sql);
-                $stmt->bind_param("ssss", $videoId, $nombreVideo, $urlVideo, $fechaSubida);
-                
-                if ($stmt->execute()) {
-                    $response = array(
-                        'status' => 'success',
-                        'fileName' => $fileName,
-                        'fileSize' => $fileSize,
-                        'uploadDate' => $fechaSubida,
-                        'videoId' => $videoId
-                    );
-                } else {
-                    $response = array(
-                        'status' => 'error',
-                        'message' => 'Error al insertar datos en la base de datos: ' . $conexion->error
-                    );
-                }
-
-                $stmt->close();
-            } else {
-                $response = array(
-                    'status' => 'error',
-                    'message' => 'There was some error moving the file to upload directory.'
-                );
-            }
+        $fileHandle = fopen($tempFilePath, ($chunkNumber === 0) ? 'wb' : 'ab');
+        if ($fileHandle === false) {
+            $response = array('status' => 'error', 'message' => 'No se pudo abrir el archivo temporal');
         } else {
-            $response = array(
-                'status' => 'error',
-                'message' => 'Upload failed. Allowed file types: ' . implode(', ', $allowedfileExtensions)
-            );
+            if (fwrite($fileHandle, $chunkData) === false) {
+                $response = array('status' => 'error', 'message' => 'Error al escribir el chunk');
+            } else {
+                fclose($fileHandle);
+
+                if ($chunkNumber === $totalChunks - 1) {
+                    // Último chunk, procesar el archivo completo
+                    $finalFilePath = $uploadFileDir . $fileName;
+                    rename($tempFilePath, $finalFilePath);
+
+                    $videoId = generateVideoId();
+                    $urlVideo = $finalFilePath;
+                    $fechaSubida = date("Y-m-d H:i:s");
+
+                    $sql = "INSERT INTO videos (id_video, nombre_video, url_video, fecha) VALUES (?, ?, ?, ?)";
+                    $stmt = $conexion->prepare($sql);
+                    $stmt->bind_param("ssss", $videoId, $fileName, $urlVideo, $fechaSubida);
+
+                    if ($stmt->execute()) {
+                        $response = array(
+                            'status' => 'success',
+                            'fileName' => $fileName,
+                            'fileSize' => filesize($finalFilePath),
+                            'uploadDate' => $fechaSubida,
+                            'videoId' => $videoId
+                        );
+                    } else {
+                        $response = array(
+                            'status' => 'error',
+                            'message' => 'Error al insertar datos en la base de datos: ' . $conexion->error
+                        );
+                    }
+
+                    $stmt->close();
+                } else {
+                    $response = array('status' => 'success', 'message' => 'Chunk recibido');
+                }
+            }
         }
     } else {
-        $response = array(
-            'status' => 'error',
-            'message' => 'No file uploaded or there was an upload error'
-        );
+        $response = array('status' => 'error', 'message' => 'No se recibió el chunk o hubo un error en la subida');
     }
 } else {
-    $response = array(
-        'status' => 'error',
-        'message' => 'Invalid request method'
-    );
+    $response = array('status' => 'error', 'message' => 'Método de solicitud inválido');
 }
 
 echo json_encode($response);
