@@ -98,7 +98,10 @@ if ($video) {
     // Comando FFmpeg
     $ffmpegPath = '/usr/bin/ffmpeg'; // Ajusta esta ruta según tu sistema
     //$command = "$ffmpegPath -i $inputFile -c:v libx264 -c:a aac -hls_time 10 -hls_list_size 0 -f hls $m3u8File";
-    $command = "$ffmpegPath -i $inputFile -c:v libx264 -c:a aac -hls_time 10  -hls_key_info_file $keyfile -hls_list_size 0 -f hls $m3u8File";
+     //$command = "$ffmpegPath -i $inputFile -c:v libx264 -c:a aac -hls_time 10 -hls_list_size 0 -f hls $m3u8File";
+
+     $command = "$ffmpegPath -i $inputFile -c:v libx264 -c:a aac -hls_time 10 -hls_key_info_file /home/drm/cipher/key.txt -hls_playlist_type vod $m3u8File";
+
 
     exec($command, $output, $returnVar);
 
