@@ -1,5 +1,5 @@
 <?php
-include("/home/drm/public_html/conexion/conexion.php");
+/*include("/home/drm/public_html/conexion/conexion.php");
 
 $folderId = $_GET['folderId'];
 
@@ -31,3 +31,4 @@ while ($video = $resultVideos->fetch_assoc()) {
 }
 
 echo json_encode($response);
+*/

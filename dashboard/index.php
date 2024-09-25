@@ -194,7 +194,18 @@ $h = time();
             transform: scale(0.96);
         }
 
+        .btn-video-list-archived {
+            border: 1px solid #CCC;
+            color: #CCC;
+            background-color: #FFFFFF;
+            border-radius: 3px;
+            padding: 5px 10px 5px 10px;
+            font-size: 0.85em;
+        }
 
+        .btn-video-list-archived:hover {
+            transform: scale(0.96);
+        }
 
 
         .btn-video-list-delete {
@@ -209,13 +220,6 @@ $h = time();
         .btn-video-list-delete:hover {
             transform: scale(0.96);
         }
-
-
-
-
-
-
-
 
         .badge-ready {
             font-size: 14px;
@@ -340,7 +344,39 @@ $h = time();
                    
         }
 
+    .badge-folder {
+    /*background-color: #f0f0f0;
+    color: #333;
+    padding: 3px 6px;
+    margin-right: 5px;
+    border-radius: 3px;
+    font-size: 0.8em;*/
+    
+            font-size: .65em;
+            color: #FFF;
+            text-transform: capitalize;
+            font-weight: 600;
+            background-color: #5F50E4;
+            padding: 2px 3px;
+            border-radius: 4px;
+            margin-right: 10px;
+            padding: 5px 10px 5px 10px;
+         
+        }
 
+
+        .badge-not-archived {
+            font-size: .65em;
+            color: #333;
+            text-transform: capitalize;
+            font-weight: 600;
+            background-color: #CCCCCC;
+            padding: 2px 3px;
+            border-radius: 4px;
+            margin-right: 10px;
+            padding: 5px 10px 5px 10px;
+            
+        }
 
         /*.btn-link {
             display: inline-block;
@@ -390,10 +426,11 @@ $h = time();
 
 
         .path-folders {
-            margin-left:60px;
-            font-size: 1rem;
-            font-family: 'Poppins', sans-serif;
+           margin-left:60px;
+           font-size: 1rem;
+           font-family: 'Poppins', sans-serif;
            color: rgba(0, 0, 0, 0.6); 
+           cursor: pointer;
 
         }
 
@@ -418,7 +455,23 @@ $h = time();
 </head>
 <body>
 
-
+<div class="modal fade" id="renameFolderModal" tabindex="-1" aria-labelledby="renameFolderModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="renameFolderModalLabel">Rename Folder</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="form-control" id="newFolderName">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="confirmRenameBtn">Rename</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Modal para archivar video -->
 <div class="modal fade" id="archiveVideoModal" tabindex="-1" aria-labelledby="archiveVideoModalLabel" aria-hidden="true">
@@ -512,22 +565,8 @@ $h = time();
     
 
     <div class="main-content">
-        <div class="top-bar">
-            <div class="top-bar-left">
-                <h5>...</h5>
-            </div>
-
-            <div class="user-menu">
-                <div class="user-icon" onclick="toggleDropdown()">
-                    <i class="fas fa-user"></i>
-                </div>
-                <div class="dropdown-menu" id="userDropdown">
-                    <a href="#"><i class="fas fa-user-circle"></i> Perfil</a>
-                    <a href="#"><i class="fas fa-cog"></i> Configuración</a>
-                    <a href="../campus/cerrar.php"><i class="fas fa-sign-out-alt"></i> Salir</a>
-                </div>
-            </div>
-        </div>
+        
+   <?php include("/home/drm/public_html/dashboard/topbar.php"); ?>
 
     <div class="content">
     <div class="menu-upload mb-5">
@@ -538,7 +577,7 @@ $h = time();
     <button class="button-no-fill" data-bs-toggle="modal" data-bs-target="#createFolderModal" data-bs-dismiss="modal">Create Folder</button>
 
 
-    <div class="path-folders">Root Folder </div>
+    <div onclick="location.reload()" class="path-folders">Root Folder </div>
 
      <input type="file" id="file-input" style="display: none;" onchange="uploadVideo(event)"></div>
 
@@ -569,10 +608,10 @@ $h = time();
 
 
 <?php
-$sql = "SELECT f.id_folder as id, f.name, COALESCE(COUNT(a.id_video), 0) as video_count 
+$sql = "SELECT f.id AS id, f.id_folder, f.name, f.fecha, COALESCE(COUNT(a.id_video), 0) as video_count 
 FROM folders f 
 LEFT JOIN archived a ON f.id_folder = a.id_folder 
-GROUP BY f.id_folder, f.name";
+GROUP BY f.id_folder, f.name, f.fecha ORDER BY f.id ASC";
 $result = $conexion->query($sql);
 
 $folders = [];
@@ -590,7 +629,7 @@ $folders[] = $row;
         <div class="d-flex align-items-center">
           <i class="fa-solid fa-folder fa-2x" style="color: #f4d471;"></i>
           <div class="flex-grow-1 ms-3">
-            <a href="#" class="folder-name" data-folder-id="<?php echo $folder['id']; ?>">
+            <a href="#" class="folder-name" data-folder-id="<?php echo $folder['id_folder']; ?>">
               <?php echo htmlspecialchars($folder['name']); ?>
             </a>
             <div class="video-count small text-muted ms-3">
@@ -598,12 +637,12 @@ $folders[] = $row;
             </div>
           </div>
           <div class="dropdown">
-            <button class="btn-link" type="" id="<?php echo $folder['id']; ?>" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn-link" type="" id="<?php echo $folder['id_folder']; ?>" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="fas fa-ellipsis-v"></i>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="<?php echo $folder['id']; ?>">
-              <li><a class="dropdown-item" href="#">Rename</a></li>
-              <li><a class="dropdown-item delete-folder" href="#" data-folder-id="<?php echo $folder['id']; ?>">Delete</a></li>
+            <ul class="dropdown-menu" aria-labelledby="<?php echo $folder['id_folder']; ?>">
+            <li><a class="dropdown-item rename-folder" href="#" data-folder-id="<?php echo $folder['id_folder']; ?>">Rename</a></li>
+              <li><a class="dropdown-item delete-folder" href="#" data-folder-id="<?php echo $folder['id_folder']; ?>">Delete</a></li>
               <li><a class="dropdown-item" href="#"></a></li>
             </ul>
           </div>
@@ -787,6 +826,7 @@ $folders[] = $row;
                             fileName: video.nombre_video,
                             uploadDate: video.fecha,
                             videoId: video.id_video,
+                            folderNames: video.folder_names,
                             status: 'success'
                         });
                     });
@@ -851,14 +891,29 @@ document.getElementById('createFolderBtn').addEventListener('click', function() 
 
 function updateFolderList() {
     fetch('get_folders.php')
-    .then(response => response.text())
-    .then(html => {
-        document.getElementById('container-folders').innerHTML = html;
+    .then(response => response.json())
+    .then(data => {
+        const containerFolders = document.getElementById('container-folders');
+        const folderSelect = document.getElementById('folderSelect');
+
+        // Actualizar el contenedor de folders
+        containerFolders.innerHTML = data.containerHtml;
+
+        // Actualizar el select de folder
+        folderSelect.innerHTML = '';
+        data.folders.forEach(folder => {
+            const option = document.createElement('option');
+            option.value = folder.id_folder;
+            option.textContent = folder.name;
+            folderSelect.appendChild(option);
+        });
     })
     .catch(error => {
         console.error('Error updating folder list:', error);
     });
 }
+
+
 
 
 
@@ -900,14 +955,6 @@ document.getElementById('container-folders').addEventListener('click', function(
         deleteFolder(folderId);
     }
 });
-
-
-
-
-
-
-
-
 
 
 
@@ -990,7 +1037,7 @@ document.getElementById('archiveVideoBtn').addEventListener('click', function() 
     })
     .then(data => {
         if (data.success) {
-            alert('Video archived successfully');
+            //alert('Video archived successfully');
             location.reload();
         } else {
             alert('Error archiving video: ' + (data.message || 'Unknown error'));
@@ -1058,6 +1105,7 @@ document.getElementById('archiveVideoBtn').addEventListener('click', function() 
                         fileName: video.nombre_video,
                         uploadDate: video.fecha,
                         videoId: video.id_video,
+                        folderNames: video.folder_names,
                         status: 'success'
                     });
                 });
@@ -1071,45 +1119,6 @@ document.getElementById('archiveVideoBtn').addEventListener('click', function() 
 
 
 
-
-
-
-
-/*function displayVideoItem(file) {
-  
-    // Mueve la declaración del template dentro de la función para asegurar que 
-    // siempre exista en el DOM cuando esta función sea llamada.
-    //const template = document.getElementById('video-item-template');
-    const template = document.querySelector('#video-item-template');
-    console.log("Template element:", template);
-    if (!template) {
-        console.error('Video item template not found');
-        return;
-    }
-    const clone = template.cloneNode(true);
-    clone.removeAttribute('id');
-    clone.style.display = 'flex';
-    clone.querySelector('.file-name').textContent = file.fileName;
-    clone.querySelector('.upload-date').textContent = file.uploadDate;
-    clone.querySelector('.btn-video-list-delete').setAttribute('data-video-id', file.videoId);
-    clone.querySelector('.btn-video-list-archive').setAttribute('data-video-id', file.videoId);
-    clone.querySelector('.btn-video-list-conf').setAttribute('data-video-id', file.videoId);
-
-    const badge = clone.querySelector('.badge');
-    badge.textContent = 'Ready';
-    badge.classList.add('badge-ready');
-    badge.classList.remove('processing-badge');
-    
-    const videosContainer = document.querySelector('.videos');
-    if (videosContainer) {
-        videosContainer.appendChild(clone);
-    } else {
-        console.error('Videos container not found');
-    }
-}*/
-
-
-
 function displayVideoItem(file) {
     const videoItem = document.createElement('div');
     videoItem.className = 'video-item';
@@ -1119,6 +1128,9 @@ function displayVideoItem(file) {
             <div>
                 <p class="file-name">${file.fileName}</p>
                 <small class="upload-date">${file.uploadDate}</small>
+               <p> ${file.folderNames ? file.folderNames.split(', ').map(folder => 
+                `<span class="badge badge-folder">${folder}</span>`
+            ).join(' ') : '<span class="badge badge-not-archived">Not Archived</span>'}</p>
                 <div class="progress-container">
                     <div class="progress-bar"></div>
                 </div>
@@ -1126,6 +1138,7 @@ function displayVideoItem(file) {
         </div>
         <div>
             <span class="badge badge-ready">Ready</span>
+            
             <button id="archiveBtn" class="btn-video-list-archive mx-1" data-video-id="${file.videoId}">Archive</button>
             <button class="btn-video-list-conf mx-1" data-video-id="${file.videoId}">Configuration</button>
             <button class="btn-video-list-delete mx-1" data-video-id="${file.videoId}">Delete</button>
@@ -1141,6 +1154,52 @@ function displayVideoItem(file) {
 }
 
 
+let folderIdToRename;
+
+document.addEventListener('click', function(e) {
+    if (e.target && e.target.classList.contains('rename-folder')) {
+        e.preventDefault();
+        folderIdToRename = e.target.getAttribute('data-folder-id');
+        const currentFolderName = e.target.closest('.folder-box').querySelector('.folder-name').textContent.trim();
+        const modal = new bootstrap.Modal(document.getElementById('renameFolderModal'));
+        document.getElementById('newFolderName').value = currentFolderName;
+        modal.show();
+        setTimeout(() => {
+            const input = document.getElementById('newFolderName');
+            input.focus();
+            input.setSelectionRange(input.value.length, input.value.length);
+        }, 500);
+    }
+});
+
+document.getElementById('confirmRenameBtn').addEventListener('click', function() {
+    const newName = document.getElementById('newFolderName').value.trim();
+    if (newName) {
+        fetch('rename_folder.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'folderId=' + encodeURIComponent(folderIdToRename) + '&newName=' + encodeURIComponent(newName)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                updateFolderList();
+                const modal = bootstrap.Modal.getInstance(document.getElementById('renameFolderModal'));
+                modal.hide();
+            } else {
+                alert('Error renaming folder: ' + (data.message || 'Unknown error'));
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while renaming the folder: ' + error.message);
+        });
+    } else {
+        alert('Please enter a folder name');
+    }
+});
 
 </script>
 </body>
