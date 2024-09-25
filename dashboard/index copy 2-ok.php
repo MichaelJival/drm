@@ -1119,6 +1119,76 @@ document.getElementById('archiveVideoBtn').addEventListener('click', function() 
 
 
 
+
+
+
+
+/*function displayVideoItem(file) {
+    const videoItem = document.createElement('div');
+    videoItem.className = 'video-item';
+    videoItem.innerHTML = `
+        <div class="video-thumb">
+            <img src="https://via.placeholder.com/60" alt="thumbnail">
+            <div>
+                <p class="file-name">${file.fileName}</p>
+                <small class="upload-date">${file.uploadDate}</small>
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <span class="badge badge-ready">Ready</span>
+            <button id="" class="btn-video-list-archived mx-1" data-video-id="${file.videoId}">NAME FOLDER</button>
+            <button id="archiveBtn" class="btn-video-list-archive mx-1" data-video-id="${file.videoId}">Archive</button>
+            <button class="btn-video-list-conf mx-1" data-video-id="${file.videoId}">Configuration</button>
+            <button class="btn-video-list-delete mx-1" data-video-id="${file.videoId}">Delete</button>
+        </div>
+    `;
+    
+    const videosContainer = document.querySelector('.videos');
+    if (videosContainer) {
+        videosContainer.appendChild(videoItem);
+    } else {
+        console.error('Videos container not found');
+    }
+}*/
+
+/*function displayVideoItem(file) {
+    const videoItem = document.createElement('div');
+    videoItem.className = 'video-item';
+    videoItem.innerHTML = `
+        <div class="video-thumb">
+            <img src="https://via.placeholder.com/60" alt="thumbnail">
+            <div>
+                <p class="file-name">${file.fileName}</p>
+                <small class="upload-date">${file.uploadDate}</small>
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <span class="badge badge-ready">Ready</span>
+            <button class="btn-video-list-archived mx-1" data-video-id="${file.videoId}">
+                ${file.folderName ? file.folderName : 'Not Archived'}
+            </button>
+            <button id="archiveBtn" class="btn-video-list-archive mx-1" data-video-id="${file.videoId}">Archive</button>
+            <button class="btn-video-list-conf mx-1" data-video-id="${file.videoId}">Configuration</button>
+            <button class="btn-video-list-delete mx-1" data-video-id="${file.videoId}">Delete</button>
+        </div>
+    `;
+    
+    const videosContainer = document.querySelector('.videos');
+    if (videosContainer) {
+        videosContainer.appendChild(videoItem);
+    } else {
+        console.error('Videos container not found');
+    }
+}*/
+
+
+
 function displayVideoItem(file) {
     const videoItem = document.createElement('div');
     videoItem.className = 'video-item';
