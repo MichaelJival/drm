@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['usuario'] = $row['usuario'];
         $_SESSION['nombre'] = $row['nombre']; // Guardar el nombre en la variable de sesión
         $_SESSION['csrf_token'] = "1234567890";  
+        $_SESSION['authorized'] = true;
         
         $user_authenticated = true;
        if($user_authenticated){$_SESSION['authorized']=true;}else{$_SESSION['authorized'] = false;}  

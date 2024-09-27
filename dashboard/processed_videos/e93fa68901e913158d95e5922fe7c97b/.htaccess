@@ -1,0 +1,5 @@
+<FilesMatch "\.cipher$">
+    ForceType application/vnd.apple.mpegurl
+</FilesMatch>
+AddType video/vnd.apple.mpegurl .cipher
+

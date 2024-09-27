@@ -7,7 +7,7 @@ include("/home/drm/public_html/conexion/conexion.php");
         LEFT JOIN folders f ON a.id_folder = f.id_folder
         ORDER BY v.fecha DESC";*/
 
-       $sql = "SELECT v.id_video, v.nombre_video, v.fecha, 
+       $sql = "SELECT v.id_video, v.nombre_video, v.fecha, v.estado, 
         GROUP_CONCAT(DISTINCT f.name SEPARATOR ', ') AS folder_names
         FROM videos v 
         LEFT JOIN archived a ON v.id_video = a.id_video

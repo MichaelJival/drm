@@ -1,0 +1,9 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-TARGETDURATION:12
+#EXT-X-MEDIA-SEQUENCE:0
+#EXT-X-PLAYLIST-TYPE:VOD
+#EXT-X-KEY:METHOD=AES-128,URI="https://drm.eweo.com/dashboard/processed_videos/f6d494bfaf5be805b1b1b25207dd944d/enc.key",IV=0xdac7f3c5bf39086fe11f5c96bd92bf80
+#EXTINF:12.112100,
+https://drm.eweo.com/dashboard/processed_videos/f6d494bfaf5be805b1b1b25207dd944d/segment_000.ts
+#EXT-X-ENDLIST
