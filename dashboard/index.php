@@ -574,6 +574,8 @@ $h = time();
 
 .video-wrapper {
     position: relative;
+    cursor: pointer;
+    background-color: #CCC;
 }
 
 .play-button-overlay {
@@ -585,13 +587,15 @@ $h = time();
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.1); /* Añade un ligero oscurecimiento al video */
+    transition: background-color 0.3s ease;
 }
 
 .play-button-circle {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -600,17 +604,168 @@ $h = time();
 
 .play-icon {
     color: white;
-    font-size: 28px;
-    margin-left: 4px; /* Ajusta ligeramente la posición del ícono */
+    font-size: 24px;
+    margin-left: 4px;
 }
 
-.play-button-overlay:hover .play-button-circle {
+.video-wrapper:hover .play-button-overlay {
+    background-color: rgba(0, 0, 0, 0.3); /* Oscurece más al hacer hover */
+}
+
+.video-wrapper:hover .play-button-circle {
     background-color: rgba(255, 255, 255, 1);
 }
 
-.play-button-overlay:hover .play-icon {
+.video-wrapper:hover .play-icon {
     color: #5F50E4;
 }
+
+
+.modal-video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    cursor: pointer;
+}
+
+.modal-video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-video-wrapper .play-button-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    transition: opacity 0.3s ease
+}
+
+.modal-video-wrapper .play-button-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.modal-video-wrapper .play-icon {
+    color: white;
+    font-size: 50px;
+}
+
+.modal-video-wrapper:hover .play-button-circle {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.modal-video-wrapper:hover .play-icon {
+    color: #5F50E4;
+}
+
+
+
+
+
+
+@keyframes tvNoise {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 100%; }
+        }
+
+
+        @keyframes colorBars {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-16.67%); }
+        }
+        .tv-effect {
+            background-image: 
+                linear-gradient(to bottom, transparent, rgba(255,255,255,0.3)),
+                repeating-radial-gradient(circle at 50% 50%, black 0, black 2px, transparent 2px, transparent 4px);
+            background-size: 100% 100%, 4px 4px;
+            animation: tvNoise 0.5s infinite linear;
+        }
+        .color-bars {
+            animation: colorBars 2s linear infinite, static 0.05s linear infinite;
+        }
+        .color-bar {
+            opacity: 0.5;
+        }
+
+
+    @keyframes static {  
+    
+        0% { transform: translate(0, 0); }
+        100% { transform: translate(-5px, -5px); }
+  }
+  
+  .tv-effect {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+
+  .color-bars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 100%;
+    display: flex;
+    animation: static 0.05s linear infinite;
+    /*nimation: static 0.1s steps(10) infinite;*/
+    z-index: 1;
+    mix-blend-mode: multiply;
+  }
+
+  .color-bars > div {
+    flex: 1;
+  }
+
+  .noise {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://drm.eweo.com/dashboard/noise.jpg') repeat;
+    background-size: cover;
+    animation: static 0.05s linear infinite;
+    z-index: 2;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+  }
+
+
+  @keyframes dots {
+    0%, 20% { content: ''; }
+    40% { content: '.'; }
+    60% { content: '..'; }
+    80%, 100% { content: '...'; }
+}
+
+.processing-text .dots::after {
+    content: '';
+    animation: dots 1.5s infinite;
+}
+
+
+
 
 
 </style>
@@ -853,40 +1008,65 @@ $folders[] = $row;
     
 
 document.addEventListener('click', function(e) {
-    if (e.target && (e.target.classList.contains('play-button-overlay') || 
-                     e.target.classList.contains('play-button-circle') || 
-                     e.target.classList.contains('play-button-triangle'))) {
-        const videoWrapper = e.target.closest('.video-wrapper');
-        if (videoWrapper) {
-            const videoId = videoWrapper.querySelector('video').id;
+    const videoWrapper = e.target.closest('.video-wrapper');
+    if (videoWrapper) {
+        const videoId = videoWrapper.getAttribute('data-video-id');
+        if (videoId) {
             openVideoModal(videoId);
         }
     }
 });
 
 
-    function openVideoModal(videoId) {
+function openVideoModal(videoId) {
     const modalVideoContainer = document.getElementById('modalVideoContainer');
     modalVideoContainer.innerHTML = `
-        <video id="modal-video-${videoId}" controls style="width: 100%; height: auto;">
-            <source src="https://drm.eweo.com/dashboard/processed_videos/${videoId}/playlist.m3u8" autoplay type="application/x-mpegURL">
-            Your browser does not support the video tag.
-        </video>
+        <div class="modal-video-wrapper" data-video-id="${videoId}">
+            <video controls id="modal-video-${videoId}" style="width: 100%; height: auto;">
+                <source src="https://drm.eweo.com/dashboard/processed_videos/${videoId}/playlist.m3u8" type="application/x-mpegURL">
+                Your browser does not support the video tag.
+            </video>
+            <div class="play-button-overlay">
+                <div class="play-button-circle">
+                    <i class="fa-solid fa-play play-icon"></i>
+                </div>
+            </div>
+        </div>
     `;
 
     const modal = new bootstrap.Modal(document.getElementById('videoModal'));
     modal.show();
 
+    const videoElement = document.getElementById(`modal-video-${videoId}`);
+    const playButtonOverlay = modalVideoContainer.querySelector('.play-button-overlay');
+
     // Inicializar el video en el modal
     initializeVideo(`modal-video-${videoId}`);
 
+    // Agregar evento de clic al overlay para reproducir/pausar el video
+    playButtonOverlay.addEventListener('click', function() {
+        if (videoElement.paused) {
+            videoElement.play();
+        } else {
+            videoElement.pause();
+        }
+    });
+
+    // Ocultar el overlay cuando el video comience a reproducirse
+    videoElement.addEventListener('play', function() {
+        playButtonOverlay.style.opacity = '0';
+    });
+
+    // Mostrar el overlay cuando el video se pause
+    videoElement.addEventListener('pause', function() {
+        playButtonOverlay.style.opacity = '1';
+    });
+
     // Detener el video cuando se cierre el modal
     document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
-        const video = document.getElementById(`modal-video-${videoId}`);
-        if (video) {
-            video.pause();
-            video.currentTime = 0;
-        }
+        videoElement.pause();
+        videoElement.currentTime = 0;
+        playButtonOverlay.style.opacity = '1';
     });
 }
 
@@ -1345,53 +1525,72 @@ function displayVideoItem(file) {
     videoItem.setAttribute('data-video-id', file.videoId);
     const videoId = file.videoId;
     
-    let videoHtml;
-    if (file.status === 'READY') {
-        videoHtml = `
-            <div class="video-wrapper">
-                <video id="${videoId}" style="width: 280px; height: 160px;">
-                    <source src="https://drm.eweo.com/dashboard/processed_videos/${videoId}/playlist.m3u8" type="application/x-mpegURL" poster="https://drm.eweo.com/portadas/${videoId}.jpg">
-                    Your browser does not support the video tag.
-                </video>
-              <div class="play-button-overlay fa-2x">
-            <div class="play-button-circle">
-                <i class="fa-solid fa-play play-icon fa-2x"></i>
-            </div>
-        </div>
-    </div>
-        `;
-    } else {
-        videoHtml = `
-            <div class="video-wrapper">
-                <video id="${videoId}" style="width: 280px; height: 160px;" poster="https://drm.eweo.com/portadas/${videoId}.jpg">
-                    <source src="" type="application/x-mpegURL">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="play-button-overlay">
-                    <i class="fa-solid fa-play play-button" data-video-id="${videoId}"></i>
-                </div>
-            </div>
-        `;
-    }
-    
+    // Añade estos estilos al head del documento o en tu archivo CSS
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes tvNoise {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 100%; }
+        }
+        @keyframes colorBars {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-16.67%); }
+        }
+        .tv-effect {
+            background-image: 
+                linear-gradient(to bottom, transparent, rgba(255,255,255,0.3)),
+                repeating-radial-gradient(circle at 50% 50%, black 0, black 2px, transparent 2px, transparent 4px);
+            background-size: 100% 100%, 4px 4px;
+            animation: tvNoise 0.5s infinite linear;
+        }
+        .color-bars {
+            animation: colorBars 2s infinite linear;
+        }
+    `;
+    document.head.appendChild(style);
+
     videoItem.innerHTML = `
-        <div class="video-thumb">
-            <div id="video-container-${videoId}">
-                ${videoHtml}
+        <div style="display: flex; align-items: flex-start;">
+            <div class="video-thumb" style="position: relative; width: 280px; height: 160px; flex-shrink: 0; overflow: hidden;">
+                <div id="video-container-${videoId}" class="video-wrapper" data-video-id="${videoId}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                    <img src="https://drm.eweo.com/portadas/${videoId}.jpg?v=<?php echo time(); ?>" alt="${file.fileName}" class="video-thumbnail" style="width: 100%; height: 100%; object-fit: cover; ${file.status === 'PROCESSING' ? 'display: none;' : ''}">
+                    
+                    <div class="tv-effect" style="display: ${file.status === 'PROCESSING' ? 'block' : 'none'}; width: 100%; height: 100%; position: absolute; top: 0; left: 0; overflow: hidden;">
+                        <div class="color-bars" style="position: absolute; top: 0; left: 0; width: 120%; height: 100%; display: flex;">
+                             <div style="background: white;"></div>
+                                <div style="background: yellow;"></div>
+                                <div style="background: cyan;"></div>
+                                <div style="background: green;"></div>
+                                <div style="background: magenta;"></div>
+                                <div style="background: red;"></div>
+                                <div style="background: blue;"></div>
+                                <div style="background: white;"></div>
+                            </div>
+                             <div class="noise"></div>
+                             <div class="processing-text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 18px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+                             PROCESSING<span class="dots"></span>
+                             </div>
+
+                    </div>
+                    <div class="play-button-overlay" style="display: ${file.status === 'PROCESSING' ? 'none' : 'block'}; position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <div class="play-button-circle">
+                            <i class="fa-solid fa-play play-icon"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div>
-                <p class="ms-4 file-name">${file.fileName}</p>
-                <small class="ms-4 upload-date">${file.uploadDate}</small>
-                <p> ${file.folderNames ? file.folderNames.split(', ').map(folder => 
-                    `<span class="ms-4 badge badge-folder">${folder}</span>`
-                ).join(' ') : '<span class="ms-4 badge badge-not-archived">Not Archived</span>'}</p>
-                <div class="ms-4 progress-container" style="display: ${file.status === 'READY' ? 'none' : 'block'}">
-                    <div class="progress-bar ${file.status === 'PROCESSING' ? 'progress-bar-processing' : ''}"></div>
+            <div style="margin-left: 10px;">
+                <p class="ms-5 mt-5 file-name" style="margin: 0;">${file.fileName}</p>
+                <small class="ms-5 upload-date" style="display: block; margin-bottom: 5px;">${file.uploadDate}</small>
+                <p style="margin: 0;"> ${file.folderNames ? file.folderNames.split(', ').map(folder => 
+                    `<span class="ms-5 badge badge-folder">${folder}</span>`
+                ).join(' ') : '<span class="ms-5 badge badge-not-archived">Not Archived</span>'}</p>
+                <div class="progress-container" style="display: ${file.status === 'READY' ? 'none' : 'none'}; margin-top: 5px;">
+                    <!--<div class="progress-bar ${file.status === 'PROCESSING' ? 'progress-bar-processing' : ''}"></div>-->
                 </div>
             </div>
         </div>
-        <div>
+        <div style="margin-top: 10px;">
             <span class="badge badge-${file.status.toLowerCase()}">${file.status}</span>
             <button title="${videoId}" id="Enbed_${videoId}" class="btn-video-embed mx-1" data-video-id="${videoId}"> <> Embed </button>
             <button title="${videoId}" id="copyID_${videoId}" class="btn-video-list mx-1" data-video-id="${videoId}">Copy ID</button>
@@ -1404,15 +1603,6 @@ function displayVideoItem(file) {
     const videosContainer = document.querySelector('.videos');
     if (videosContainer) {
         videosContainer.appendChild(videoItem);
-        initializeVideo(file.videoId);
-        
-
-
-
-
-
-
-
         
         // Add click event listener for the Copy ID button
         const copyButton = videoItem.querySelector(`#copyID_${videoId}`);
@@ -1448,7 +1638,6 @@ function displayVideoItem(file) {
     } else {
         console.error('Videos container not found');
     }
-
 }
 
 
@@ -1550,6 +1739,24 @@ function checkVideoStatus(videoId) {
                     videoItem.querySelector('div:last-child').prepend(statusBadge);
                 }
                 
+
+                // Actualizar la visibilidad de la portada, el efecto de TV y el botón de reproducción
+                const thumbnail = videoItem.querySelector('.video-thumbnail');
+                const tvEffect = videoItem.querySelector('.tv-effect');
+                const playButton = videoItem.querySelector('.play-button-overlay');
+                if (thumbnail && tvEffect && playButton) {
+                    if (data.status === 'READY') {
+                        thumbnail.style.display = 'block';
+                        tvEffect.style.display = 'none';
+                        playButton.style.display = 'flex';
+                    } else {
+                        thumbnail.style.display = 'none';
+                        tvEffect.style.display = 'block';
+                        playButton.style.display = 'none';
+                    }
+                }
+
+
                 const oldStatus = statusBadge.textContent;
                 statusBadge.className = `badge badge-${data.status.toLowerCase()}`;
                 statusBadge.textContent = data.status;
@@ -1572,14 +1779,13 @@ function checkVideoStatus(videoId) {
                     // El estado ha cambiado a READY por primera vez
                     const videoContainer = videoItem.querySelector(`#video-container-${videoId}`);
                     if (videoContainer) {
-                        // Reemplazar completamente el elemento de video
-                        videoContainer.innerHTML = `
-                            <video id="${videoId}" controls style="width: 280px; height: 160px;">
-                                <source src="https://drm.eweo.com/dashboard/processed_videos/${videoId}/playlist.m3u8" type="application/x-mpegURL" poster="https://drm.eweo.com/portadas/${videoId}.jpg">
-                                Your browser does not support the video tag.
-                            </video>
-                        `;
-                        initializeVideo(videoId);
+                        // Actualizar la imagen con la nueva portada (si es necesario)
+                        const thumbnailImg = videoContainer.querySelector('img');
+                        if (thumbnailImg) {
+                            // Añadir un parámetro de versión para forzar la recarga de la imagen
+                            const timestamp = new Date().getTime();
+                            thumbnailImg.src = `https://drm.eweo.com/portadas/${videoId}.jpg?v=${Date.now()}`;
+                        }
                     }
                     
                     const oldBadges = videoItem.querySelectorAll('.badge-processing');
@@ -1596,26 +1802,19 @@ function checkVideoStatus(videoId) {
 
 
 
-
 function initializeVideo(videoId) {
     const video = document.getElementById(videoId);
-    const source = video.querySelector('source');
-    
     if (Hls.isSupported()) {
         const hls = new Hls();
-        hls.loadSource(source.src);
+        hls.loadSource(video.querySelector('source').src);
         hls.attachMedia(video);
         hls.on(Hls.Events.MANIFEST_PARSED, function() {
             console.log('HLS manifest loaded');
-            // video.play(); // Descomenta si quieres reproducción automática
         });
-    }
-    // Para navegadores que soportan HLS nativamente como Safari
-    else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = source.src;
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = video.querySelector('source').src;
         video.addEventListener('loadedmetadata', function() {
             console.log('Video metadata loaded');
-            // video.play(); // Descomenta si quieres reproducción automática
         });
     }
 }
