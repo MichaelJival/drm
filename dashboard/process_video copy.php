@@ -71,13 +71,30 @@ $iv = openssl_random_pseudo_bytes(16);
 $keyinfoContent = $baseUrl . "enc.key\n" . $baseUrl . "enc.key" . "\n" . bin2hex($iv);
 file_put_contents($keyinfoFile, $keyinfoContent);
 
+// Comando FFmpeg para segmentar el video
+/*$command = sprintf(
+    '%s -i %s -c:v libx264 -c:a aac -hls_time 10 -hls_key_info_file %s -hls_playlist_type vod -hls_segment_filename %s -hls_base_url %s %s',
+    escapeshellcmd($ffmpegPath),
+    escapeshellarg($inputFile),
+    escapeshellarg($keyinfoFile),
+    escapeshellarg($segmentPattern),
+    escapeshellarg($baseUrl),
+    escapeshellarg($m3u8File)
+);*/
+
+//$coverImagePath = $segmentDir . '/portada_' . $videoId . '.jpg';
 $baseImagePath = '/home/drm/public_html/portadas/';
 $coverImagePath = $baseImagePath . $videoId . '.jpg';
 
 $command = sprintf(
-    
+    /*'%s -i %s -c:v libx264 -c:a aac -hls_time 10 -hls_key_info_file %s -hls_playlist_type vod -hls_segment_filename %s -hls_base_url %s %s && %s -i %s -vf "select=eq(pict_type\,I),scale=200:-1" -frames:v 1 %s',*/
+
+    /*"%s -i %s -c:v libx264 -c:a aac -hls_time 10 -hls_key_info_file %s -hls_playlist_type vod -hls_segment_filename %s -hls_base_url %s %s && %s -i %s -vf \"select='eq(pict_type\,I)*gte(n\,3)',scale=200:-1\" -frames:v 1 %s",*/
+
    "%s -i %s -c:v libx264 -c:a aac -hls_time 10 -hls_key_info_file %s -hls_playlist_type vod -hls_segment_filename %s -hls_base_url %s %s && %s -i %s -vf \"select='eq(pict_type\,I)*gte(n\,3)',scale=200:-1\" -frames:v 1 %s",
-        
+    
+    
+    
     escapeshellcmd($ffmpegPath),
     escapeshellarg($inputFile),
     escapeshellarg($keyinfoFile),
@@ -120,10 +137,10 @@ if (!$stmt->execute()) {
 
 
 // Actualizar el estado del video a READY
-$sql = "UPDATE videos SET estado = 'READY' WHERE id_video = ?";
+$sql = "UPDATE videos SET estado = 'READY', url_processed = ? WHERE id_video = ?";
 $stmt = $conexion->prepare($sql);
 $processedUrl = $baseUrl . 'playlist.m3u8';
-$stmt->bind_param("s", $videoId);
+$stmt->bind_param("ss", $processedUrl, $videoId);
 
 if (!$stmt->execute()) {
     logError("Error al actualizar el estado del video $videoId: " . $stmt->error);

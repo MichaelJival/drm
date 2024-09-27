@@ -31,14 +31,53 @@ $h = time();
     <link rel="stylesheet" type="text/css" href="https://drm.eweo.com/dashboard/css/topbar.css?v=<?php echo $h ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+
+
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css"
+      >
+
+
+
+
+
     <style>
         body {
             display: flex;
             min-height: 100vh;
             margin: 0;
             background-color: #F7F9F9;
-            font-family: Arial, sans-serif;
+            font-family:  "Poppins", sans-serif;
         }
 
         
@@ -108,13 +147,14 @@ $h = time();
         .video-thumb {
             display: flex;
             align-items: center;
-            margin-left: 20px;
-        }
+            margin-left: 0px;
+            padding-right: 50px;
+            }
 
-        .video-thumb img {
-            width: 60px;
-            margin-right: 20px;
-        }
+        /*.video-thumb img {
+            width: 200px;
+            margin-right: 113px;
+        }*/
 
         .uploading {
             max-width: 600px;    
@@ -168,9 +208,27 @@ $h = time();
             margin-right: 0px;
         }
 
-        .btn-video-list-conf {
+
+        .btn-video-list {
+            border: 1px solid #959CAF;
+            color: #818895;
+            background-color: #FFFFFF;
+            border-radius: 3px;
+            padding: 5px 10px 5px 10px;
+            font-size: 0.85em;
+        }
+
+        .btn-video-list:hover {
+            /*transform: scale(0.96);*/
             border: 1px solid #5F50E4;
             color: #5F50E4;
+       
+        }
+
+
+        .btn-video-list-conf {
+            border: 1px solid #A9B0C9;
+            color: #333;
             background-color: #FFFFFF;
             border-radius: 3px;
             padding: 5px 10px 5px 10px;
@@ -178,7 +236,9 @@ $h = time();
         }
 
         .btn-video-list-conf:hover {
-            transform: scale(0.96);
+            /*transform: scale(0.96);*/
+            border: 1px solid #5F50E4;
+            color: #5F50E4;
         }
 
         .btn-video-list-archive {
@@ -209,6 +269,16 @@ $h = time();
 
 
         .btn-video-list-delete {
+            border: 1px solid #959CAF;
+            color: #818895;
+            background-color: #FFFFFF;
+            border-radius: 3px;
+            padding: 5px 10px 5px 10px;
+            font-size: 0.85em;
+        }
+
+        .btn-video-list-delete:hover {
+            /*transform: scale(0.96);*/
             border: 1px solid #E4505F;
             color: #E4505F;
             background-color: #FFFFFF;
@@ -217,13 +287,28 @@ $h = time();
             font-size: 0.85em;
         }
 
-        .btn-video-list-delete:hover {
-            transform: scale(0.96);
+        .video-item:has(.btn-video-list-delete:hover) {
+        border-color: #E4505F;
         }
+
+        .btn-video-embed {
+            border: 1px solid #5F50E4;
+            color: #FFF;
+            font-size: 0.85em;
+            font-family: 'Poppins', sans-serif;
+            background-color: #5F50E4;
+            border-radius: 3px;
+            padding: 5px 15px 5px 10px;
+            font-size: 0.85em;
+
+
+        }
+
 
         .badge-ready {
             font-size: 14px;
-            color: rgb(46, 125, 50);
+            /*color: rgb(46, 125, 50);*/
+            color: #2E7D32;
             text-transform: capitalize;
             font-weight: 600;
             background: #D7FEDD;
@@ -232,6 +317,29 @@ $h = time();
             margin-right: 10px;
             padding: 10px 15px 10px 15px;
         }
+
+
+        
+        
+
+        .badge-processing {
+            font-size: 14px;
+            color: rgb(178, 83, 1);
+            text-transform: capitalize;
+            font-weight: 600;
+            background: rgb(255, 240, 217);
+            padding: 4px 6px;
+            border-radius: 4px;
+            margin-right: 10px;
+            padding: 10px 15px 10px 15px;
+
+  
+
+
+
+        }
+
+
 
         .progress-container {
             width: 100%;
@@ -449,11 +557,96 @@ $h = time();
         font-size: 0.875rem;
         margin-left: 15px;
     }
+
+
+    @keyframes processing-animation {
+    0% { width: 0%; }
+    50% { width: 100%; }
+    100% { width: 0%; }
+}
+
+.progress-bar-processing {
+    animation: processing-animation 2s ease-in-out infinite;
+    background-color: #007bff;
+}
      
-        
-    </style>
+
+
+.video-wrapper {
+    position: relative;
+}
+
+.play-button-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-button-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.play-icon {
+    color: white;
+    font-size: 28px;
+    margin-left: 4px; /* Ajusta ligeramente la posición del ícono */
+}
+
+.play-button-overlay:hover .play-button-circle {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.play-button-overlay:hover .play-icon {
+    color: #5F50E4;
+}
+
+
+</style>
 </head>
 <body>
+
+
+
+
+
+
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="max-width: 800px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="videoModalLabel">Video Player</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="modalVideoContainer"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div class="modal fade" id="renameFolderModal" tabindex="-1" aria-labelledby="renameFolderModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -525,15 +718,6 @@ $h = time();
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
 <!-- Modal para crear carpeta -->
 <div class="modal fade" id="createFolderModal" tabindex="-1" aria-labelledby="createFolderModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -580,11 +764,6 @@ $h = time();
     <div onclick="location.reload()" class="path-folders">Root Folder </div>
 
      <input type="file" id="file-input" style="display: none;" onchange="uploadVideo(event)"></div>
-
-
-
-
-
 
 
 
@@ -668,9 +847,49 @@ $folders[] = $row;
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <script>
 
     
+
+document.addEventListener('click', function(e) {
+    if (e.target && (e.target.classList.contains('play-button-overlay') || 
+                     e.target.classList.contains('play-button-circle') || 
+                     e.target.classList.contains('play-button-triangle'))) {
+        const videoWrapper = e.target.closest('.video-wrapper');
+        if (videoWrapper) {
+            const videoId = videoWrapper.querySelector('video').id;
+            openVideoModal(videoId);
+        }
+    }
+});
+
+
+    function openVideoModal(videoId) {
+    const modalVideoContainer = document.getElementById('modalVideoContainer');
+    modalVideoContainer.innerHTML = `
+        <video id="modal-video-${videoId}" controls style="width: 100%; height: auto;">
+            <source src="https://drm.eweo.com/dashboard/processed_videos/${videoId}/playlist.m3u8" autoplay type="application/x-mpegURL">
+            Your browser does not support the video tag.
+        </video>
+    `;
+
+    const modal = new bootstrap.Modal(document.getElementById('videoModal'));
+    modal.show();
+
+    // Inicializar el video en el modal
+    initializeVideo(`modal-video-${videoId}`);
+
+    // Detener el video cuando se cierre el modal
+    document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
+        const video = document.getElementById(`modal-video-${videoId}`);
+        if (video) {
+            video.pause();
+            video.currentTime = 0;
+        }
+    });
+}
+
 
 
            function toggleDropdown() {
@@ -688,8 +907,8 @@ $folders[] = $row;
         }
 
         function uploadVideo(event) {
-    const file = event.target.files[0];
-    if (file) {
+        const file = event.target.files[0];
+        if (file) {
         const chunkSize = 1024 * 1024; // 1 MB
         const totalChunks = Math.ceil(file.size / chunkSize);
         let currentChunk = 0;
@@ -758,30 +977,32 @@ $folders[] = $row;
                     };
 
                     xhr.onload = function() {
-                        if (xhr.status === 200) {
-                            try {
-                                const response = JSON.parse(xhr.responseText);
-                                if (response.status === 'success') {
-                                    if (currentChunk < totalChunks - 1) {
-                                        currentChunk++;
-                                        uploadNextChunk();
-                                    } else {
-                                        displayVideoItem(response);
-                                        hideUploadingSection();
-                                    }
+                    if (xhr.status === 200) {
+                        try {
+                            const response = JSON.parse(xhr.responseText);
+                            if (response.status === 'success') {
+                                if (currentChunk < totalChunks - 1) {
+                                    currentChunk++;
+                                    uploadNextChunk();
                                 } else {
-                                    console.error("Error en la respuesta del servidor:", response.message);
+                                    response.status = 'PROCESSING'; // Cambia el estado inicial a PROCESSING
+                                    displayVideoItem(response);
                                     hideUploadingSection();
+                                    checkVideoStatus(response.videoId);
                                 }
-                            } catch (e) {
-                                console.error("Error al parsear la respuesta JSON:", e);
+                            } else {
+                                console.error("Error en la respuesta del servidor:", response.message);
                                 hideUploadingSection();
                             }
-                        } else {
-                            console.error("Error en la respuesta del servidor. Estado:", xhr.status);
+                        } catch (e) {
+                            console.error("Error al parsear la respuesta JSON:", e);
                             hideUploadingSection();
                         }
-                    };
+                    } else {
+                        console.error("Error en la respuesta del servidor. Estado:", xhr.status);
+                        hideUploadingSection();
+                    }
+                };
 
                     xhr.send(formData);
                 }
@@ -827,7 +1048,7 @@ $folders[] = $row;
                             uploadDate: video.fecha,
                             videoId: video.id_video,
                             folderNames: video.folder_names,
-                            status: 'success'
+                            status: video.estado // Usa el estado real del video
                         });
                     });
                 })
@@ -1118,40 +1339,120 @@ document.getElementById('archiveVideoBtn').addEventListener('click', function() 
 }
 
 
-
 function displayVideoItem(file) {
     const videoItem = document.createElement('div');
     videoItem.className = 'video-item';
+    videoItem.setAttribute('data-video-id', file.videoId);
+    const videoId = file.videoId;
+    
+    let videoHtml;
+    if (file.status === 'READY') {
+        videoHtml = `
+            <div class="video-wrapper">
+                <video id="${videoId}" style="width: 280px; height: 160px;">
+                    <source src="https://drm.eweo.com/dashboard/processed_videos/${videoId}/playlist.m3u8" type="application/x-mpegURL" poster="https://drm.eweo.com/portadas/${videoId}.jpg">
+                    Your browser does not support the video tag.
+                </video>
+              <div class="play-button-overlay fa-2x">
+            <div class="play-button-circle">
+                <i class="fa-solid fa-play play-icon fa-2x"></i>
+            </div>
+        </div>
+    </div>
+        `;
+    } else {
+        videoHtml = `
+            <div class="video-wrapper">
+                <video id="${videoId}" style="width: 280px; height: 160px;" poster="https://drm.eweo.com/portadas/${videoId}.jpg">
+                    <source src="" type="application/x-mpegURL">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="play-button-overlay">
+                    <i class="fa-solid fa-play play-button" data-video-id="${videoId}"></i>
+                </div>
+            </div>
+        `;
+    }
+    
     videoItem.innerHTML = `
         <div class="video-thumb">
-            <img src="https://via.placeholder.com/60" alt="thumbnail">
+            <div id="video-container-${videoId}">
+                ${videoHtml}
+            </div>
+            
             <div>
-                <p class="file-name">${file.fileName}</p>
-                <small class="upload-date">${file.uploadDate}</small>
-               <p> ${file.folderNames ? file.folderNames.split(', ').map(folder => 
-                `<span class="badge badge-folder">${folder}</span>`
-            ).join(' ') : '<span class="badge badge-not-archived">Not Archived</span>'}</p>
-                <div class="progress-container">
-                    <div class="progress-bar"></div>
+                <p class="ms-4 file-name">${file.fileName}</p>
+                <small class="ms-4 upload-date">${file.uploadDate}</small>
+                <p> ${file.folderNames ? file.folderNames.split(', ').map(folder => 
+                    `<span class="ms-4 badge badge-folder">${folder}</span>`
+                ).join(' ') : '<span class="ms-4 badge badge-not-archived">Not Archived</span>'}</p>
+                <div class="ms-4 progress-container" style="display: ${file.status === 'READY' ? 'none' : 'block'}">
+                    <div class="progress-bar ${file.status === 'PROCESSING' ? 'progress-bar-processing' : ''}"></div>
                 </div>
             </div>
         </div>
         <div>
-            <span class="badge badge-ready">Ready</span>
-            
-            <button id="archiveBtn" class="btn-video-list-archive mx-1" data-video-id="${file.videoId}">Archive</button>
-            <button class="btn-video-list-conf mx-1" data-video-id="${file.videoId}">Configuration</button>
-            <button class="btn-video-list-delete mx-1" data-video-id="${file.videoId}">Delete</button>
+            <span class="badge badge-${file.status.toLowerCase()}">${file.status}</span>
+            <button title="${videoId}" id="Enbed_${videoId}" class="btn-video-embed mx-1" data-video-id="${videoId}"> <> Embed </button>
+            <button title="${videoId}" id="copyID_${videoId}" class="btn-video-list mx-1" data-video-id="${videoId}">Copy ID</button>
+            <button id="archiveBtn" class="btn-video-list mx-1" data-video-id="${videoId}">Archive</button>
+            <button class="btn-video-list mx-1" data-video-id="${videoId}">Configuration</button>
+            <button class="btn-video-list-delete mx-1" data-video-id="${videoId}">Delete</button>
         </div>
     `;
     
     const videosContainer = document.querySelector('.videos');
     if (videosContainer) {
         videosContainer.appendChild(videoItem);
+        initializeVideo(file.videoId);
+        
+
+
+
+
+
+
+
+        
+        // Add click event listener for the Copy ID button
+        const copyButton = videoItem.querySelector(`#copyID_${videoId}`);
+        copyButton.addEventListener('click', function() {
+            navigator.clipboard.writeText(videoId).then(() => {
+                // Provide visual feedback that the ID was copied
+                const originalText = copyButton.textContent;
+                copyButton.textContent = 'Copied!';
+                setTimeout(() => {
+                    copyButton.textContent = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        });
+
+        // Add click event listener for the Embed button
+        const embedButton = videoItem.querySelector(`#Enbed_${videoId}`);
+        embedButton.addEventListener('click', function() {
+            const embedUrl = `https://drm.eweo.com/player.php?id=${videoId}`;
+            navigator.clipboard.writeText(embedUrl).then(() => {
+                // Provide visual feedback that the URL was copied
+                const originalText = embedButton.textContent;
+                embedButton.textContent = 'Embed URL Copied!';
+                setTimeout(() => {
+                    embedButton.textContent = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        });
+        
     } else {
         console.error('Videos container not found');
     }
+
 }
+
+
+
 
 
 let folderIdToRename;
@@ -1200,6 +1501,132 @@ document.getElementById('confirmRenameBtn').addEventListener('click', function()
         alert('Please enter a folder name');
     }
 });
+
+
+
+
+/*function checkVideoStatus(videoId) {
+    fetch('check_video_status.php?videoId=' + encodeURIComponent(videoId))
+        .then(response => response.json())
+        .then(data => {
+            const videoItem = document.querySelector(`.video-item[data-video-id="${videoId}"]`);
+            if (videoItem) {
+                let statusBadge = videoItem.querySelector('.badge-processing, .badge-ready');
+                if (!statusBadge) {
+                    // Si no existe el badge, lo creamos
+                    statusBadge = document.createElement('span');
+                    statusBadge.className = 'badge';
+                    videoItem.querySelector('div:last-child').prepend(statusBadge);
+                }
+                
+                // Actualizamos la clase y el texto del badge
+                statusBadge.className = `badge badge-${data.status.toLowerCase()}`;
+                statusBadge.textContent = data.status;
+                
+                // Si el estado es READY, removemos cualquier otro badge de estado
+                if (data.status === 'READY') {
+                    const oldBadges = videoItem.querySelectorAll('.badge-processing');
+                    oldBadges.forEach(badge => badge.remove());
+                }
+            }
+            
+            if (data.status !== 'READY') {
+                setTimeout(() => checkVideoStatus(videoId), 5000); // Verificar cada 5 segundos
+            }
+        })
+        .catch(error => console.error('Error:', error));
+}*/
+
+function checkVideoStatus(videoId) {
+    fetch('check_video_status.php?videoId=' + encodeURIComponent(videoId))
+        .then(response => response.json())
+        .then(data => {
+            const videoItem = document.querySelector(`.video-item[data-video-id="${videoId}"]`);
+            if (videoItem) {
+                let statusBadge = videoItem.querySelector('.badge-processing, .badge-ready');
+                if (!statusBadge) {
+                    statusBadge = document.createElement('span');
+                    statusBadge.className = 'badge';
+                    videoItem.querySelector('div:last-child').prepend(statusBadge);
+                }
+                
+                const oldStatus = statusBadge.textContent;
+                statusBadge.className = `badge badge-${data.status.toLowerCase()}`;
+                statusBadge.textContent = data.status;
+                
+                // Actualizar la barra de progreso
+                const progressContainer = videoItem.querySelector('.progress-container');
+                if (progressContainer) {
+                    if (data.status === 'PROCESSING') {
+                        progressContainer.style.display = 'block';
+                        const progressBar = progressContainer.querySelector('.progress-bar');
+                        if (progressBar) {
+                            progressBar.classList.add('progress-bar-processing');
+                        }
+                    } else if (data.status === 'READY') {
+                        progressContainer.style.display = 'none';
+                    }
+                }
+                
+                if (data.status === 'READY' && oldStatus !== 'READY') {
+                    // El estado ha cambiado a READY por primera vez
+                    const videoContainer = videoItem.querySelector(`#video-container-${videoId}`);
+                    if (videoContainer) {
+                        // Reemplazar completamente el elemento de video
+                        videoContainer.innerHTML = `
+                            <video id="${videoId}" controls style="width: 280px; height: 160px;">
+                                <source src="https://drm.eweo.com/dashboard/processed_videos/${videoId}/playlist.m3u8" type="application/x-mpegURL" poster="https://drm.eweo.com/portadas/${videoId}.jpg">
+                                Your browser does not support the video tag.
+                            </video>
+                        `;
+                        initializeVideo(videoId);
+                    }
+                    
+                    const oldBadges = videoItem.querySelectorAll('.badge-processing');
+                    oldBadges.forEach(badge => badge.remove());
+                }
+            }
+            
+            if (data.status !== 'READY') {
+                setTimeout(() => checkVideoStatus(videoId), 5000);
+            }
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+
+
+
+function initializeVideo(videoId) {
+    const video = document.getElementById(videoId);
+    const source = video.querySelector('source');
+    
+    if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(source.src);
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            console.log('HLS manifest loaded');
+            // video.play(); // Descomenta si quieres reproducción automática
+        });
+    }
+    // Para navegadores que soportan HLS nativamente como Safari
+    else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = source.src;
+        video.addEventListener('loadedmetadata', function() {
+            console.log('Video metadata loaded');
+            // video.play(); // Descomenta si quieres reproducción automática
+        });
+    }
+}
+
+
+
+
+
+
+
+
 
 </script>
 </body>

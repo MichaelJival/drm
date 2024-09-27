@@ -1,0 +1,3 @@
+https://drm.eweo.com/key/encription.key
+/home/cipher/encription.key
+93757155da37cfe22f917010e1e483b2

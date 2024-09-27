@@ -242,7 +242,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $chunkNumber = isset($_POST['chunkNumber']) ? intval($_POST['chunkNumber']) : 0;
     $totalChunks = isset($_POST['totalChunks']) ? intval($_POST['totalChunks']) : 0;
 
-    $uploadFileDir = 'uploaded_files/';
+    $uploadFileDir = '/home/drm/public_html/dashboard/uploaded_files/';
     if (!is_dir($uploadFileDir)) {
         mkdir($uploadFileDir, 0777, true);
     }
@@ -270,7 +270,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $urlVideo = $finalFilePath;
                     $fechaSubida = date("Y-m-d H:i:s");
 
-                    $sql = "INSERT INTO videos (id_video, nombre_video, url_video, fecha, estado) VALUES (?, ?, ?, ?, 'PROCESANDO')";
+                    $sql = "INSERT INTO videos (id_video, nombre_video, url_video, fecha, estado) VALUES (?, ?, ?, ?, 'PROCESSING')";
                     $stmt = $conexion->prepare($sql);
                     $stmt->bind_param("ssss", $videoId, $fileName, $urlVideo, $fechaSubida);
 
@@ -281,7 +281,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             'fileSize' => filesize($finalFilePath),
                             'uploadDate' => $fechaSubida,
                             'videoId' => $videoId,
-                            'estado' => 'PROCESANDO'
+                            'estado' => 'PROCESSING'
                         );
 
                         // Iniciar el procesamiento con FFmpeg en segundo plano
