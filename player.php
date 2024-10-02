@@ -69,15 +69,15 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    fetch(`api.php?action=getVideoInfo&id=${videoId}`)
+    fetch(`48aafa4ba1186dc6e206d122fd1d2920.php?action=881d88d07cb03b125274dc3704a60fe5&id=${videoId}`)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Error al obtener la información del video');
+                throw new Error('Error');
             }
             return response.json();
         })
         .then(data => {
-            return fetch('api.php?action=decrypt', {
+            return fetch('48aafa4ba1186dc6e206d122fd1d2920.php?action=76f0f918e8c9e8f0a07abede72711b5d', {
                 method: 'POST',
                 body: JSON.stringify({
                     content: data.a9d51eaf10a6d6d19d51fe4c40bc507b,
@@ -92,15 +92,15 @@ document.addEventListener('DOMContentLoaded', function() {
         
         .then(response => {
             if (!response.ok) {
-                throw new Error('Error al descifrar el contenido');
+                throw new Error('Error');
             }
             return response.text();
         })
-        .then(decryptedContent => {
-            const videoSrc = URL.createObjectURL(new Blob([decryptedContent], { type: 'application/vnd.apple.mpegurl' }));
+        .then(da72e290f290479b4abc904ebe181438 => {
+            const videoSrc = URL.createObjectURL(new Blob([da72e290f290479b4abc904ebe181438], { type: 'application/vnd.apple.mpegurl' }));
         initializePlayer(videoSrc);
     })
-    .catch(error => console.error('Error fetching video source:', error));
+    .catch(error => console.error('Error', error));
 
     function initializePlayer(videoSrc) {
         if (Hls.isSupported()) {
@@ -115,9 +115,6 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('HLS no es soportado en este navegador');
         }
     }
-
-
-    
 });
 </script>
 </body>

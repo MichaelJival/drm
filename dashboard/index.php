@@ -36,36 +36,12 @@ $h = time();
 
 
 
-
-      <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
-      >
-
-      <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css"
-      >
-
-      <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css"
-      >
-
-      <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css"
-      >
-
-      <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css"
-      >
-
-      <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css"
-      >
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css">
 
 
 
@@ -765,8 +741,27 @@ $h = time();
 }
 
 
+.disabledEmbed {
+   
+    border: 1px solid #ccc;
+    color: #333;
+    font-size: 0.85em;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ccc;
+    border-radius: 3px;
+    padding: 5px 15px 5px 10px;
+    font-size: 0.85em;
+    pointer-events: none;
+    opacity: 0.6; 
+    font-weight: 600;  
+    
+    
+}
 
 
+.hide {
+    display: none;
+}
 
 </style>
 </head>
@@ -966,10 +961,12 @@ $folders[] = $row;
             <a href="#" class="folder-name" data-folder-id="<?php echo $folder['id_folder']; ?>">
               <?php echo htmlspecialchars($folder['name']); ?>
             </a>
+
             <div class="video-count small text-muted ms-3">
-            <?php echo $folder['video_count']; ?> video<?php echo $folder['video_count'] != 1 ? 's' : ''; ?>
-            </div>
+    <?php echo $folder['video_count']; ?> video<?php echo $folder['video_count'] != 1 ? 's' : ''; ?>
+</div>
           </div>
+
           <div class="dropdown">
             <button class="btn-link" type="" id="<?php echo $folder['id_folder']; ?>" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="fas fa-ellipsis-v"></i>
@@ -1054,21 +1051,30 @@ function openVideoModal(videoId) {
 
     // Ocultar el overlay cuando el video comience a reproducirse
     videoElement.addEventListener('play', function() {
-        playButtonOverlay.style.opacity = '0';
-    });
+    playButtonOverlay.style.display = 'none';
+    });   
 
     // Mostrar el overlay cuando el video se pause
     videoElement.addEventListener('pause', function() {
-        playButtonOverlay.style.opacity = '1';
+        playButtonOverlay.style.display = 'flex';
     });
 
     // Detener el video cuando se cierre el modal
     document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
-        videoElement.pause();
-        videoElement.currentTime = 0;
-        playButtonOverlay.style.opacity = '1';
+    videoElement.pause();
+    videoElement.currentTime = 0;
+    playButtonOverlay.style.display = 'flex';
     });
 }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1166,7 +1172,7 @@ function openVideoModal(videoId) {
                                     uploadNextChunk();
                                 } else {
                                     response.status = 'PROCESSING'; // Cambia el estado inicial a PROCESSING
-                                    displayVideoItem(response);
+                                    displayVideoItem(response,true);
                                     hideUploadingSection();
                                     checkVideoStatus(response.videoId);
                                 }
@@ -1519,7 +1525,7 @@ document.getElementById('archiveVideoBtn').addEventListener('click', function() 
 }
 
 
-function displayVideoItem(file) {
+function displayVideoItem(file, isNewUpload = false) {
     const videoItem = document.createElement('div');
     videoItem.className = 'video-item';
     videoItem.setAttribute('data-video-id', file.videoId);
@@ -1558,13 +1564,20 @@ function displayVideoItem(file) {
                     <div class="tv-effect" style="display: ${file.status === 'PROCESSING' ? 'block' : 'none'}; width: 100%; height: 100%; position: absolute; top: 0; left: 0; overflow: hidden;">
                         <div class="color-bars" style="position: absolute; top: 0; left: 0; width: 120%; height: 100%; display: flex;">
                              <div style="background: white;"></div>
+
                                 <div style="background: yellow;"></div>
                                 <div style="background: cyan;"></div>
                                 <div style="background: green;"></div>
                                 <div style="background: magenta;"></div>
                                 <div style="background: red;"></div>
-                                <div style="background: blue;"></div>
-                                <div style="background: white;"></div>
+                                <div style="background: pink;"></div>
+                                <div style="background: lime;"></div>
+                                <div style="background: orange;"></div>
+                                <div style="background: purple;"></div>
+                                <div style="background: pink;"></div>
+                                <div style="background: gold;"></div>
+
+                           
                             </div>
                              <div class="noise"></div>
                              <div class="processing-text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 18px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
@@ -1592,7 +1605,9 @@ function displayVideoItem(file) {
         </div>
         <div style="margin-top: 10px;">
             <span class="badge badge-${file.status.toLowerCase()}">${file.status}</span>
-            <button title="${videoId}" id="Enbed_${videoId}" class="btn-video-embed mx-1" data-video-id="${videoId}"> <> Embed </button>
+            
+            <button  title="${videoId}" id="Enbed_${videoId}" class="btn-video-embed mx-1 ${file.status === 'PROCESSING' ? 'disabledEmbed' : ''}" data-video-id="${videoId}" ${file.status === 'PROCESSING' ? 'title="Video Not Ready"' : ''}> <> Embed </button>
+
             <button title="${videoId}" id="copyID_${videoId}" class="btn-video-list mx-1" data-video-id="${videoId}">Copy ID</button>
             <button id="archiveBtn" class="btn-video-list mx-1" data-video-id="${videoId}">Archive</button>
             <button class="btn-video-list mx-1" data-video-id="${videoId}">Configuration</button>
@@ -1602,7 +1617,11 @@ function displayVideoItem(file) {
     
     const videosContainer = document.querySelector('.videos');
     if (videosContainer) {
-        videosContainer.appendChild(videoItem);
+        if (isNewUpload) {
+            videosContainer.insertBefore(videoItem, videosContainer.firstChild);
+        } else {
+            videosContainer.appendChild(videoItem);
+        }
         
         // Add click event listener for the Copy ID button
         const copyButton = videoItem.querySelector(`#copyID_${videoId}`);
@@ -1693,39 +1712,6 @@ document.getElementById('confirmRenameBtn').addEventListener('click', function()
 
 
 
-
-/*function checkVideoStatus(videoId) {
-    fetch('check_video_status.php?videoId=' + encodeURIComponent(videoId))
-        .then(response => response.json())
-        .then(data => {
-            const videoItem = document.querySelector(`.video-item[data-video-id="${videoId}"]`);
-            if (videoItem) {
-                let statusBadge = videoItem.querySelector('.badge-processing, .badge-ready');
-                if (!statusBadge) {
-                    // Si no existe el badge, lo creamos
-                    statusBadge = document.createElement('span');
-                    statusBadge.className = 'badge';
-                    videoItem.querySelector('div:last-child').prepend(statusBadge);
-                }
-                
-                // Actualizamos la clase y el texto del badge
-                statusBadge.className = `badge badge-${data.status.toLowerCase()}`;
-                statusBadge.textContent = data.status;
-                
-                // Si el estado es READY, removemos cualquier otro badge de estado
-                if (data.status === 'READY') {
-                    const oldBadges = videoItem.querySelectorAll('.badge-processing');
-                    oldBadges.forEach(badge => badge.remove());
-                }
-            }
-            
-            if (data.status !== 'READY') {
-                setTimeout(() => checkVideoStatus(videoId), 5000); // Verificar cada 5 segundos
-            }
-        })
-        .catch(error => console.error('Error:', error));
-}*/
-
 function checkVideoStatus(videoId) {
     fetch('check_video_status.php?videoId=' + encodeURIComponent(videoId))
         .then(response => response.json())
@@ -1753,6 +1739,18 @@ function checkVideoStatus(videoId) {
                         thumbnail.style.display = 'none';
                         tvEffect.style.display = 'block';
                         playButton.style.display = 'none';
+                    }
+                }
+
+
+                const embedButton = videoItem.querySelector(`#Enbed_${videoId}`);
+                if (embedButton) {
+                    if (data.status === 'READY') {
+                        embedButton.classList.remove('disabledEmbed');
+                        embedButton.removeAttribute('title');
+                    } else {
+                        embedButton.classList.add('disabledEmbed');
+                        embedButton.setAttribute('title', 'Video Not Ready');
                     }
                 }
 
@@ -1819,7 +1817,13 @@ function initializeVideo(videoId) {
     }
 }
 
-
+function formatBytes(bytes, decimals = 2) {
+    if (bytes === 0) return '0 Bytes';
+    const k = 1024;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(decimals)) + ' ' + sizes[i];
+}
 
 
 

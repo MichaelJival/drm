@@ -23,11 +23,11 @@ $action = $_GET['action'] ?? '';
 $classId = $_GET['id'] ?? '';
 
 switch ($action) {
-    case 'getVideoInfo':
+    case '881d88d07cb03b125274dc3704a60fe5':
         require_once 'getVideoInfo.php';
         getVideoInfo($classId);
         break;
-    case 'decrypt':
+    case '76f0f918e8c9e8f0a07abede72711b5d':
         require_once 'decrypt.php';
         decryptVideo();
         break;
