@@ -20,15 +20,19 @@ function getVideoInfo($classId) {
     $videoSrc = $url;
 
     
+    //$encryptionKey = 'KUPyyqkR12zZdINm5rGecyUT5t8W1QxbhHXHJtlDz0c=';
     $encryptionKey = '5aad9b549e86812c95542e0714c1b2b7';
-    $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length('aes-128-cbc'));
+    //$iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length('aes-128-cbc'));
 
     $content = file_get_contents($videoSrc);
     $encryptedContent = openssl_encrypt($content, 'aes-128-cbc', $encryptionKey, 0, $iv);
 
+    $_SESSION['video_token'] = bin2hex(random_bytes(32));
+    $_SESSION['token_expiry'] = time() + 300;
+
     $responseData = [
         'encrypted' => base64_encode($encryptedContent),
-        'iv' => base64_encode($iv)
+        //'iv' => base64_encode($iv)
         //'token' => $_SESSION['video_token']
     ];
 

@@ -26,11 +26,13 @@ function getVideoInfo($classId) {
     $content = file_get_contents($videoSrc);
     $encryptedContent = openssl_encrypt($content, 'aes-128-cbc', $encryptionKey, 0, $iv);
 
+    $_SESSION['video_token'] = bin2hex(random_bytes(32));
+    $_SESSION['token_expiry'] = time() + 300;
+
     $responseData = [
         'encrypted' => base64_encode($encryptedContent),
         'iv' => base64_encode($iv)
-        //'token' => $_SESSION['video_token']
-    ];
+        ];
 
     echo json_encode($responseData);
 }

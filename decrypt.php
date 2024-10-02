@@ -53,15 +53,13 @@ function decryptVideo() {
         exit;
     }*/
 
-    $encryptionKey = 'KUPyyqkR12zZdINm5rGecyUT5t8W1QxbhHXHJtlDz0c=';
-    $decryptedContent = openssl_decrypt(base64_decode($data['content']), 'aes-256-cbc', $encryptionKey, 0, base64_decode($data['iv']));
-
-    if ($decryptedContent === false) {
+    $encryptionKey = '5aad9b549e86812c95542e0714c1b2b7';
+    $decryptedContent = openssl_decrypt(base64_decode($data['content']), 'aes-128-cbc', $encryptionKey, 0, base64_decode($data['iv']));
+    if($decryptedContent === false){
         http_response_code(500);
         echo json_encode(["error" => "Decryption failed"]);
         exit;
     }
-
     header('Content-Type: application/vnd.apple.mpegurl');
     echo $decryptedContent;
 }
