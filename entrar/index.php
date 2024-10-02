@@ -61,6 +61,27 @@ $conexion->close();
 
     <!-- Bootstrap Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+
+<style>
+
+.btn-entrar{
+    color : white !important;
+    background-color: #000;
+    border-color: #000;
+    height: 35px;
+}
+
+.btm-entrar:hover {
+    color : white !important;
+    background-color: #000;
+    border-color: #000;
+    height: 35px;
+}
+
+
+</style>
+
 </head>
 
 <body>
@@ -88,7 +109,7 @@ $conexion->close();
                               
                             </div>
                             <div class="text-center mt-4">
-                                <button class="btn btn-primary btn-block" type="submit">ENTRAR</button>
+                                <button class="btn-entrar btn-block" type="submit">ENTRAR</button>
                             </div>
                         </form>
                     </div>

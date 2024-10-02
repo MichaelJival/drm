@@ -242,7 +242,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $chunkNumber = isset($_POST['chunkNumber']) ? intval($_POST['chunkNumber']) : 0;
     $totalChunks = isset($_POST['totalChunks']) ? intval($_POST['totalChunks']) : 0;
 
-    $uploadFileDir = '/home/drm/public_html/dashboard/uploaded_files/';
+    //$uploadFileDir = '/home/drm/public_html/dashboard/uploaded_files/';
+    $uploadFileDir = '/home/drm/videos/';
+
     if (!is_dir($uploadFileDir)) {
         mkdir($uploadFileDir, 0777, true);
     }

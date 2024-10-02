@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Video Player</title>
+    <link href="https://vjs.zencdn.net/7.20.3/video-js.min.css" rel="stylesheet">
+    <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css">
+
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        .video-container {
+            width: 1024px;
+            max-width: 800px;
+        }
+        .video-js .vjs-control-bar {
+            background-color: #000;
+        }
+        .video-js .vjs-button > .vjs-icon-placeholder:before {
+            display: none;
+        }
+        .video-js .vjs-button.vjs-play-control .vjs-icon-placeholder:before,
+        .video-js .vjs-mute-control .vjs-icon-placeholder:before,
+        .video-js .vjs-fullscreen-control .vjs-icon-placeholder:before {
+            content: none !important;
+        }
+        .video-js .vjs-play-control .vjs-icon-placeholder,
+        .video-js .vjs-mute-control .vjs-icon-placeholder,
+        .video-js .vjs-fullscreen-control .vjs-icon-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .vjs-play-control i,
+        .vjs-mute-control i,
+        .vjs-fullscreen-control i {
+            color: #fff;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto">
+        </video>
+    </div>
+
+    <script>
+        var player = videojs('my-video', {
+            controls: true,
+            autoplay: false,
+            preload: 'auto',
+            responsive: true,
+            fluid: true,
+            playbackRates: [0.5, 1, 1.5, 2],
+            controlBar: {
+                pictureInPictureToggle: false
+            },
+            html5: {
+                hls: {
+                    enableLowInitialPlaylist: true,
+                    smoothQualityChange: true,
+                    overrideNative: true
+                }
+            }
+        });
+
+        player.src({
+            type: 'application/x-mpegURL',
+            src: 'https://drm.eweo.com/dashboard/processed_videos/e3f656d53d381ccb2c1d1e557e88758f/playlist.m3u8'
+        });
+
+        player.ready(function() {
+            // Cambiar iconos de los botones
+            var playButton = document.querySelector('.vjs-play-control .vjs-icon-placeholder');
+            var muteButton = document.querySelector('.vjs-mute-control .vjs-icon-placeholder');
+            var fullscreenButton = document.querySelector('.vjs-fullscreen-control .vjs-icon-placeholder');
+            
+            playButton.innerHTML = '<i class="fa-solid fa-play" style="color: #ffffff;"></i>';
+            muteButton.innerHTML = '<i class="fa-solid fa-volume" style="color: #ffffff;"></i>';
+            fullscreenButton.innerHTML = '<i class="fa-solid fa-expand" style="color: #ffffff;"></i>';
+
+            // Cambiar icono de reproducción entre play y pause
+            player.on('play', function() {
+                playButton.innerHTML = '<i class="fa-solid fa-pause" style="color: #ffffff;"></i>';
+            });
+
+            player.on('pause', function() {
+                playButton.innerHTML = '<i class="fa-solid fa-play" style="color: #ffffff;"></i>';
+            });
+
+            // Cambiar icono de mute entre volumen y volumen-xmark
+            player.on('volumechange', function() {
+                if (player.muted() || player.volume() === 0) {
+                    muteButton.innerHTML = '<i class="fa-solid fa-volume-xmark" style="color: red;"></i>';
+                } else {
+                    muteButton.innerHTML = '<i class="fa-solid fa-volume" style="color: #ffffff;"></i>';
+                }
+            });
+
+            // Crear botones personalizados de rebobinar y avanzar
+            var Button = videojs.getComponent('Button');
+            
+            var RewindButton = videojs.extend(Button, {
+                constructor: function() {
+                    Button.apply(this, arguments);
+                    this.controlText("Rebobinar 5 segundos");
+                    this.el().innerHTML = '<i class="fa-solid fa-arrow-rotate-left" style="color: #ffffff;"></i>';
+                },
+                handleClick: function() {
+                    this.player().currentTime(this.player().currentTime() - 5);
+                }
+            });
+            
+            var ForwardButton = videojs.extend(Button, {
+                constructor: function() {
+                    Button.apply(this, arguments);
+                    this.controlText("Avanzar 5 segundos");
+                    this.el().innerHTML = '<i class="fa-sharp fa-solid fa-arrow-rotate-right" style="color: #ffffff;"></i>';
+                },
+                handleClick: function() {
+                    this.player().currentTime(this.player().currentTime() + 5);
+                }
+            });
+            
+            videojs.registerComponent('RewindButton', RewindButton);
+            videojs.registerComponent('ForwardButton', ForwardButton);
+
+            player.controlBar.addChild('RewindButton', {}, 4);
+            player.controlBar.addChild('ForwardButton', {}, 6);
+        });
+    </script>
+</body>
+</html>
