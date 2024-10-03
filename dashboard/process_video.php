@@ -81,8 +81,7 @@ if (!is_dir($segmentDir)) {
         logError("Directorio de segmentos creado: $segmentDir");
     }
 }
-sleep(3);
-logError("Esperando 3 segundos...");
+
 $encryptionKey = openssl_random_pseudo_bytes(16);
 file_put_contents($keyfile, $encryptionKey);
 $iv = openssl_random_pseudo_bytes(16);
@@ -141,7 +140,7 @@ if (!$stmt->execute()) {
     die("Error al actualizar la base de datos\n");
 }
 
-/*sleep(8);
+sleep(8);
 logError("Esperando 8 segundos...");
 logError("Encryptando el archivo m3u8 con...");
 
@@ -162,7 +161,7 @@ if ($content !== false) {
 } else {
     logError("Error al leer el archivo m3u8 para el video $videoId");
     die("Error al leer el archivo m3u8\n");
-}*/
+}
 
 
 
