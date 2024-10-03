@@ -167,7 +167,7 @@ if ($content !== false) {
 
 
 
-$maxAttempts = 10;
+/*$maxAttempts = 10;
 $attempts = 0;
 $encryptionKey = '5aad9b549e86812c95542e0714c1b2b7';
 
@@ -201,7 +201,7 @@ if ($attempts >= $maxAttempts) {
     logError("El archivo m3u8 no se creó después de $maxAttempts intentos");
     die("Error: El archivo m3u8 no se creó\n");
 }
-
+*/
 
 
 $sql = "UPDATE videos SET estado = 'READY' WHERE id_video = ?";

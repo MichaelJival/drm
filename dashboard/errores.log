@@ -36,3 +36,14 @@
 [2024-10-03 14:35:52] Esperando 5 segundos...
 [2024-10-03 14:35:52] Error procesando el video fb717c88e73616d41f03ffbcba9baa66. Código de salida: 1
 [2024-10-03 14:35:52] Salida de FFmpeg: 
+[2024-10-03 14:44:17] Script iniciado
+[2024-10-03 14:44:17] ID de video proporcionado: 3359945850e4424daf13c2bbb7693304
+[2024-10-03 14:44:17] Video encontrado: 3359945850e4424daf13c2bbb7693304
+[2024-10-03 14:44:17] Archivo de video encontrado: /home/drm/videos/Dummy Video For Website.mp4
+[2024-10-03 14:44:17] Directorio de segmentos creado: /home/drm/public_html/dashboard/processed_videos/3359945850e4424daf13c2bbb7693304/
+[2024-10-03 14:44:20] Esperando 3 segundos...
+[2024-10-03 14:44:20] Ejecutando comando FFmpeg
+[2024-10-03 14:44:31] Comando FFmpeg ejecutado
+[2024-10-03 14:44:36] Esperando 5 segundos...
+[2024-10-03 14:44:36] Error procesando el video 3359945850e4424daf13c2bbb7693304. Código de salida: 1
+[2024-10-03 14:44:36] Salida de FFmpeg: 
