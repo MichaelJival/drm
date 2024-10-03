@@ -285,7 +285,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             'videoId' => $videoId,
                             'estado' => 'PROCESSING'
                         );
-
+                         sleep(5);       
                         // Iniciar el procesamiento con FFmpeg en segundo plano
                         $command = "php process_video.php $videoId > /dev/null 2>&1 &";
                         exec($command);
