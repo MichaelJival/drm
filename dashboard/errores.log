@@ -1,0 +1,27 @@
+[2024-10-03 14:23:45] Script iniciado
+[2024-10-03 14:23:45] ID de video proporcionado: 6fe32060b08ceeaa28229594e46c1d78
+[2024-10-03 14:23:45] Video encontrado: 6fe32060b08ceeaa28229594e46c1d78
+[2024-10-03 14:23:45] Archivo de video encontrado: /home/drm/videos/aclaración.mp4
+[2024-10-03 14:23:45] No se pudo crear el directorio de segmentos: /home/drm/public_html/dashboard/processed_videos/6fe32060b08ceeaa28229594e46c1d78/
+[2024-10-03 14:24:50] Script iniciado
+[2024-10-03 14:24:50] ID de video proporcionado: f24dca5285ed79c33a11a59fe6b920ff
+[2024-10-03 14:24:50] Video encontrado: f24dca5285ed79c33a11a59fe6b920ff
+[2024-10-03 14:24:50] Archivo de video encontrado: /home/drm/videos/aclaración.mp4
+[2024-10-03 14:24:50] Directorio de segmentos creado: /home/drm/public_html/dashboard/processed_videos/f24dca5285ed79c33a11a59fe6b920ff/
+[2024-10-03 14:24:53] Esperando 3 segundos...
+[2024-10-03 14:24:53] Ejecutando comando FFmpeg
+[2024-10-03 14:24:53] Comando FFmpeg ejecutado
+[2024-10-03 14:24:58] Esperando 5 segundos...
+[2024-10-03 14:24:58] Error procesando el video f24dca5285ed79c33a11a59fe6b920ff. Código de salida: 1
+[2024-10-03 14:24:58] Salida de FFmpeg: 
+[2024-10-03 14:27:50] Script iniciado
+[2024-10-03 14:27:50] ID de video proporcionado: e43da12a972cd3fadbaef66c6c1f46d0
+[2024-10-03 14:27:50] Video encontrado: e43da12a972cd3fadbaef66c6c1f46d0
+[2024-10-03 14:27:50] Archivo de video encontrado: /home/drm/videos/direccion e intencion.mp4
+[2024-10-03 14:27:50] Directorio de segmentos creado: /home/drm/public_html/dashboard/processed_videos/e43da12a972cd3fadbaef66c6c1f46d0/
+[2024-10-03 14:27:53] Esperando 3 segundos...
+[2024-10-03 14:27:53] Ejecutando comando FFmpeg
+[2024-10-03 14:28:03] Comando FFmpeg ejecutado
+[2024-10-03 14:28:08] Esperando 5 segundos...
+[2024-10-03 14:28:08] Error procesando el video e43da12a972cd3fadbaef66c6c1f46d0. Código de salida: 1
+[2024-10-03 14:28:08] Salida de FFmpeg: 
