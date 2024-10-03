@@ -26,10 +26,34 @@ $access_allowed = array_reduce($allowed_ip_ranges, function($carry, $range) use 
     return $carry || ip_in_range($client_ip, $range);
 }, false);
 
-// Manejar el acceso
 if (!$access_allowed) {
     http_response_code(403);
-    die("Acceso prohibido. Su dirección IP ({$client_ip}) no está autorizada.");
+    echo '
+    <html>
+        <head>
+            <style>
+                body {
+                    margin: 0;
+                    padding: 0;
+                    background-color: black;
+                    height: 100vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    font-family: Arial, sans-serif;
+                    text-align: center;
+                }
+            </style>
+        </head>
+        <body>
+            <div>
+                <h1>Acceso prohibido</h1>
+                <p>No tienes <b>autorización</b> para ver esta pagina.</p>
+            </div>
+        </body>
+    </html>';
+    die();
 }
 
 // Si llegamos aquí, el acceso está permitido

@@ -1593,7 +1593,7 @@ function displayVideoItem(file, isNewUpload = false) {
                 </div>
             </div>
             <div style="margin-left: 10px;">
-                <p class="ms-5 mt-5 file-name" style="margin: 0;">${file.fileName}</p>
+                <p class="ms-5 mt-5 file-name editable" style="margin: 0;" contenteditable="true">${file.fileName}</p>
                 <small class="ms-5 upload-date" style="display: block; margin-bottom: 5px;">${file.uploadDate}</small>
                 <p style="margin: 0;"> ${file.folderNames ? file.folderNames.split(', ').map(folder => 
                     `<span class="ms-5 badge badge-folder">${folder}</span>`
@@ -1827,7 +1827,38 @@ function formatBytes(bytes, decimals = 2) {
 
 
 
+document.querySelector('.videos').addEventListener('blur', function(e) {
+    if (e.target.classList.contains('editable')) {
+        const newFileName = e.target.textContent.trim();
+        const videoId = e.target.closest('.video-item').getAttribute('data-video-id');
 
+        if (newFileName) {
+            // Actualiza el nombre en la tabla de videos
+            fetch('update_video_name.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `videoId=${encodeURIComponent(videoId)}&newFileName=${encodeURIComponent(newFileName)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Actualizar el nombre en el HTML correspondiente
+                    e.target.textContent = newFileName; // En file name
+                    // Aquí también podrás hacer algo para actualizar '/home/drm/videos/file-name' si es necesario.
+                    console.log("Nombre actualizado en la base de datos y visualmente.");
+                } else {
+                    alert('Error updating video name: ' + (data.message || 'Unknown error'));
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while updating the video name: ' + error.message);
+            });
+        }
+    }
+}, true);
 
 
 
