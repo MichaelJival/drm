@@ -1,0 +1,24 @@
+[2024-10-04 11:20:53] [PROCESS] Script iniciado...
+[2024-10-04 11:20:53] [PROCESS] Verificando archivos de entrada:
+[2024-10-04 11:20:53] [PROCESS] Archivo de entrada existe: Sí
+[2024-10-04 11:20:53] [PROCESS] Directorio de segmentos existe: Sí
+[2024-10-04 11:20:53] [PROCESS] Ejecutando comando FFmpeg (HLS): /usr/bin/ffmpeg -v debug -i '/home/drm/videos/mundo.mp4' -c:v libx264 -c:a aac -hls_time 10 -hls_key_info_file '/home/drm/public_html/dashboard/processed_videos/e04fe62227df423f166f849be8e8ac93/enc.keyinfo' -hls_playlist_type vod -hls_segment_filename '/home/drm/public_html/dashboard/processed_videos/e04fe62227df423f166f849be8e8ac93/segment_%03d.ts' -hls_base_url 'https://drm.eweo.com/dashboard/processed_videos/e04fe62227df423f166f849be8e8ac93/' '/home/drm/public_html/dashboard/processed_videos/e04fe62227df423f166f849be8e8ac93/playlist.m3u8'
+[2024-10-04 11:21:02] [PROCESS] Salida de FFmpeg (HLS): 
+[2024-10-04 11:21:02] [PROCESS] Código de salida de FFmpeg (HLS): 
+[2024-10-04 11:21:07] [PROCESS] Ejecutando comando FFmpeg (Miniatura): /usr/bin/ffmpeg -v debug -i '/home/drm/videos/mundo.mp4' -vf "select='eq(pict_type\,I)*gte(n\,3)',scale=200:-1" -frames:v 1 '/home/drm/public_html/portadas/e04fe62227df423f166f849be8e8ac93.jpg'
+[2024-10-04 11:21:07] [PROCESS] Verificando archivos de salida:
+[2024-10-04 11:21:07] [PROCESS] Archivo m3u8 existe: Sí
+[2024-10-04 11:21:07] [PROCESS] Número de segmentos TS: 1
+[2024-10-04 11:21:07] [PROCESS] Error al procesar el video. Código de salida: 
+[2024-10-04 11:38:34] [PROCESS] Script iniciado...
+[2024-10-04 11:38:34] [PROCESS] Verificando archivos de entrada:
+[2024-10-04 11:38:34] [PROCESS] Archivo de entrada existe: Sí
+[2024-10-04 11:38:34] [PROCESS] Directorio de segmentos existe: Sí
+[2024-10-04 11:38:34] [PROCESS] Ejecutando comando FFmpeg (HLS): /usr/bin/ffmpeg -v debug -i '/home/drm/videos/mundo.mp4' -c:v libx264 -c:a aac -hls_time 10 -hls_key_info_file '/home/drm/public_html/dashboard/processed_videos/dfedecb027d915ed075fea47c8c45772/enc.keyinfo' -hls_playlist_type vod -hls_segment_filename '/home/drm/public_html/dashboard/processed_videos/dfedecb027d915ed075fea47c8c45772/segment_%03d.ts' -hls_base_url 'https://drm.eweo.com/dashboard/processed_videos/dfedecb027d915ed075fea47c8c45772/' '/home/drm/public_html/dashboard/processed_videos/dfedecb027d915ed075fea47c8c45772/playlist.m3u8'
+[2024-10-04 11:38:59] [PROCESS] Salida de FFmpeg (HLS): 
+[2024-10-04 11:38:59] [PROCESS] Código de salida de FFmpeg (HLS): 
+[2024-10-04 11:39:04] [PROCESS] Ejecutando comando FFmpeg (Miniatura): /usr/bin/ffmpeg -v debug -i '/home/drm/videos/mundo.mp4' -vf "select='eq(pict_type\,I)*gte(n\,3)',scale=200:-1" -frames:v 1 '/home/drm/public_html/portadas/dfedecb027d915ed075fea47c8c45772.jpg'
+[2024-10-04 11:39:05] [PROCESS] Verificando archivos de salida:
+[2024-10-04 11:39:05] [PROCESS] Archivo m3u8 existe: No
+[2024-10-04 11:39:05] [PROCESS] Número de segmentos TS: 0
+[2024-10-04 11:39:05] [PROCESS] Error al procesar el video. Código de salida: 
