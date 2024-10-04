@@ -329,7 +329,6 @@ function logMessage($message) {
     $logEntry = "[$timestamp] [UPLOAD] $message\n";
     error_log($logEntry, 3, LOG_FILE);
 }
-
 logMessage("Iniciando script de carga");
 
 // conexion
@@ -405,7 +404,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $chunkNumber = isset($_POST['chunkNumber']) ? intval($_POST['chunkNumber']) : 0;
     $totalChunks = isset($_POST['totalChunks']) ? intval($_POST['totalChunks']) : 0;
 
-    logMessage("Datos recibidos - Nombre de archivo: $fileName, Chunk: $chunkNumber/$totalChunks");
+    //logMessage("Datos recibidos - Nombre de archivo: $fileName, Chunk: $chunkNumber/$totalChunks");
 
     $uploadFileDir = '/home/drm/videos/';
 
@@ -420,23 +419,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $tempFilePath = $uploadFileDir . $fileName . '.part';
-    logMessage("Ruta del archivo temporal: $tempFilePath");
+    //logMessage("Ruta del archivo temporal: $tempFilePath");
 
     if (isset($_FILES['chunk']) && $_FILES['chunk']['error'] === UPLOAD_ERR_OK) {
-        logMessage("Chunk recibido correctamente");
+        //logMessage("Chunk recibido correctamente");
         $chunkData = file_get_contents($_FILES['chunk']['tmp_name']);
         
         $fileHandle = fopen($tempFilePath, ($chunkNumber === 0) ? 'wb' : 'ab');
         if ($fileHandle === false) {
-            logMessage("Error al abrir el archivo temporal: $tempFilePath");
+            //logMessage("Error al abrir el archivo temporal: $tempFilePath");
             $response = array('status' => 'error', 'message' => 'No se pudo abrir el archivo temporal');
         } else {
             if (fwrite($fileHandle, $chunkData) === false) {
-                logMessage("Error al escribir el chunk en el archivo temporal");
+                //logMessage("Error al escribir el chunk en el archivo temporal");
                 $response = array('status' => 'error', 'message' => 'Error al escribir el chunk');
             } else {
                 fclose($fileHandle);
-                logMessage("Chunk escrito correctamente");
+                //logMessage("Chunk escrito correctamente");
 
                 if ($chunkNumber === $totalChunks - 1) {
                     logMessage("Último chunk recibido, procesando archivo completo");

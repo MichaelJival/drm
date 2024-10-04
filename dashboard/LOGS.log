@@ -1,45 +1,233 @@
-[2024-10-04 12:02:43] [UPLOAD] Iniciando script de carga
-[2024-10-04 11:02:43] [UPLOAD] Conexión incluida
-[2024-10-04 11:02:43] [UPLOAD] Método de solicitud: POST
-[2024-10-04 11:02:43] [UPLOAD] Datos recibidos - Nombre de archivo: mundo.mp4, Chunk: 0/2
-[2024-10-04 11:02:43] [UPLOAD] Ruta del archivo temporal: /home/drm/videos/mundo.mp4.part
-[2024-10-04 11:02:43] [UPLOAD] Chunk recibido correctamente
-[2024-10-04 11:02:43] [UPLOAD] Chunk escrito correctamente
-[2024-10-04 11:02:43] [UPLOAD] Chunk procesado correctamente
-[2024-10-04 11:02:43] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
-[2024-10-04 12:02:43] [UPLOAD] Iniciando script de carga
-[2024-10-04 11:02:43] [UPLOAD] Conexión incluida
-[2024-10-04 11:02:43] [UPLOAD] Método de solicitud: POST
-[2024-10-04 11:02:43] [UPLOAD] Datos recibidos - Nombre de archivo: mundo.mp4, Chunk: 1/2
-[2024-10-04 11:02:43] [UPLOAD] Ruta del archivo temporal: /home/drm/videos/mundo.mp4.part
-[2024-10-04 11:02:43] [UPLOAD] Chunk recibido correctamente
-[2024-10-04 11:02:43] [UPLOAD] Chunk escrito correctamente
-[2024-10-04 11:02:43] [UPLOAD] Último chunk recibido, procesando archivo completo
-[2024-10-04 11:02:43] [UPLOAD] Archivo renombrado correctamente: /home/drm/videos/mundo.mp4
-[2024-10-04 11:02:43] [UPLOAD] VideoId generado: c2cef831090d957b8d7a2f4192cfdb5b
-[2024-10-04 11:02:43] [UPLOAD] Generando clave de encriptación
-[2024-10-04 11:02:43] [UPLOAD] Generando clave de encriptación para videoId: c2cef831090d957b8d7a2f4192cfdb5b
-[2024-10-04 11:02:43] [UPLOAD] Creando directorio: /home/drm/public_html/dashboard/processed_videos/c2cef831090d957b8d7a2f4192cfdb5b/
-[2024-10-04 11:02:44] [UPLOAD] Clave de encriptación generada
-[2024-10-04 11:02:44] [UPLOAD] Archivo de clave creado: /home/drm/public_html/dashboard/processed_videos/c2cef831090d957b8d7a2f4192cfdb5b/enc.key
-[2024-10-04 11:02:44] [UPLOAD] Archivo keyinfo creado: /home/drm/public_html/dashboard/processed_videos/c2cef831090d957b8d7a2f4192cfdb5b/enc.keyinfo
-[2024-10-04 11:02:44] [UPLOAD] Clave de encriptación generada exitosamente
-[2024-10-04 11:02:44] [UPLOAD] Preparando consulta SQL: INSERT INTO videos (id_video, nombre_video, url_video, fecha, estado) VALUES (?, ?, ?, ?, 'PROCESSING')
-[2024-10-04 11:02:44] [UPLOAD] Ejecutando consulta SQL
-[2024-10-04 11:02:44] [UPLOAD] Datos insertados correctamente en la base de datos
-[2024-10-04 11:02:44] [UPLOAD] Esperando 5 segundos antes de iniciar el procesamiento
-[2024-10-04 11:02:49] [UPLOAD] Iniciando procesamiento de video en segundo plano
-[2024-10-04 11:02:49] [UPLOAD] Procesamiento de video iniciado
-[2024-10-04 11:02:49] [UPLOAD] Respuesta final: {"status":"success","fileName":"mundo.mp4","fileSize":1144050,"uploadDate":"2024-10-04 11:02:43","videoId":"c2cef831090d957b8d7a2f4192cfdb5b","estado":"PROCESSING"}
-[2024-10-04 11:02:49] Script iniciado...
-[2024-10-04 11:02:49] Verificando archivos de entrada:
-[2024-10-04 11:02:49] Archivo de entrada existe: Sí
-[2024-10-04 11:02:49] Directorio de segmentos existe: Sí
-[2024-10-04 11:02:49] Ejecutando comando FFmpeg (HLS): /usr/bin/ffmpeg -v debug -i '/home/drm/videos/mundo.mp4' -c:v libx264 -c:a aac -hls_time 10 -hls_key_info_file '/home/drm/public_html/dashboard/processed_videos/c2cef831090d957b8d7a2f4192cfdb5b/enc.keyinfo' -hls_playlist_type vod -hls_segment_filename '/home/drm/public_html/dashboard/processed_videos/c2cef831090d957b8d7a2f4192cfdb5b/segment_%03d.ts' -hls_base_url 'https://drm.eweo.com/dashboard/processed_videos/c2cef831090d957b8d7a2f4192cfdb5b/' '/home/drm/public_html/dashboard/processed_videos/c2cef831090d957b8d7a2f4192cfdb5b/playlist.m3u8'
-[2024-10-04 11:03:14] Salida de FFmpeg (HLS): 
-[2024-10-04 11:03:14] Código de salida de FFmpeg (HLS): 
-[2024-10-04 11:03:19] Ejecutando comando FFmpeg (Miniatura): /usr/bin/ffmpeg -v debug -i '/home/drm/videos/mundo.mp4' -vf "select='eq(pict_type\,I)*gte(n\,3)',scale=200:-1" -frames:v 1 '/home/drm/public_html/portadas/c2cef831090d957b8d7a2f4192cfdb5b.jpg'
-[2024-10-04 11:03:19] Verificando archivos de salida:
-[2024-10-04 11:03:19] Archivo m3u8 existe: No
-[2024-10-04 11:03:19] Número de segmentos TS: 0
-[2024-10-04 11:03:19] Error al procesar el video. Código de salida: 
+[2024-10-04 13:30:07] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:30:07] [UPLOAD] Conexión incluida
+[2024-10-04 12:30:07] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:30:07] [UPLOAD] Ruta del archivo temporal: /home/drm/videos/aclaracion.mp4.part
+[2024-10-04 12:30:07] [UPLOAD] Chunk recibido correctamente
+[2024-10-04 12:30:07] [UPLOAD] Chunk escrito correctamente
+[2024-10-04 12:30:07] [UPLOAD] Chunk procesado correctamente
+[2024-10-04 12:30:07] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-10-04 13:30:11] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:30:11] [UPLOAD] Conexión incluida
+[2024-10-04 12:30:11] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:30:11] [UPLOAD] Ruta del archivo temporal: /home/drm/videos/aclaracion.mp4.part
+[2024-10-04 12:30:11] [UPLOAD] Chunk recibido correctamente
+[2024-10-04 12:30:11] [UPLOAD] Chunk escrito correctamente
+[2024-10-04 12:30:11] [UPLOAD] Chunk procesado correctamente
+[2024-10-04 12:30:11] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-10-04 13:30:15] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:30:15] [UPLOAD] Conexión incluida
+[2024-10-04 12:30:15] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:30:15] [UPLOAD] Ruta del archivo temporal: /home/drm/videos/aclaracion.mp4.part
+[2024-10-04 12:30:15] [UPLOAD] Chunk recibido correctamente
+[2024-10-04 12:30:15] [UPLOAD] Chunk escrito correctamente
+[2024-10-04 12:30:15] [UPLOAD] Chunk procesado correctamente
+[2024-10-04 12:30:15] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-10-04 13:30:18] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:30:18] [UPLOAD] Conexión incluida
+[2024-10-04 12:30:18] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:30:18] [UPLOAD] Ruta del archivo temporal: /home/drm/videos/aclaracion.mp4.part
+[2024-10-04 12:30:18] [UPLOAD] Chunk recibido correctamente
+[2024-10-04 12:30:18] [UPLOAD] Chunk escrito correctamente
+[2024-10-04 12:30:18] [UPLOAD] Chunk procesado correctamente
+[2024-10-04 12:30:18] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-10-04 13:30:21] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:30:21] [UPLOAD] Conexión incluida
+[2024-10-04 12:30:21] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:30:21] [UPLOAD] Ruta del archivo temporal: /home/drm/videos/aclaracion.mp4.part
+[2024-10-04 12:30:21] [UPLOAD] Chunk recibido correctamente
+[2024-10-04 12:30:21] [UPLOAD] Chunk escrito correctamente
+[2024-10-04 12:30:21] [UPLOAD] Chunk procesado correctamente
+[2024-10-04 12:30:21] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-10-04 13:30:25] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:30:25] [UPLOAD] Conexión incluida
+[2024-10-04 12:30:25] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:30:25] [UPLOAD] Ruta del archivo temporal: /home/drm/videos/aclaracion.mp4.part
+[2024-10-04 12:30:25] [UPLOAD] Chunk recibido correctamente
+[2024-10-04 12:30:25] [UPLOAD] Chunk escrito correctamente
+[2024-10-04 12:30:25] [UPLOAD] Chunk procesado correctamente
+[2024-10-04 12:30:25] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-10-04 13:30:25] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:30:25] [UPLOAD] Conexión incluida
+[2024-10-04 12:30:25] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:30:25] [UPLOAD] Ruta del archivo temporal: /home/drm/videos/aclaracion.mp4.part
+[2024-10-04 12:30:25] [UPLOAD] Chunk recibido correctamente
+[2024-10-04 12:30:25] [UPLOAD] Chunk escrito correctamente
+[2024-10-04 12:30:25] [UPLOAD] Último chunk recibido, procesando archivo completo
+[2024-10-04 12:30:25] [UPLOAD] Archivo renombrado correctamente: /home/drm/videos/aclaracion.mp4
+[2024-10-04 12:30:25] [UPLOAD] VideoId generado: 54ac22f3ab58fdd7716fe862b7b4649d
+[2024-10-04 12:30:25] [UPLOAD] Generando clave de encriptación
+[2024-10-04 12:30:25] [UPLOAD] Generando clave de encriptación para videoId: 54ac22f3ab58fdd7716fe862b7b4649d
+[2024-10-04 12:30:25] [UPLOAD] Creando directorio: /home/drm/public_html/dashboard/processed_videos/54ac22f3ab58fdd7716fe862b7b4649d/
+[2024-10-04 12:30:25] [UPLOAD] Clave de encriptación generada
+[2024-10-04 12:30:25] [UPLOAD] Archivo de clave creado: /home/drm/public_html/dashboard/processed_videos/54ac22f3ab58fdd7716fe862b7b4649d/enc.key
+[2024-10-04 12:30:25] [UPLOAD] Archivo keyinfo creado: /home/drm/public_html/dashboard/processed_videos/54ac22f3ab58fdd7716fe862b7b4649d/enc.keyinfo
+[2024-10-04 12:30:25] [UPLOAD] Clave de encriptación generada exitosamente
+[2024-10-04 12:30:25] [UPLOAD] Preparando consulta SQL: INSERT INTO videos (id_video, nombre_video, url_video, fecha, estado) VALUES (?, ?, ?, ?, 'PROCESSING')
+[2024-10-04 12:30:25] [UPLOAD] Ejecutando consulta SQL
+[2024-10-04 12:30:25] [UPLOAD] Datos insertados correctamente en la base de datos
+[2024-10-04 12:30:25] [UPLOAD] Esperando 5 segundos antes de iniciar el procesamiento
+[2024-10-04 12:30:30] [UPLOAD] Iniciando procesamiento de video en segundo plano
+[2024-10-04 12:30:30] [UPLOAD] Procesamiento de video iniciado
+[2024-10-04 12:30:30] [UPLOAD] Respuesta final: {"status":"success","fileName":"aclaracion.mp4","fileSize":9443448,"uploadDate":"2024-10-04 12:30:25","videoId":"54ac22f3ab58fdd7716fe862b7b4649d","estado":"PROCESSING"}
+[2024-10-04 12:30:30] [PROCESS] Script iniciado...
+[2024-10-04 12:30:30] [PROCESS] Verificando archivos de entrada:
+[2024-10-04 12:30:30] [PROCESS] Archivo de entrada existe: Sí
+[2024-10-04 12:30:30] [PROCESS] Directorio de segmentos existe: Sí
+[2024-10-04 12:30:30] [PROCESS] Ejecutando comando FFmpeg (HLS): /usr/bin/ffmpeg -v debug -i '/home/drm/videos/aclaracion.mp4' -c:v libx264 -c:a aac -hls_time 10 -hls_key_info_file '/home/drm/public_html/dashboard/processed_videos/54ac22f3ab58fdd7716fe862b7b4649d/enc.keyinfo' -hls_playlist_type vod -hls_segment_filename '/home/drm/public_html/dashboard/processed_videos/54ac22f3ab58fdd7716fe862b7b4649d/segment_%03d.ts' -hls_base_url 'https://drm.eweo.com/dashboard/processed_videos/54ac22f3ab58fdd7716fe862b7b4649d/' '/home/drm/public_html/dashboard/processed_videos/54ac22f3ab58fdd7716fe862b7b4649d/playlist.m3u8'
+[2024-10-04 12:30:52] [PROCESS] Salida de FFmpeg (HLS): Array
+[2024-10-04 12:30:52] [PROCESS] Ejecutando comando FFmpeg (Miniatura): /usr/bin/ffmpeg -v debug -i '/home/drm/videos/aclaracion.mp4' -vf "select='eq(pict_type\,I)*gte(n\,3)',scale=200:-1" -frames:v 1 '/home/drm/public_html/portadas/54ac22f3ab58fdd7716fe862b7b4649d.jpg'
+[2024-10-04 12:30:53] [PROCESS] Verificando archivos de salida:
+[2024-10-04 12:30:53] [PROCESS] Archivo m3u8 existe: Sí
+[2024-10-04 12:30:53] [PROCESS] Número de segmentos TS: 22
+[2024-10-04 12:30:53] [PROCESS] Video procesado exitosamente
+[2024-10-04 12:30:53] [PROCESS] ..................................................................................
+[2024-10-04 13:32:20] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:32:20] [UPLOAD] Conexión incluida
+[2024-10-04 12:32:20] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:32:20] [UPLOAD] Chunk recibido correctamente
+[2024-10-04 12:32:20] [UPLOAD] Chunk escrito correctamente
+[2024-10-04 12:32:20] [UPLOAD] Chunk procesado correctamente
+[2024-10-04 12:32:20] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-10-04 13:32:24] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:32:24] [UPLOAD] Conexión incluida
+[2024-10-04 12:32:24] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:32:24] [UPLOAD] Chunk recibido correctamente
+[2024-10-04 12:32:24] [UPLOAD] Chunk escrito correctamente
+[2024-10-04 12:32:24] [UPLOAD] Chunk procesado correctamente
+[2024-10-04 12:32:24] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-10-04 13:32:27] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:32:27] [UPLOAD] Conexión incluida
+[2024-10-04 12:32:27] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:32:27] [UPLOAD] Chunk recibido correctamente
+[2024-10-04 12:32:27] [UPLOAD] Chunk escrito correctamente
+[2024-10-04 12:32:27] [UPLOAD] Chunk procesado correctamente
+[2024-10-04 12:32:27] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-10-04 13:32:30] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:32:30] [UPLOAD] Conexión incluida
+[2024-10-04 12:32:30] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:32:30] [UPLOAD] Chunk recibido correctamente
+[2024-10-04 12:32:30] [UPLOAD] Chunk escrito correctamente
+[2024-10-04 12:32:30] [UPLOAD] Chunk procesado correctamente
+[2024-10-04 12:32:30] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-10-04 13:32:34] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:32:34] [UPLOAD] Conexión incluida
+[2024-10-04 12:32:34] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:32:34] [UPLOAD] Chunk recibido correctamente
+[2024-10-04 12:32:34] [UPLOAD] Chunk escrito correctamente
+[2024-10-04 12:32:34] [UPLOAD] Chunk procesado correctamente
+[2024-10-04 12:32:34] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-10-04 13:32:37] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:32:37] [UPLOAD] Conexión incluida
+[2024-10-04 12:32:37] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:32:37] [UPLOAD] Chunk recibido correctamente
+[2024-10-04 12:32:37] [UPLOAD] Chunk escrito correctamente
+[2024-10-04 12:32:37] [UPLOAD] Chunk procesado correctamente
+[2024-10-04 12:32:37] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-10-04 13:32:41] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:32:41] [UPLOAD] Conexión incluida
+[2024-10-04 12:32:41] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:32:41] [UPLOAD] Chunk recibido correctamente
+[2024-10-04 12:32:41] [UPLOAD] Chunk escrito correctamente
+[2024-10-04 12:32:41] [UPLOAD] Chunk procesado correctamente
+[2024-10-04 12:32:41] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-10-04 13:32:43] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:32:43] [UPLOAD] Conexión incluida
+[2024-10-04 12:32:43] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:32:43] [UPLOAD] Chunk recibido correctamente
+[2024-10-04 12:32:43] [UPLOAD] Chunk escrito correctamente
+[2024-10-04 12:32:43] [UPLOAD] Último chunk recibido, procesando archivo completo
+[2024-10-04 12:32:43] [UPLOAD] Archivo renombrado correctamente: /home/drm/videos/patrones velas binarias.mp4
+[2024-10-04 12:32:43] [UPLOAD] VideoId generado: 774a56e3447818ba9707ff8828b77d74
+[2024-10-04 12:32:43] [UPLOAD] Generando clave de encriptación
+[2024-10-04 12:32:43] [UPLOAD] Generando clave de encriptación para videoId: 774a56e3447818ba9707ff8828b77d74
+[2024-10-04 12:32:43] [UPLOAD] Creando directorio: /home/drm/public_html/dashboard/processed_videos/774a56e3447818ba9707ff8828b77d74/
+[2024-10-04 12:32:43] [UPLOAD] Clave de encriptación generada
+[2024-10-04 12:32:43] [UPLOAD] Archivo de clave creado: /home/drm/public_html/dashboard/processed_videos/774a56e3447818ba9707ff8828b77d74/enc.key
+[2024-10-04 12:32:43] [UPLOAD] Archivo keyinfo creado: /home/drm/public_html/dashboard/processed_videos/774a56e3447818ba9707ff8828b77d74/enc.keyinfo
+[2024-10-04 12:32:43] [UPLOAD] Clave de encriptación generada exitosamente
+[2024-10-04 12:32:43] [UPLOAD] Preparando consulta SQL: INSERT INTO videos (id_video, nombre_video, url_video, fecha, estado) VALUES (?, ?, ?, ?, 'PROCESSING')
+[2024-10-04 12:32:43] [UPLOAD] Ejecutando consulta SQL
+[2024-10-04 12:32:43] [UPLOAD] Datos insertados correctamente en la base de datos
+[2024-10-04 12:32:43] [UPLOAD] Esperando 5 segundos antes de iniciar el procesamiento
+[2024-10-04 12:32:48] [UPLOAD] Iniciando procesamiento de video en segundo plano
+[2024-10-04 12:32:48] [UPLOAD] Procesamiento de video iniciado
+[2024-10-04 12:32:48] [UPLOAD] Respuesta final: {"status":"success","fileName":"patrones velas binarias.mp4","fileSize":7872230,"uploadDate":"2024-10-04 12:32:43","videoId":"774a56e3447818ba9707ff8828b77d74","estado":"PROCESSING"}
+[2024-10-04 12:32:48] [PROCESS] Script iniciado...
+[2024-10-04 12:32:48] [PROCESS] Verificando archivos de entrada:
+[2024-10-04 12:32:48] [PROCESS] Archivo de entrada existe: Sí
+[2024-10-04 12:32:48] [PROCESS] Directorio de segmentos existe: Sí
+[2024-10-04 12:32:48] [PROCESS] Ejecutando comando FFmpeg (HLS): /usr/bin/ffmpeg -v debug -i '/home/drm/videos/patrones velas binarias.mp4' -c:v libx264 -c:a aac -hls_time 10 -hls_key_info_file '/home/drm/public_html/dashboard/processed_videos/774a56e3447818ba9707ff8828b77d74/enc.keyinfo' -hls_playlist_type vod -hls_segment_filename '/home/drm/public_html/dashboard/processed_videos/774a56e3447818ba9707ff8828b77d74/segment_%03d.ts' -hls_base_url 'https://drm.eweo.com/dashboard/processed_videos/774a56e3447818ba9707ff8828b77d74/' '/home/drm/public_html/dashboard/processed_videos/774a56e3447818ba9707ff8828b77d74/playlist.m3u8'
+[2024-10-04 12:33:38] [PROCESS] Salida de FFmpeg (HLS): Array
+[2024-10-04 12:33:38] [PROCESS] Ejecutando comando FFmpeg (Miniatura): /usr/bin/ffmpeg -v debug -i '/home/drm/videos/patrones velas binarias.mp4' -vf "select='eq(pict_type\,I)*gte(n\,3)',scale=200:-1" -frames:v 1 '/home/drm/public_html/portadas/774a56e3447818ba9707ff8828b77d74.jpg'
+[2024-10-04 12:33:38] [PROCESS] Verificando archivos de salida:
+[2024-10-04 12:33:38] [PROCESS] Archivo m3u8 existe: Sí
+[2024-10-04 12:33:38] [PROCESS] Número de segmentos TS: 34
+[2024-10-04 12:33:38] [PROCESS] Video procesado exitosamente
+[2024-10-04 12:33:38] [PROCESS] ..................................................................................
+[2024-10-04 13:34:23] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:34:23] [UPLOAD] Conexión incluida
+[2024-10-04 12:34:23] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:34:23] [UPLOAD] Chunk procesado correctamente
+[2024-10-04 12:34:23] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-10-04 13:34:26] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:34:26] [UPLOAD] Conexión incluida
+[2024-10-04 12:34:26] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:34:26] [UPLOAD] Chunk procesado correctamente
+[2024-10-04 12:34:26] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-10-04 13:34:29] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:34:29] [UPLOAD] Conexión incluida
+[2024-10-04 12:34:29] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:34:29] [UPLOAD] Chunk procesado correctamente
+[2024-10-04 12:34:29] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-10-04 13:34:33] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:34:33] [UPLOAD] Conexión incluida
+[2024-10-04 12:34:33] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:34:33] [UPLOAD] Chunk procesado correctamente
+[2024-10-04 12:34:33] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-10-04 13:34:36] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:34:36] [UPLOAD] Conexión incluida
+[2024-10-04 12:34:36] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:34:36] [UPLOAD] Chunk procesado correctamente
+[2024-10-04 12:34:36] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-10-04 13:34:39] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:34:39] [UPLOAD] Conexión incluida
+[2024-10-04 12:34:39] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:34:39] [UPLOAD] Chunk procesado correctamente
+[2024-10-04 12:34:39] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-10-04 13:34:42] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:34:42] [UPLOAD] Conexión incluida
+[2024-10-04 12:34:42] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:34:42] [UPLOAD] Chunk procesado correctamente
+[2024-10-04 12:34:42] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-10-04 13:34:44] [UPLOAD] Iniciando script de carga
+[2024-10-04 12:34:44] [UPLOAD] Conexión incluida
+[2024-10-04 12:34:44] [UPLOAD] Método de solicitud: POST
+[2024-10-04 12:34:44] [UPLOAD] Último chunk recibido, procesando archivo completo
+[2024-10-04 12:34:44] [UPLOAD] Archivo renombrado correctamente: /home/drm/videos/patrones velas binarias.mp4
+[2024-10-04 12:34:44] [UPLOAD] VideoId generado: 88719f8237b3c55aa5f6c2eb47ea8fe9
+[2024-10-04 12:34:44] [UPLOAD] Generando clave de encriptación
+[2024-10-04 12:34:44] [UPLOAD] Generando clave de encriptación para videoId: 88719f8237b3c55aa5f6c2eb47ea8fe9
+[2024-10-04 12:34:44] [UPLOAD] Creando directorio: /home/drm/public_html/dashboard/processed_videos/88719f8237b3c55aa5f6c2eb47ea8fe9/
+[2024-10-04 12:34:44] [UPLOAD] Clave de encriptación generada
+[2024-10-04 12:34:44] [UPLOAD] Archivo de clave creado: /home/drm/public_html/dashboard/processed_videos/88719f8237b3c55aa5f6c2eb47ea8fe9/enc.key
+[2024-10-04 12:34:44] [UPLOAD] Archivo keyinfo creado: /home/drm/public_html/dashboard/processed_videos/88719f8237b3c55aa5f6c2eb47ea8fe9/enc.keyinfo
+[2024-10-04 12:34:44] [UPLOAD] Clave de encriptación generada exitosamente
+[2024-10-04 12:34:44] [UPLOAD] Preparando consulta SQL: INSERT INTO videos (id_video, nombre_video, url_video, fecha, estado) VALUES (?, ?, ?, ?, 'PROCESSING')
+[2024-10-04 12:34:44] [UPLOAD] Ejecutando consulta SQL
+[2024-10-04 12:34:44] [UPLOAD] Datos insertados correctamente en la base de datos
+[2024-10-04 12:34:44] [UPLOAD] Esperando 5 segundos antes de iniciar el procesamiento
+[2024-10-04 12:34:49] [UPLOAD] Iniciando procesamiento de video en segundo plano
+[2024-10-04 12:34:49] [UPLOAD] Procesamiento de video iniciado
+[2024-10-04 12:34:49] [UPLOAD] Respuesta final: {"status":"success","fileName":"patrones velas binarias.mp4","fileSize":7872230,"uploadDate":"2024-10-04 12:34:44","videoId":"88719f8237b3c55aa5f6c2eb47ea8fe9","estado":"PROCESSING"}
+[2024-10-04 12:34:50] [PROCESS] Script iniciado...
+[2024-10-04 12:34:50] [PROCESS] Verificando archivos de entrada:
+[2024-10-04 12:34:50] [PROCESS] Archivo de entrada existe: Sí
+[2024-10-04 12:34:50] [PROCESS] Directorio de segmentos existe: Sí
+[2024-10-04 12:34:50] [PROCESS] Ejecutando comando FFmpeg (HLS): /usr/bin/ffmpeg -v debug -i '/home/drm/videos/patrones velas binarias.mp4' -c:v libx264 -c:a aac -hls_time 10 -hls_key_info_file '/home/drm/public_html/dashboard/processed_videos/88719f8237b3c55aa5f6c2eb47ea8fe9/enc.keyinfo' -hls_playlist_type vod -hls_segment_filename '/home/drm/public_html/dashboard/processed_videos/88719f8237b3c55aa5f6c2eb47ea8fe9/segment_%03d.ts' -hls_base_url 'https://drm.eweo.com/dashboard/processed_videos/88719f8237b3c55aa5f6c2eb47ea8fe9/' '/home/drm/public_html/dashboard/processed_videos/88719f8237b3c55aa5f6c2eb47ea8fe9/playlist.m3u8'
+[2024-10-04 12:35:34] [PROCESS] Salida de FFmpeg (HLS): Array
+[2024-10-04 12:35:34] [PROCESS] Ejecutando comando FFmpeg (Miniatura): /usr/bin/ffmpeg -v debug -i '/home/drm/videos/patrones velas binarias.mp4' -vf "select='eq(pict_type\,I)*gte(n\,3)',scale=200:-1" -frames:v 1 '/home/drm/public_html/portadas/88719f8237b3c55aa5f6c2eb47ea8fe9.jpg'
+[2024-10-04 12:35:34] [PROCESS] Verificando archivos de salida:
+[2024-10-04 12:35:34] [PROCESS] Archivo m3u8 existe: Sí
+[2024-10-04 12:35:34] [PROCESS] Número de segmentos TS: 34
+[2024-10-04 12:35:34] [PROCESS] Video procesado exitosamente
+[2024-10-04 12:35:34] [PROCESS] ..................................................................................
