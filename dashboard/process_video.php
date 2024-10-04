@@ -1,8 +1,8 @@
 <?php
 //process_video_optimized.php
-/*include("/home/drm/public_html/conexion/conexion.php");
+include("/home/drm/public_html/conexion/conexion.php");
 
-define('ERROR_LOG_FILE', '/home/drm/public_html/dashboard/errores.log');
+define('ERROR_LOG_FILE', '/home/drm/public_html/dashboard/LOGS.log');
 define('FFMPEG_PATH', '/usr/bin/ffmpeg');
 define('SEGMENT_DIR_BASE', '/home/drm/public_html/dashboard/processed_videos/');
 define('BASE_IMAGE_PATH', '/home/drm/public_html/portadas/');
@@ -63,11 +63,11 @@ try {
         throw new Exception("Error al crear el directorio de segmentos: $segmentDir");
     }
 
-    $encryptionKey = bin2hex(openssl_random_pseudo_bytes(16));
+    /*$encryptionKey = bin2hex(openssl_random_pseudo_bytes(16));
     file_put_contents($keyfile, $encryptionKey);
     $iv = bin2hex(openssl_random_pseudo_bytes(16));
     $keyinfoContent = implode("\n", [$baseUrl . "enc.key", $baseUrl . "enc.key", $iv]);
-    file_put_contents($keyinfoFile, $keyinfoContent);
+    file_put_contents($keyinfoFile, $keyinfoContent);*/
 
     $coverImagePath = BASE_IMAGE_PATH . $videoId . '.jpg';
 
@@ -145,7 +145,7 @@ try {
         $conexion->close();
     }
     //////////////////////////////////////////////////////////////////////////////////////////////
-    */
+    
 
   
   
@@ -727,7 +727,9 @@ try {
 
 
 
-error_reporting(E_ALL);
+/////////////////////////////////////////////////////////////////
+///////////////// 3 intentos ////////////////////////////////////
+/*error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 echo "Iniciando script...\n";
@@ -868,10 +870,10 @@ try {
         escapeshellarg($coverImagePath)
     );
     
-    logMessage("Comando FFmpeg (Miniatura): $command2", "INFO");
+    //logMessage("Comando FFmpeg (Miniatura): $command2", "INFO");
     echo "Ejecutando comando FFmpeg (Miniatura): $command2\n";
     $output2 = executeFFmpegCommand($command2);
-    echo "Salida de FFmpeg (Miniatura): $output2\n";
+    //echo "Salida de FFmpeg (Miniatura): $output2\n";
 
     echo "Verificando archivos de salida:\n";
     echo "Archivo m3u8 existe: " . (file_exists($m3u8File) ? "Sí" : "No") . "\n";
