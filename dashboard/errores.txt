@@ -1,0 +1,64 @@
+[2024-10-04 09:45:00] [INFO] Este es un mensaje informativo
+[2024-10-04 11:03:14] [UPLOAD] Iniciando script de carga
+[2024-10-04 10:03:14] [UPLOAD] Conexión incluida
+[2024-10-04 10:03:14] [UPLOAD] Método de solicitud: POST
+[2024-10-04 10:03:14] [UPLOAD] Datos recibidos - Nombre de archivo: mundo.mp4, Chunk: 0/2
+[2024-10-04 10:03:14] [UPLOAD] Ruta del archivo temporal: /home/drm/videos/mundo.mp4.part
+[2024-10-04 10:03:14] [UPLOAD] Chunk recibido correctamente
+[2024-10-04 10:03:14] [UPLOAD] Chunk escrito correctamente
+[2024-10-04 10:03:14] [UPLOAD] Chunk procesado correctamente
+[2024-10-04 10:03:14] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-10-04 11:03:15] [UPLOAD] Iniciando script de carga
+[2024-10-04 10:03:15] [UPLOAD] Conexión incluida
+[2024-10-04 10:03:15] [UPLOAD] Método de solicitud: POST
+[2024-10-04 10:03:15] [UPLOAD] Datos recibidos - Nombre de archivo: mundo.mp4, Chunk: 1/2
+[2024-10-04 10:03:15] [UPLOAD] Ruta del archivo temporal: /home/drm/videos/mundo.mp4.part
+[2024-10-04 10:03:15] [UPLOAD] Chunk recibido correctamente
+[2024-10-04 10:03:15] [UPLOAD] Chunk escrito correctamente
+[2024-10-04 10:03:15] [UPLOAD] Último chunk recibido, procesando archivo completo
+[2024-10-04 10:03:15] [UPLOAD] Archivo renombrado correctamente: /home/drm/videos/mundo.mp4
+[2024-10-04 10:03:15] [UPLOAD] VideoId generado: a3de3e70daecd78d8301a634cf31311e
+[2024-10-04 10:03:15] [UPLOAD] Generando clave de encriptación
+[2024-10-04 10:03:15] [UPLOAD] Generando clave de encriptación para videoId: a3de3e70daecd78d8301a634cf31311e
+[2024-10-04 10:03:15] [UPLOAD] Creando directorio: /home/drm/public_html/dashboard/processed_videos/a3de3e70daecd78d8301a634cf31311e/
+[2024-10-04 10:03:15] [UPLOAD] Clave de encriptación generada
+[2024-10-04 10:03:15] [UPLOAD] Archivo de clave creado: /home/drm/public_html/dashboard/processed_videos/a3de3e70daecd78d8301a634cf31311e/enc.key
+[2024-10-04 10:03:15] [UPLOAD] Archivo keyinfo creado: /home/drm/public_html/dashboard/processed_videos/a3de3e70daecd78d8301a634cf31311e/enc.keyinfo
+[2024-10-04 10:03:15] [UPLOAD] Clave de encriptación generada exitosamente
+[2024-10-04 10:03:15] [UPLOAD] Preparando consulta SQL: INSERT INTO videos (id_video, nombre_video, url_video, fecha, estado, encryption_key, encryption_iv) VALUES (?, ?, ?, ?, 'PROCESSING', ?, ?)
+[2024-10-04 10:03:15] [UPLOAD] Error en la preparación de la consulta: Unknown column 'encryption_key' in 'field list'
+[2024-10-04 10:03:15] [UPLOAD] Excepción capturada: Error en la preparación de la consulta
+[2024-10-04 10:03:15] [UPLOAD] Respuesta final: {"status":"error","message":"Error durante el procesamiento: Error en la preparaci\u00f3n de la consulta"}
+[2024-10-04 11:16:34] [UPLOAD] Iniciando script de carga
+[2024-10-04 10:16:34] [UPLOAD] Conexión incluida
+[2024-10-04 10:16:34] [UPLOAD] Método de solicitud: POST
+[2024-10-04 10:16:34] [UPLOAD] Datos recibidos - Nombre de archivo: mundo.mp4, Chunk: 0/2
+[2024-10-04 10:16:34] [UPLOAD] Ruta del archivo temporal: /home/drm/videos/mundo.mp4.part
+[2024-10-04 10:16:34] [UPLOAD] Chunk recibido correctamente
+[2024-10-04 10:16:34] [UPLOAD] Chunk escrito correctamente
+[2024-10-04 10:16:34] [UPLOAD] Chunk procesado correctamente
+[2024-10-04 10:16:34] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-10-04 11:16:34] [UPLOAD] Iniciando script de carga
+[2024-10-04 10:16:34] [UPLOAD] Conexión incluida
+[2024-10-04 10:16:34] [UPLOAD] Método de solicitud: POST
+[2024-10-04 10:16:34] [UPLOAD] Datos recibidos - Nombre de archivo: mundo.mp4, Chunk: 1/2
+[2024-10-04 10:16:34] [UPLOAD] Ruta del archivo temporal: /home/drm/videos/mundo.mp4.part
+[2024-10-04 10:16:34] [UPLOAD] Chunk recibido correctamente
+[2024-10-04 10:16:34] [UPLOAD] Chunk escrito correctamente
+[2024-10-04 10:16:34] [UPLOAD] Último chunk recibido, procesando archivo completo
+[2024-10-04 10:16:34] [UPLOAD] Archivo renombrado correctamente: /home/drm/videos/mundo.mp4
+[2024-10-04 10:16:34] [UPLOAD] VideoId generado: f0cccb15de96ac637b59a4a84257951a
+[2024-10-04 10:16:34] [UPLOAD] Generando clave de encriptación
+[2024-10-04 10:16:34] [UPLOAD] Generando clave de encriptación para videoId: f0cccb15de96ac637b59a4a84257951a
+[2024-10-04 10:16:34] [UPLOAD] Creando directorio: /home/drm/public_html/dashboard/processed_videos/f0cccb15de96ac637b59a4a84257951a/
+[2024-10-04 10:16:34] [UPLOAD] Clave de encriptación generada
+[2024-10-04 10:16:34] [UPLOAD] Archivo de clave creado: /home/drm/public_html/dashboard/processed_videos/f0cccb15de96ac637b59a4a84257951a/enc.key
+[2024-10-04 10:16:34] [UPLOAD] Archivo keyinfo creado: /home/drm/public_html/dashboard/processed_videos/f0cccb15de96ac637b59a4a84257951a/enc.keyinfo
+[2024-10-04 10:16:34] [UPLOAD] Clave de encriptación generada exitosamente
+[2024-10-04 10:16:34] [UPLOAD] Preparando consulta SQL: INSERT INTO videos (id_video, nombre_video, url_video, fecha, estado) VALUES (?, ?, ?, ?, 'PROCESSING')
+[2024-10-04 10:16:34] [UPLOAD] Ejecutando consulta SQL
+[2024-10-04 10:16:34] [UPLOAD] Datos insertados correctamente en la base de datos
+[2024-10-04 10:16:34] [UPLOAD] Esperando 5 segundos antes de iniciar el procesamiento
+[2024-10-04 10:16:39] [UPLOAD] Iniciando procesamiento de video en segundo plano
+[2024-10-04 10:16:39] [UPLOAD] Procesamiento de video iniciado
+[2024-10-04 10:16:39] [UPLOAD] Respuesta final: {"status":"success","fileName":"mundo.mp4","fileSize":1144050,"uploadDate":"2024-10-04 10:16:34","videoId":"f0cccb15de96ac637b59a4a84257951a","estado":"PROCESSING"}
