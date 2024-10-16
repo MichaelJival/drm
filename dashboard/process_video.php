@@ -2,6 +2,7 @@
 //process_video_optimized.php
 include("/home/drm/public_html/conexion/conexion.php");
 
+
 //define('ERROR_LOG_FILE', '/home/drm/public_html/dashboard/LOGS.log');
 define('FFMPEG_PATH', '/usr/bin/ffmpeg');
 define('SEGMENT_DIR_BASE', '/home/drm/public_html/dashboard/processed_videos/');
@@ -13,6 +14,8 @@ function logMessage($message) {
     $logEntry = "[$timestamp] [PROCESS] $message\n";
     error_log($logEntry, 3, LOG_FILE);
 }
+logMessage("Script cargando...");
+sleep(30);
 
 function executeSql($conexion, $query, $types = '', ...$params) {
     $stmt = $conexion->prepare($query);
@@ -112,9 +115,20 @@ try {
         /*if ($returnVar1 !== 0 || !file_exists($m3u8File) || count(glob($segmentDir . "*.ts")) === 0) {
             throw new Exception("Error al procesar el video. Código de salida: $returnVar1");
         }*/
-        if (!file_exists($m3u8File) || count(glob($segmentDir . "*.ts")) === 0) {
-            throw new Exception("Error al procesar el video. Archivos de salida no encontrados.");
+        try {
+            // Código que puede lanzar excepciones
+            
+            if (!file_exists($m3u8File) || count(glob($segmentDir . "*.ts")) === 0) {
+                throw new Exception("Error al procesar el video. Archivos de salida no encontrados.");
+            }
+        
+        } catch (Exception $e) {
+            executeSql($conexion, "UPDATE videos SET estado = 'ERROR' WHERE id_video = ?", 's', $videoId);
+            logMessage($e->getMessage());
+            die($e->getMessage() . "\n");
         }
+           
+        
 
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////

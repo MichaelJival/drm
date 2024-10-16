@@ -418,13 +418,14 @@ $h = time();
             align-items: center;
             margin-bottom: 15px;
             padding: 10px;
-            margin-left:30px;
-            margin-right:20px;
+            margin-left:10px;
+            margin-right:10px;
             border-radius: 8px;
             background-color: #FFF;
             cursor: pointer;
-            padding: 20px 25px 20px 25px;
+            padding: 20px 15px 20px 25px;
             box-shadow:  rgba(62, 73, 84, 0.04) 0px 12px 23px;
+       
                    
         }
 
@@ -763,6 +764,24 @@ $h = time();
     display: none;
 }
 
+
+
+
+
+.badge-error {
+            font-size: 14px;
+            /*color: rgb(46, 125, 50);*/
+            color: white;
+            text-transform: capitalize;
+            font-weight: 600;
+            background: #dc3545;
+            padding: 4px 6px;
+            border-radius: 4px;
+            margin-right: 10px;
+            padding: 10px 15px 10px 15px;
+        }
+
+
 </style>
 </head>
 <body>
@@ -954,7 +973,7 @@ $folders[] = $row;
 <div id="container-folders" class="container-folders">
 <div class="row">
 <?php foreach ($folders as $folder): ?>
-      <div class="col-md-3 mb-3 folder-box">
+      <div class="col-md-3 mb-2 folder-box">
         <div class="d-flex align-items-center">
           <i class="fa-solid fa-folder fa-2x" style="color: #f4d471;"></i>
           <div class="flex-grow-1 ms-3">
@@ -1594,7 +1613,7 @@ function displayVideoItem(file, isNewUpload = false) {
             </div>
             <div style="margin-left: 10px;">
                 <p class="ms-5 mt-5 file-name editable" style="margin: 0;" contenteditable="true">${file.fileName}</p>
-                <small class="ms-5 upload-date" style="display: block; margin-bottom: 5px;">${file.uploadDate}</small>
+                <small class="ms-5 upload-date" style="display: block; margin-bottom: 5px;"><span class="me-2"><i class="fa-solid fa-calendar-days" style="color: #888;"></i></span>${file.uploadDate}</small>
                 <p style="margin: 0;"> ${file.folderNames ? file.folderNames.split(', ').map(folder => 
                     `<span class="ms-5 badge badge-folder">${folder}</span>`
                 ).join(' ') : '<span class="ms-5 badge badge-not-archived">Not Archived</span>'}</p>
@@ -1758,6 +1777,13 @@ function checkVideoStatus(videoId) {
                 const oldStatus = statusBadge.textContent;
                 statusBadge.className = `badge badge-${data.status.toLowerCase()}`;
                 statusBadge.textContent = data.status;
+
+
+                // Añadir manejo de estado ERROR
+                if (data.status === 'ERROR') {
+                    statusBadge.className = 'badge badge-error';
+                    statusBadge.textContent = 'ERROR'; // Puedes personalizar el texto que desees
+                }
                 
                 // Actualizar la barra de progreso
                 const progressContainer = videoItem.querySelector('.progress-container');
