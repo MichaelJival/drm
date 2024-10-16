@@ -329,11 +329,11 @@ function logMessage($message) {
     $logEntry = "[$timestamp] [UPLOAD] $message\n";
     error_log($logEntry, 3, LOG_FILE);
 }
-logMessage("Iniciando script de carga");
+//logMessage("Iniciando script de carga");
 
 // conexion
 include("/home/drm/public_html/conexion/conexion.php");
-logMessage("Conexión incluida");
+//logMessage("Conexión incluida");
 
 function exception_error_handler($severity, $message, $file, $line) {
     logMessage("Error capturado: $message in $file on line $line");
@@ -397,7 +397,7 @@ function generateEncryptionKey($videoId) {
 
 $response = array();
 
-logMessage("Método de solicitud: " . $_SERVER['REQUEST_METHOD']);
+//logMessage("Método de solicitud: " . $_SERVER['REQUEST_METHOD']);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fileName = isset($_POST['fileName']) ? $_POST['fileName'] : '';
@@ -476,7 +476,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     'estado' => 'PROCESSING'
                                 );
                                 logMessage("Esperando 5 segundos antes de iniciar el procesamiento");
-                                sleep(5);       
+                                sleep(3);       
                                 logMessage("Iniciando procesamiento de video en segundo plano");
                                 $command = "php process_video.php $videoId > /dev/null 2>&1 &";
                                 shell_exec($command);
@@ -499,7 +499,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         }
                     }
                 } else {
-                    logMessage("Chunk procesado correctamente");
+                    //logMessage("Chunk procesado correctamente");
                     $response = array('status' => 'success', 'message' => 'Chunk recibido');
                 }
             }
