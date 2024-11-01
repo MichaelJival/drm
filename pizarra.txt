@@ -1,1 +1,13 @@
 /usr/bin/ffmpeg -i /home/drm/public_html/[URL_DEL_VIDEO_ORIGINAL] -c:v libx264 -c:a aac -hls_time 10 -hls_key_info_file /home/drm/public_html/dashboard/processed_videos/[ID_DEL_VIDEO]/enc.keyinfo -hls_playlist_type vod -hls_segment_filename /home/drm/public_html/dashboard/processed_videos/[ID_DEL_VIDEO]/segment_%03d.ts -hls_base_url https://drm.eweo.com/dashboard/processed_videos/[ID_DEL_VIDEO]/ /home/drm/public_html/dashboard/processed_videos/[ID_DEL_VIDEO]/playlist.m3u8 && /usr/bin/ffmpeg -i /home/drm/public_html/[URL_DEL_VIDEO_ORIGINAL] -vf "select='eq(pict_type\,I)*gte(n\,3)',scale=200:-1" -frames:v 1 /home/drm/public_html/portadas/[ID_DEL_VIDEO].jpg
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+xxHash es más rápido que CRC32 porque:
+Usa instrucciones SIMD (Single Instruction Multiple Data) del procesador
+Procesa múltiples bytes en paralelo
+Está optimizado para hardware moderno de 64 bits
+Mejor uso del caché del procesador
+Diseñado específicamente para velocidad en hardware moderno
+Mientras CRC32 procesa byte por byte secuencialmente, xxHash procesa bloques más grandes simultáneamente.
+$cacheKey = hash('crc32c', $data['content']);
+//////////////////////////////////////////////////////////////////////////////////////////////////////////

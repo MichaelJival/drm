@@ -1,58 +1,29 @@
 <?php
 session_start();
-
-/*if (!isset($_SESSION['authorized']) || $_SESSION['authorized'] !== true) {
-    header('HTTP/1.0 403 Forbidden');
-    exit('Acceso denenado');
+/*define("LOG_FILE", "/home/drm/public_html/LOGS.log");
+function logMessage($message) {
+    $timestamp = date("Y-m-d H:i:s");
+    $logEntry = "[$timestamp] [VIDEO] [DECRYPT] $message\n";
+    error_log($logEntry, 3, LOG_FILE);
 }*/
-
-//function respondWithError($statusCode, $message) {
-//    header("HTTP/1.0 $statusCode");
-//    exit(json_encode(['error' => $message]));
-//}
-
-//$allowed_origins = ["https://drm.eweo.com", "https://campustribu.com"];
-//if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $allowed_origins)) {
-//    header("Access-Control-Allow-Origin: " . $_SERVER['HTTP_ORIGIN']);
-//}
-//header("Access-Control-Allow-Methods: POST, OPTIONS");
-//header("Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-CSRF-Token");
-
-//if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-//    exit(0);
-///}
-
-/*if (!isset($_SESSION['csrf_token']) || 
-    !isset($_SERVER['HTTP_X_CSRF_TOKEN']) ||
-    $_SERVER['HTTP_X_CSRF_TOKEN'] !== $_SESSION['csrf_token']) {
-    respondWithError(403, 'Invalid CSRF token');
-}*/
-
-/*$isAjax = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && 
-          strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
-
-if (!$isAjax && !isset($_SERVER['HTTP_ACCEPT']) && strpos($_SERVER['HTTP_ACCEPT'], 'application/json') === false) {
-    respondWithError(403, 'Invalid AJAX request');
-}*/
-
-
-
 function decryptVideo() {
     $json = file_get_contents('php://input');
     $data = json_decode($json, true);
-
-    /*if (!isset($data['content']) || !isset($data['token']) || !isset($data['iv'])) {
-        http_response_code(400);
-        echo json_encode(["error" => "Missing required data"]);
-        exit;
-    }*/
-
-    /*if ($data['token'] !== $_SESSION['video_token'] || time() > $_SESSION['token_expiry']) {
-        http_response_code(403);
-        echo json_encode(["error" => "Invalid or expired video token"]);
-        exit;
-    }*/
-
+     /////////////////////////////////////////////////////////
+     //$cacheKey = crc32($data['content']);
+     $cacheKey = hash('crc32c', $data['content']);
+     //logMessage("Cache key: " . $cacheKey);
+     
+     $cachePath = "/home/drm/public_html/cache/{$cacheKey}.m3u8";
+     
+     if (file_exists($cachePath)) {
+         //logMessage("Using cached version: " . $cachePath);
+         header('Content-Type: application/vnd.apple.mpegurl');
+         readfile($cachePath);
+         return;
+     }
+    ///////////////////////////////////////////////////////
+    //logMessage("Cache not found, decrypting new content");
     $encryptionKey = '5aad9b549e86812c95542e0714c1b2b7';
     $decryptedContent = openssl_decrypt(base64_decode($data['content']), 'aes-128-cbc', $encryptionKey, 0, base64_decode($data['iv']));
     if($decryptedContent === false){
@@ -60,6 +31,8 @@ function decryptVideo() {
         echo json_encode(["error" => "Decryption failed"]);
         exit;
     }
+    // Guardar en cache
+    file_put_contents($cachePath, $decryptedContent);
     header('Content-Type: application/vnd.apple.mpegurl');
-    echo $decryptedContent;
+    echo $decryptedContent;   
 }
