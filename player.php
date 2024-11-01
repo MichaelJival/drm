@@ -87,6 +87,15 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             console.error('HLS no es soportado en este navegador');
         }
+
+        // Añadir el listener para el evento 'ended'
+        videoElement.addEventListener('ended', function() {
+            // Enviar un mensaje al parent window indicando que el video ha terminado
+            window.parent.postMessage({ 
+                type: 'videoEnded', 
+                videoId: videoId 
+            }, '*');
+        });
     }
 });
 </script>
