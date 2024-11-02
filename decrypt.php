@@ -45,68 +45,81 @@ function decryptVideo() {
          
          return;
      }*/
-$cacheKey = hash('crc32c', $data['content']);
-$cachePath = "/home/drm/public_html/cache/{$cacheKey}.m3u8";
-$gzipCachePath = "/home/drm/public_html/cache/{$cacheKey}.m3u8.gz";
-
-if (file_exists($cachePath)) {
-    // Verificar si el navegador tiene una versión en caché
-    if (isset($_SERVER['HTTP_IF_NONE_MATCH'])) {
-        $etag = md5_file($cachePath);
-        if ($_SERVER['HTTP_IF_NONE_MATCH'] === '"' . $etag . '"') {
-            logMessage("Cliente usando caché del navegador - 304 Not Modified");
-            header('HTTP/1.1 304 Not Modified');
-            exit;
-        }
-    }
-
-    $startTime = microtime(true);
-    logMessage("Iniciando carga del video: " . $cachePath);
-    
-    // Headers
-    header('Content-Type: application/vnd.apple.mpegurl');
-    header('Content-Encoding: gzip');
-    
-    $etag = md5_file($cachePath);
-    header("ETag: \"$etag\"");
-    header('Cache-Control: public, max-age=2592000');
-    header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 2592000) . ' GMT');
-
-    // Verificar y crear versión comprimida si no existe
-    if (!file_exists($gzipCachePath)) {
-        logMessage("Creando nueva versión comprimida");
-        $content = file_get_contents($cachePath);
-        $compressed = gzencode($content, 9);
-        file_put_contents($gzipCachePath, $compressed);
-        logMessage("Versión comprimida creada: " . $gzipCachePath);
-    } else {
-        logMessage("Usando versión comprimida existente");
-    }
-
-    // Lectura y envío en chunks
-    $chunkSize = 8192; // 8KB chunks
-    $handle = fopen($gzipCachePath, 'rb');
-    
-    if ($handle === false) {
-        logMessage("Error al abrir archivo comprimido");
-        return;
-    }
-
-    while (!feof($handle)) {
-        $chunk = fread($handle, $chunkSize);
-        echo $chunk;
-        flush();
-        logMessage("Chunk enviado: " . strlen($chunk) . " bytes");
-    }
-
-    fclose($handle);
-
-    $endTime = microtime(true);
-    $loadTime = round(($endTime - $startTime) * 1000, 2);
-    logMessage("Video servido en: {$loadTime}ms - Original: " . filesize($cachePath) . " bytes - Comprimido: " . filesize($gzipCachePath) . " bytes");
-    
-    return;
-}
+     $cacheKey = hash('crc32c', $data['content']);
+     $cachePath = "/home/drm/public_html/cache/{$cacheKey}.m3u8";
+     $gzipCachePath = "/home/drm/public_html/cache/{$cacheKey}.m3u8.gz"; 
+     $brotliCachePath = "/home/drm/public_html/cache/{$cacheKey}.m3u8.br";
+     
+     if (file_exists($cachePath)) {
+         if (isset($_SERVER['HTTP_IF_NONE_MATCH'])) {
+             $etag = hash_file('crc32c', $cachePath);
+             if ($_SERVER['HTTP_IF_NONE_MATCH'] === '"' . $etag . '"') {
+                 logMessage("Cliente usando caché del navegador - 304 Not Modified");
+                 header('HTTP/1.1 304 Not Modified');
+                 exit;
+             }
+         }
+     
+         $startTime = microtime(true);
+         logMessage("Iniciando carga del video: " . $cachePath);
+         
+         ob_start();
+         
+         $useBrotli = isset($_SERVER['HTTP_ACCEPT_ENCODING']) && strpos($_SERVER['HTTP_ACCEPT_ENCODING'], 'br') !== false;
+         
+         header('Content-Type: application/vnd.apple.mpegurl');
+         if($useBrotli) {
+             header('Content-Encoding: br');
+             $compressedPath = $brotliCachePath;
+             logMessage("Usando compresión Brotli");
+         } else {
+             header('Content-Encoding: gzip');
+             $compressedPath = $gzipCachePath;
+             logMessage("Usando compresión Gzip");
+         }
+         
+         $etag = hash_file('crc32c', $cachePath);
+         header("ETag: \"$etag\"");
+         header('Cache-Control: public, max-age=2592000');
+         header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 2592000) . ' GMT');
+     
+         if($useBrotli && !file_exists($brotliCachePath)) {
+             logMessage("Creando nueva versión Brotli");
+             $command = "brotli -q 11 \"{$cachePath}\" -o \"{$brotliCachePath}\"";
+             $output = shell_exec($command);
+             logMessage("Versión Brotli creada: " . $brotliCachePath);
+         } elseif(!$useBrotli && !file_exists($gzipCachePath)) {
+             logMessage("Creando nueva versión Gzip");
+             $content = file_get_contents($cachePath);
+             $compressed = gzencode($content, 9);
+             file_put_contents($gzipCachePath, $compressed);
+             logMessage("Versión Gzip creada: " . $gzipCachePath);
+         } else {
+             logMessage("Usando versión comprimida existente - {$compressedPath}");
+         }
+     
+         if(function_exists('apache_get_modules') && in_array('mod_xsendfile', apache_get_modules())) {
+             header('X-Sendfile: ' . $compressedPath);
+             logMessage("Usando X-Sendfile para enviar archivo");
+         } else {
+             $chunkSize = 65536; // Aumentado a 64KB
+             readfile($compressedPath);
+             logMessage("Archivo enviado mediante readfile()");
+         }
+         
+     
+         $endTime = microtime(true);
+         $loadTime = round(($endTime - $startTime) * 1000, 2);
+         logMessage("Video servido en: {$loadTime}ms - Original: " . filesize($cachePath) . " bytes - Comprimido: " . filesize($compressedPath) . " bytes ");
+         //// logMesagge % de reduccion  ///
+         $originalSize = filesize($cachePath);
+         $compressedSize = filesize($compressedPath);
+         $reduction = ($originalSize - $compressedSize) / $originalSize * 100;
+         logMessage("Reduccion: {$reduction}%");
+         
+         return;
+     }
+     
 
 
 
