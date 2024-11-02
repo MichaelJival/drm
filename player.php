@@ -39,6 +39,7 @@ $videoId = $_GET['id'] ?? 0;
 document.addEventListener('DOMContentLoaded', function() {
     const videoId = "<?php echo $videoId; ?>";
     const videoElement = document.getElementById('video');
+    let halfwayNotified = false; // Bandera para saber si ya se notificó el 50%
 
     if (!videoId) {
         console.error('ID de clase no definido');
@@ -88,6 +89,22 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('HLS no es soportado en este navegador');
         }
 
+        // Añadir el listener para el evento 'timeupdate' 
+        videoElement.addEventListener('timeupdate', function() {
+            const currentTime = videoElement.currentTime;
+            const duration = videoElement.duration;
+
+            // Comprobar si se ha alcanzado el 50%
+            if (!halfwayNotified && currentTime >= duration / 2) {
+                halfwayNotified = true;
+                // Enviar un mensaje al parent window indicando que el video ha alcanzado el 50%
+                window.parent.postMessage({ 
+                    type: 'videoHalfway', 
+                    videoId: videoId 
+                }, '*');
+            }
+        });
+
         // Añadir el listener para el evento 'ended'
         videoElement.addEventListener('ended', function() {
             // Enviar un mensaje al parent window indicando que el video ha terminado
@@ -98,6 +115,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
 </script>
 </body>
 </html>
