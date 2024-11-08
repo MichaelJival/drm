@@ -3029,3 +3029,340 @@
 [2024-11-02 15:46:26] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
 [2024-11-02 15:46:26] [VIDEO] [DECRYPT] Video servido en: 1.23ms - Original: 5442 bytes - Comprimido: 357 bytes 
 [2024-11-02 15:46:26] [VIDEO] [DECRYPT] Reduccion: 93.439911797133%
+[2024-11-02 15:49:04] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/9b05f8cf.m3u8
+[2024-11-02 15:49:04] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:49:04] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/9b05f8cf.m3u8.br
+[2024-11-02 15:49:04] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:49:04] [VIDEO] [DECRYPT] Video servido en: 1.48ms - Original: 4181 bytes - Comprimido: 309 bytes 
+[2024-11-02 15:49:04] [VIDEO] [DECRYPT] Reduccion: 92.609423582875%
+[2024-11-02 15:49:07] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/0cb37b66.m3u8
+[2024-11-02 15:49:07] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:49:07] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/0cb37b66.m3u8.br
+[2024-11-02 15:49:07] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:49:07] [VIDEO] [DECRYPT] Video servido en: 1.11ms - Original: 16361 bytes - Comprimido: 526 bytes 
+[2024-11-02 15:49:07] [VIDEO] [DECRYPT] Reduccion: 96.785037589389%
+[2024-11-02 15:49:24] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/045956d0.m3u8
+[2024-11-02 15:49:24] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:49:24] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/045956d0.m3u8.br
+[2024-11-02 15:49:24] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:49:24] [VIDEO] [DECRYPT] Video servido en: 1.1ms - Original: 5098 bytes - Comprimido: 361 bytes 
+[2024-11-02 15:49:24] [VIDEO] [DECRYPT] Reduccion: 92.918791683013%
+[2024-11-02 15:49:32] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/b28641ae.m3u8
+[2024-11-02 15:49:32] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:49:32] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/b28641ae.m3u8.br
+[2024-11-02 15:49:32] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:49:32] [VIDEO] [DECRYPT] Video servido en: 1.29ms - Original: 2111 bytes - Comprimido: 288 bytes 
+[2024-11-02 15:49:32] [VIDEO] [DECRYPT] Reduccion: 86.35717669351%
+[2024-11-02 15:49:35] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/13d37040.m3u8
+[2024-11-02 15:49:35] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:49:35] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/13d37040.m3u8.br
+[2024-11-02 15:49:35] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:49:35] [VIDEO] [DECRYPT] Video servido en: 1.08ms - Original: 2570 bytes - Comprimido: 293 bytes 
+[2024-11-02 15:49:35] [VIDEO] [DECRYPT] Reduccion: 88.599221789883%
+[2024-11-02 15:49:39] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/031e5cdc.m3u8
+[2024-11-02 15:49:39] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:49:39] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/031e5cdc.m3u8.br
+[2024-11-02 15:49:39] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:49:39] [VIDEO] [DECRYPT] Video servido en: 1.32ms - Original: 25325 bytes - Comprimido: 695 bytes 
+[2024-11-02 15:49:39] [VIDEO] [DECRYPT] Reduccion: 97.255676209279%
+[2024-11-02 15:52:08] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/ffe5cc3f.m3u8
+[2024-11-02 15:52:08] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:52:08] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/ffe5cc3f.m3u8.br
+[2024-11-02 15:52:08] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:52:08] [VIDEO] [DECRYPT] Video servido en: 3.14ms - Original: 3375 bytes - Comprimido: 306 bytes 
+[2024-11-02 15:52:08] [VIDEO] [DECRYPT] Reduccion: 90.933333333333%
+[2024-11-02 15:52:12] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/cd7d6719.m3u8
+[2024-11-02 15:52:12] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:52:12] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/cd7d6719.m3u8.br
+[2024-11-02 15:52:12] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:52:12] [VIDEO] [DECRYPT] Video servido en: 1.31ms - Original: 7629 bytes - Comprimido: 379 bytes 
+[2024-11-02 15:52:12] [VIDEO] [DECRYPT] Reduccion: 95.032114300695%
+[2024-11-02 15:52:17] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/c07d21df.m3u8
+[2024-11-02 15:52:17] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:52:17] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/c07d21df.m3u8.br
+[2024-11-02 15:52:17] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:52:17] [VIDEO] [DECRYPT] Video servido en: 1.11ms - Original: 14753 bytes - Comprimido: 522 bytes 
+[2024-11-02 15:52:17] [VIDEO] [DECRYPT] Reduccion: 96.461736595947%
+[2024-11-02 15:53:42] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/a6095a6f.m3u8
+[2024-11-02 15:53:42] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:53:42] [VIDEO] [DECRYPT] Cache MISS - No ETag en la solicitud
+[2024-11-02 15:53:42] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/a6095a6f.m3u8.br
+[2024-11-02 15:53:42] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:53:42] [VIDEO] [DECRYPT] Video servido en: 0.43ms - Original: 4640 bytes - Comprimido: 322 bytes 
+[2024-11-02 15:53:42] [VIDEO] [DECRYPT] Reduccion: 93.060344827586%
+[2024-11-02 15:53:54] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/b857850f.m3u8
+[2024-11-02 15:53:54] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:53:54] [VIDEO] [DECRYPT] Cache MISS - No ETag en la solicitud
+[2024-11-02 15:53:54] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/b857850f.m3u8.br
+[2024-11-02 15:53:54] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:53:54] [VIDEO] [DECRYPT] Video servido en: 0.48ms - Original: 8085 bytes - Comprimido: 416 bytes 
+[2024-11-02 15:53:54] [VIDEO] [DECRYPT] Reduccion: 94.854669140383%
+[2024-11-02 15:54:19] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/a6095a6f.m3u8
+[2024-11-02 15:54:19] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:54:19] [VIDEO] [DECRYPT] Cache MISS - No ETag en la solicitud
+[2024-11-02 15:54:19] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/a6095a6f.m3u8.br
+[2024-11-02 15:54:19] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:54:19] [VIDEO] [DECRYPT] Video servido en: 0.43ms - Original: 4640 bytes - Comprimido: 322 bytes 
+[2024-11-02 15:54:19] [VIDEO] [DECRYPT] Reduccion: 93.060344827586%
+[2024-11-02 15:55:57] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/367f13e0.m3u8
+[2024-11-02 15:55:57] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:55:57] [VIDEO] [DECRYPT] Cache MISS - No ETag en la solicitud
+[2024-11-02 15:55:57] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/367f13e0.m3u8.br
+[2024-11-02 15:55:57] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:55:57] [VIDEO] [DECRYPT] Video servido en: 0.52ms - Original: 6479 bytes - Comprimido: 365 bytes 
+[2024-11-02 15:55:57] [VIDEO] [DECRYPT] Reduccion: 94.36641457015%
+[2024-11-02 15:55:58] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/2f9a18f8.m3u8
+[2024-11-02 15:55:58] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:55:58] [VIDEO] [DECRYPT] Cache MISS - No ETag en la solicitud
+[2024-11-02 15:55:58] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/2f9a18f8.m3u8.br
+[2024-11-02 15:55:58] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:55:58] [VIDEO] [DECRYPT] Video servido en: 0.37ms - Original: 3832 bytes - Comprimido: 328 bytes 
+[2024-11-02 15:55:58] [VIDEO] [DECRYPT] Reduccion: 91.440501043841%
+[2024-11-02 15:56:01] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/18b7bbb2.m3u8
+[2024-11-02 15:56:01] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:56:01] [VIDEO] [DECRYPT] Cache MISS - No ETag en la solicitud
+[2024-11-02 15:56:01] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/18b7bbb2.m3u8.br
+[2024-11-02 15:56:01] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:56:01] [VIDEO] [DECRYPT] Video servido en: 0.4ms - Original: 3948 bytes - Comprimido: 339 bytes 
+[2024-11-02 15:56:01] [VIDEO] [DECRYPT] Reduccion: 91.413373860182%
+[2024-11-02 15:56:05] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/eb8a5f38.m3u8
+[2024-11-02 15:56:05] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:56:05] [VIDEO] [DECRYPT] Cache MISS - No ETag en la solicitud
+[2024-11-02 15:56:05] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/eb8a5f38.m3u8.br
+[2024-11-02 15:56:05] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:56:05] [VIDEO] [DECRYPT] Video servido en: 0.36ms - Original: 3951 bytes - Comprimido: 310 bytes 
+[2024-11-02 15:56:05] [VIDEO] [DECRYPT] Reduccion: 92.153885092382%
+[2024-11-02 15:56:06] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/fc966cf5.m3u8
+[2024-11-02 15:56:06] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:56:06] [VIDEO] [DECRYPT] Cache MISS - No ETag en la solicitud
+[2024-11-02 15:56:06] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/fc966cf5.m3u8.br
+[2024-11-02 15:56:06] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:56:06] [VIDEO] [DECRYPT] Video servido en: 0.41ms - Original: 5901 bytes - Comprimido: 369 bytes 
+[2024-11-02 15:56:06] [VIDEO] [DECRYPT] Reduccion: 93.746822572445%
+[2024-11-02 15:56:08] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/d7456f67.m3u8
+[2024-11-02 15:56:08] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:56:08] [VIDEO] [DECRYPT] Cache MISS - No ETag en la solicitud
+[2024-11-02 15:56:08] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/d7456f67.m3u8.br
+[2024-11-02 15:56:08] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:56:08] [VIDEO] [DECRYPT] Video servido en: 0.41ms - Original: 20840 bytes - Comprimido: 643 bytes 
+[2024-11-02 15:56:08] [VIDEO] [DECRYPT] Reduccion: 96.914587332054%
+[2024-11-02 15:56:10] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/22f72707.m3u8
+[2024-11-02 15:56:10] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:56:10] [VIDEO] [DECRYPT] Cache MISS - No ETag en la solicitud
+[2024-11-02 15:56:10] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/22f72707.m3u8.br
+[2024-11-02 15:56:10] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:56:10] [VIDEO] [DECRYPT] Video servido en: 0.35ms - Original: 3835 bytes - Comprimido: 314 bytes 
+[2024-11-02 15:56:10] [VIDEO] [DECRYPT] Reduccion: 91.812255541069%
+[2024-11-02 15:56:13] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/80f5c7f8.m3u8
+[2024-11-02 15:56:13] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:56:13] [VIDEO] [DECRYPT] Cache MISS - No ETag en la solicitud
+[2024-11-02 15:56:13] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/80f5c7f8.m3u8.br
+[2024-11-02 15:56:13] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:56:13] [VIDEO] [DECRYPT] Video servido en: 0.36ms - Original: 9009 bytes - Comprimido: 399 bytes 
+[2024-11-02 15:56:13] [VIDEO] [DECRYPT] Reduccion: 95.571095571096%
+[2024-11-02 15:56:17] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/43bc0069.m3u8
+[2024-11-02 15:56:17] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:56:17] [VIDEO] [DECRYPT] Cache MISS - No ETag en la solicitud
+[2024-11-02 15:56:17] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/43bc0069.m3u8.br
+[2024-11-02 15:56:17] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:56:17] [VIDEO] [DECRYPT] Video servido en: 0.38ms - Original: 4641 bytes - Comprimido: 315 bytes 
+[2024-11-02 15:56:17] [VIDEO] [DECRYPT] Reduccion: 93.212669683258%
+[2024-11-02 15:56:23] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/330f5bb2.m3u8
+[2024-11-02 15:56:23] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:56:23] [VIDEO] [DECRYPT] Cache MISS - No ETag en la solicitud
+[2024-11-02 15:56:23] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/330f5bb2.m3u8.br
+[2024-11-02 15:56:23] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:56:23] [VIDEO] [DECRYPT] Video servido en: 0.34ms - Original: 5442 bytes - Comprimido: 357 bytes 
+[2024-11-02 15:56:23] [VIDEO] [DECRYPT] Reduccion: 93.439911797133%
+[2024-11-02 15:56:27] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/9b05f8cf.m3u8
+[2024-11-02 15:56:27] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:56:27] [VIDEO] [DECRYPT] Cache MISS - No ETag en la solicitud
+[2024-11-02 15:56:27] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/9b05f8cf.m3u8.br
+[2024-11-02 15:56:27] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:56:27] [VIDEO] [DECRYPT] Video servido en: 0.39ms - Original: 4181 bytes - Comprimido: 309 bytes 
+[2024-11-02 15:56:27] [VIDEO] [DECRYPT] Reduccion: 92.609423582875%
+[2024-11-02 15:56:30] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/0cb37b66.m3u8
+[2024-11-02 15:56:30] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:56:30] [VIDEO] [DECRYPT] Cache MISS - No ETag en la solicitud
+[2024-11-02 15:56:30] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/0cb37b66.m3u8.br
+[2024-11-02 15:56:30] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:56:30] [VIDEO] [DECRYPT] Video servido en: 0.23ms - Original: 16361 bytes - Comprimido: 526 bytes 
+[2024-11-02 15:56:30] [VIDEO] [DECRYPT] Reduccion: 96.785037589389%
+[2024-11-02 15:57:05] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/045956d0.m3u8
+[2024-11-02 15:57:05] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:57:05] [VIDEO] [DECRYPT] Cache MISS - No ETag en la solicitud
+[2024-11-02 15:57:05] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/045956d0.m3u8.br
+[2024-11-02 15:57:05] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:57:05] [VIDEO] [DECRYPT] Video servido en: 0.25ms - Original: 5098 bytes - Comprimido: 361 bytes 
+[2024-11-02 15:57:05] [VIDEO] [DECRYPT] Reduccion: 92.918791683013%
+[2024-11-02 15:57:08] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/b28641ae.m3u8
+[2024-11-02 15:57:08] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:57:08] [VIDEO] [DECRYPT] Cache MISS - No ETag en la solicitud
+[2024-11-02 15:57:08] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/b28641ae.m3u8.br
+[2024-11-02 15:57:08] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:57:08] [VIDEO] [DECRYPT] Video servido en: 0.4ms - Original: 2111 bytes - Comprimido: 288 bytes 
+[2024-11-02 15:57:08] [VIDEO] [DECRYPT] Reduccion: 86.35717669351%
+[2024-11-02 15:57:11] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/13d37040.m3u8
+[2024-11-02 15:57:11] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:57:11] [VIDEO] [DECRYPT] Cache MISS - No ETag en la solicitud
+[2024-11-02 15:57:11] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/13d37040.m3u8.br
+[2024-11-02 15:57:11] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:57:11] [VIDEO] [DECRYPT] Video servido en: 0.42ms - Original: 2570 bytes - Comprimido: 293 bytes 
+[2024-11-02 15:57:11] [VIDEO] [DECRYPT] Reduccion: 88.599221789883%
+[2024-11-02 15:57:54] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/a6095a6f.m3u8
+[2024-11-02 15:57:54] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:57:54] [VIDEO] [DECRYPT] Cache MISS - No ETag en la solicitud
+[2024-11-02 15:57:54] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/a6095a6f.m3u8.br
+[2024-11-02 15:57:54] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:57:54] [VIDEO] [DECRYPT] Video servido en: 0.37ms - Original: 4640 bytes - Comprimido: 322 bytes 
+[2024-11-02 15:57:54] [VIDEO] [DECRYPT] Reduccion: 93.060344827586%
+[2024-11-02 15:59:09] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/1e4cdb86.m3u8
+[2024-11-02 15:59:09] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:59:09] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/1e4cdb86.m3u8.br
+[2024-11-02 15:59:09] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:59:09] [VIDEO] [DECRYPT] Video servido en: 2.78ms - Original: 25217 bytes - Comprimido: 652 bytes 
+[2024-11-02 15:59:09] [VIDEO] [DECRYPT] Reduccion: 97.414442637903%
+[2024-11-02 15:59:21] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/1e4cdb86.m3u8
+[2024-11-02 15:59:21] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:59:21] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/1e4cdb86.m3u8.br
+[2024-11-02 15:59:21] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:59:21] [VIDEO] [DECRYPT] Video servido en: 0.38ms - Original: 25217 bytes - Comprimido: 652 bytes 
+[2024-11-02 15:59:21] [VIDEO] [DECRYPT] Reduccion: 97.414442637903%
+[2024-11-02 15:59:22] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/71ad0930.m3u8
+[2024-11-02 15:59:22] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:59:22] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/71ad0930.m3u8.br
+[2024-11-02 15:59:22] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:59:22] [VIDEO] [DECRYPT] Video servido en: 0.96ms - Original: 10958 bytes - Comprimido: 474 bytes 
+[2024-11-02 15:59:22] [VIDEO] [DECRYPT] Reduccion: 95.674393137434%
+[2024-11-02 15:59:26] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/9b815024.m3u8
+[2024-11-02 15:59:26] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:59:26] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/9b815024.m3u8.br
+[2024-11-02 15:59:26] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:59:26] [VIDEO] [DECRYPT] Video servido en: 0.73ms - Original: 4175 bytes - Comprimido: 358 bytes 
+[2024-11-02 15:59:26] [VIDEO] [DECRYPT] Reduccion: 91.425149700599%
+[2024-11-02 15:59:30] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/b7b6ee75.m3u8
+[2024-11-02 15:59:30] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:59:30] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/b7b6ee75.m3u8.br
+[2024-11-02 15:59:30] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:59:30] [VIDEO] [DECRYPT] Video servido en: 0.84ms - Original: 7848 bytes - Comprimido: 457 bytes 
+[2024-11-02 15:59:30] [VIDEO] [DECRYPT] Reduccion: 94.176860346585%
+[2024-11-02 15:59:34] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/2ff1f4b0.m3u8
+[2024-11-02 15:59:34] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:59:34] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/2ff1f4b0.m3u8.br
+[2024-11-02 15:59:34] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:59:34] [VIDEO] [DECRYPT] Video servido en: 0.8ms - Original: 5212 bytes - Comprimido: 357 bytes 
+[2024-11-02 15:59:34] [VIDEO] [DECRYPT] Reduccion: 93.15042210284%
+[2024-11-02 15:59:38] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/e27f896a.m3u8
+[2024-11-02 15:59:38] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:59:38] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/e27f896a.m3u8.br
+[2024-11-02 15:59:38] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:59:38] [VIDEO] [DECRYPT] Video servido en: 0.74ms - Original: 3257 bytes - Comprimido: 329 bytes 
+[2024-11-02 15:59:38] [VIDEO] [DECRYPT] Reduccion: 89.898679766656%
+[2024-11-02 15:59:40] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/caa6339a.m3u8
+[2024-11-02 15:59:40] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:59:40] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/caa6339a.m3u8.br
+[2024-11-02 15:59:40] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:59:40] [VIDEO] [DECRYPT] Video servido en: 0.73ms - Original: 3259 bytes - Comprimido: 323 bytes 
+[2024-11-02 15:59:40] [VIDEO] [DECRYPT] Reduccion: 90.088984351028%
+[2024-11-02 15:59:42] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/218eea60.m3u8
+[2024-11-02 15:59:42] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 15:59:42] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/218eea60.m3u8.br
+[2024-11-02 15:59:42] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 15:59:42] [VIDEO] [DECRYPT] Video servido en: 0.71ms - Original: 5328 bytes - Comprimido: 348 bytes 
+[2024-11-02 15:59:42] [VIDEO] [DECRYPT] Reduccion: 93.468468468468%
+[2024-11-02 16:01:17] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/048dd268.m3u8
+[2024-11-02 16:01:17] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 16:01:17] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/048dd268.m3u8.br
+[2024-11-02 16:01:17] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 16:01:17] [VIDEO] [DECRYPT] Video servido en: 1.34ms - Original: 8891 bytes - Comprimido: 417 bytes 
+[2024-11-02 16:01:17] [VIDEO] [DECRYPT] Reduccion: 95.309863907322%
+[2024-11-02 16:01:24] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/38e0165e.m3u8
+[2024-11-02 16:01:24] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 16:01:24] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/38e0165e.m3u8.br
+[2024-11-02 16:01:24] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 16:01:24] [VIDEO] [DECRYPT] Video servido en: 0.69ms - Original: 6020 bytes - Comprimido: 358 bytes 
+[2024-11-02 16:01:24] [VIDEO] [DECRYPT] Reduccion: 94.053156146179%
+[2024-11-02 16:01:29] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/78292897.m3u8
+[2024-11-02 16:01:29] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 16:01:29] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/78292897.m3u8.br
+[2024-11-02 16:01:29] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 16:01:29] [VIDEO] [DECRYPT] Video servido en: 0.7ms - Original: 9229 bytes - Comprimido: 465 bytes 
+[2024-11-02 16:01:29] [VIDEO] [DECRYPT] Reduccion: 94.961534294073%
+[2024-11-02 16:01:34] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/b34ad5bc.m3u8
+[2024-11-02 16:01:34] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 16:01:34] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/b34ad5bc.m3u8.br
+[2024-11-02 16:01:34] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 16:01:34] [VIDEO] [DECRYPT] Video servido en: 0.75ms - Original: 4408 bytes - Comprimido: 334 bytes 
+[2024-11-02 16:01:34] [VIDEO] [DECRYPT] Reduccion: 92.422867513612%
+[2024-11-02 16:01:37] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/cb1865e7.m3u8
+[2024-11-02 16:01:37] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 16:01:37] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/cb1865e7.m3u8.br
+[2024-11-02 16:01:37] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 16:01:37] [VIDEO] [DECRYPT] Video servido en: 1.17ms - Original: 5902 bytes - Comprimido: 369 bytes 
+[2024-11-02 16:01:37] [VIDEO] [DECRYPT] Reduccion: 93.747882073873%
+[2024-11-02 16:01:43] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/07bb07a6.m3u8
+[2024-11-02 16:01:43] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 16:01:43] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/07bb07a6.m3u8.br
+[2024-11-02 16:01:43] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 16:01:43] [VIDEO] [DECRYPT] Video servido en: 0.8ms - Original: 7281 bytes - Comprimido: 399 bytes 
+[2024-11-02 16:01:43] [VIDEO] [DECRYPT] Reduccion: 94.519983518747%
+[2024-11-02 16:01:45] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/a7275909.m3u8
+[2024-11-02 16:01:45] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 16:01:45] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/a7275909.m3u8.br
+[2024-11-02 16:01:45] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 16:01:45] [VIDEO] [DECRYPT] Video servido en: 0.54ms - Original: 11874 bytes - Comprimido: 495 bytes 
+[2024-11-02 16:01:45] [VIDEO] [DECRYPT] Reduccion: 95.831227892875%
+[2024-11-02 16:01:50] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/db777128.m3u8
+[2024-11-02 16:01:50] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 16:01:50] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/db777128.m3u8.br
+[2024-11-02 16:01:50] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 16:01:50] [VIDEO] [DECRYPT] Video servido en: 0.74ms - Original: 6593 bytes - Comprimido: 384 bytes 
+[2024-11-02 16:01:50] [VIDEO] [DECRYPT] Reduccion: 94.175640831185%
+[2024-11-02 16:01:52] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/057d3d98.m3u8
+[2024-11-02 16:01:52] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 16:01:52] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/057d3d98.m3u8.br
+[2024-11-02 16:01:52] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 16:01:52] [VIDEO] [DECRYPT] Video servido en: 0.53ms - Original: 6821 bytes - Comprimido: 391 bytes 
+[2024-11-02 16:01:52] [VIDEO] [DECRYPT] Reduccion: 94.267702682891%
+[2024-11-02 16:01:59] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/e8da3d5e.m3u8
+[2024-11-02 16:01:59] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 16:01:59] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/e8da3d5e.m3u8.br
+[2024-11-02 16:01:59] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 16:01:59] [VIDEO] [DECRYPT] Video servido en: 1.01ms - Original: 6703 bytes - Comprimido: 402 bytes 
+[2024-11-02 16:01:59] [VIDEO] [DECRYPT] Reduccion: 94.002685364762%
+[2024-11-02 16:02:06] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/30a4f6ff.m3u8
+[2024-11-02 16:02:06] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 16:02:06] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/30a4f6ff.m3u8.br
+[2024-11-02 16:02:06] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 16:02:06] [VIDEO] [DECRYPT] Video servido en: 0.98ms - Original: 4630 bytes - Comprimido: 391 bytes 
+[2024-11-02 16:02:06] [VIDEO] [DECRYPT] Reduccion: 91.555075593952%
+[2024-11-02 16:02:11] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/5f93d2c3.m3u8
+[2024-11-02 16:02:11] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 16:02:11] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/5f93d2c3.m3u8.br
+[2024-11-02 16:02:11] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 16:02:11] [VIDEO] [DECRYPT] Video servido en: 1.22ms - Original: 9445 bytes - Comprimido: 536 bytes 
+[2024-11-02 16:02:11] [VIDEO] [DECRYPT] Reduccion: 94.325039703547%
+[2024-11-02 16:02:19] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/fe91113c.m3u8
+[2024-11-02 16:02:19] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 16:02:19] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/fe91113c.m3u8.br
+[2024-11-02 16:02:19] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 16:02:19] [VIDEO] [DECRYPT] Video servido en: 0.92ms - Original: 3829 bytes - Comprimido: 361 bytes 
+[2024-11-02 16:02:19] [VIDEO] [DECRYPT] Reduccion: 90.571950901019%
+[2024-11-02 16:02:26] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/f8ec0bb8.m3u8
+[2024-11-02 16:02:26] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 16:02:26] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/f8ec0bb8.m3u8.br
+[2024-11-02 16:02:26] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 16:02:26] [VIDEO] [DECRYPT] Video servido en: 0.81ms - Original: 3255 bytes - Comprimido: 335 bytes 
+[2024-11-02 16:02:26] [VIDEO] [DECRYPT] Reduccion: 89.708141321045%
+[2024-11-02 16:02:29] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/bdabb803.m3u8
+[2024-11-02 16:02:29] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 16:02:29] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/bdabb803.m3u8.br
+[2024-11-02 16:02:29] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 16:02:29] [VIDEO] [DECRYPT] Video servido en: 0.72ms - Original: 2682 bytes - Comprimido: 331 bytes 
+[2024-11-02 16:02:29] [VIDEO] [DECRYPT] Reduccion: 87.65846383296%
+[2024-11-02 16:02:33] [VIDEO] [DECRYPT] Iniciando carga del video: /home/drm/public_html/cache/6738e630.m3u8
+[2024-11-02 16:02:33] [VIDEO] [DECRYPT] Usando compresión Brotli
+[2024-11-02 16:02:33] [VIDEO] [DECRYPT] Usando versión comprimida existente - /home/drm/public_html/cache/6738e630.m3u8.br
+[2024-11-02 16:02:33] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
+[2024-11-02 16:02:33] [VIDEO] [DECRYPT] Video servido en: 0.69ms - Original: 5435 bytes - Comprimido: 399 bytes 
+[2024-11-02 16:02:33] [VIDEO] [DECRYPT] Reduccion: 92.658693652254%
