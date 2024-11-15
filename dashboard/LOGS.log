@@ -5265,3 +5265,292 @@
 [2024-10-30 21:56:39] [PROCESS] Número de segmentos TS: 82
 [2024-10-30 21:56:39] [PROCESS] Video procesado exitosamente
 [2024-10-30 21:56:39] [PROCESS] ..................................................................................
+[2024-11-13 15:29:56] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-13 15:30:01] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-13 15:30:05] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-13 15:30:09] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-13 15:30:13] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-13 15:30:17] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-13 15:30:21] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-13 15:30:25] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-13 15:30:25] [UPLOAD] Último chunk recibido, procesando archivo completo
+[2024-11-13 15:30:25] [UPLOAD] Archivo renombrado correctamente: /home/drm/videos/Untitled.mp4
+[2024-11-13 15:30:25] [UPLOAD] VideoId generado: a70f24fb2417324014de25f3a5881baa
+[2024-11-13 15:30:25] [UPLOAD] Generando clave de encriptación
+[2024-11-13 15:30:25] [UPLOAD] Generando clave de encriptación para videoId: a70f24fb2417324014de25f3a5881baa
+[2024-11-13 15:30:25] [UPLOAD] Creando directorio: /home/drm/public_html/dashboard/processed_videos/a70f24fb2417324014de25f3a5881baa/
+[2024-11-13 15:30:25] [UPLOAD] Clave de encriptación generada
+[2024-11-13 15:30:25] [UPLOAD] Archivo de clave creado: /home/drm/public_html/dashboard/processed_videos/a70f24fb2417324014de25f3a5881baa/enc.key
+[2024-11-13 15:30:25] [UPLOAD] Archivo keyinfo creado: /home/drm/public_html/dashboard/processed_videos/a70f24fb2417324014de25f3a5881baa/enc.keyinfo
+[2024-11-13 15:30:25] [UPLOAD] Clave de encriptación generada exitosamente
+[2024-11-13 15:30:25] [UPLOAD] Preparando consulta SQL: INSERT INTO videos (id_video, nombre_video, url_video, fecha, estado) VALUES (?, ?, ?, ?, 'PROCESSING')
+[2024-11-13 15:30:25] [UPLOAD] Ejecutando consulta SQL
+[2024-11-13 15:30:25] [UPLOAD] Datos insertados correctamente en la base de datos
+[2024-11-13 15:30:25] [UPLOAD] Esperando 5 segundos antes de iniciar el procesamiento
+[2024-11-13 15:30:28] [UPLOAD] Iniciando procesamiento de video en segundo plano
+[2024-11-13 15:30:28] [UPLOAD] Procesamiento de video iniciado
+[2024-11-13 15:30:28] [UPLOAD] Respuesta final: {"status":"success","fileName":"Untitled.mp4","fileSize":8461882,"uploadDate":"2024-11-13 15:30:25","videoId":"a70f24fb2417324014de25f3a5881baa","estado":"PROCESSING"}
+[2024-11-13 15:30:29] [PROCESS] Script cargando...
+[2024-11-13 15:30:59] [PROCESS] Script iniciado...
+[2024-11-13 15:30:59] [PROCESS] Verificando archivos de entrada:
+[2024-11-13 15:30:59] [PROCESS] Archivo de entrada existe: Sí
+[2024-11-13 15:30:59] [PROCESS] Directorio de segmentos existe: Sí
+[2024-11-13 15:30:59] [PROCESS] Ejecutando comando FFmpeg (HLS): /usr/bin/ffmpeg -v debug -i '/home/drm/videos/Untitled.mp4' -c:v libx264 -c:a aac -hls_time 10 -hls_key_info_file '/home/drm/public_html/dashboard/processed_videos/a70f24fb2417324014de25f3a5881baa/enc.keyinfo' -hls_playlist_type vod -hls_segment_filename '/home/drm/public_html/dashboard/processed_videos/a70f24fb2417324014de25f3a5881baa/segment_%03d.ts' -hls_base_url 'https://drm.eweo.com/dashboard/processed_videos/a70f24fb2417324014de25f3a5881baa/' '/home/drm/public_html/dashboard/processed_videos/a70f24fb2417324014de25f3a5881baa/playlist.m3u8'
+[2024-11-13 15:31:48] [PROCESS] Salida de FFmpeg (HLS): Array
+[2024-11-13 15:31:48] [PROCESS] Ejecutando comando FFmpeg (Miniatura): /usr/bin/ffmpeg -v debug -i '/home/drm/videos/Untitled.mp4' -vf "select='eq(pict_type\,I)*gte(n\,3)',scale=200:-1" -frames:v 1 '/home/drm/public_html/portadas/a70f24fb2417324014de25f3a5881baa.jpg'
+[2024-11-13 15:31:48] [PROCESS] Verificando archivos de salida:
+[2024-11-13 15:31:48] [PROCESS] Archivo m3u8 existe: Sí
+[2024-11-13 15:31:48] [PROCESS] Número de segmentos TS: 34
+[2024-11-13 15:31:48] [PROCESS] Video procesado exitosamente
+[2024-11-13 15:31:48] [PROCESS] ..................................................................................
+[2024-11-14 23:21:10] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:21:17] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:21:24] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:21:30] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:21:37] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:21:44] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:21:52] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:22:01] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:22:08] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:22:15] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:22:22] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:22:28] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:22:35] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:22:41] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:22:48] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:22:54] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:23:01] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:23:07] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:23:13] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:23:20] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:23:26] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:23:33] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:23:40] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:23:47] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:23:54] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:24:02] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:24:11] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:24:19] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:24:27] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:24:34] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:24:42] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:24:50] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:24:59] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:25:06] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:25:13] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:25:19] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:25:26] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:25:33] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:25:40] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:25:46] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:25:54] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:26:07] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:26:16] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:26:23] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:26:34] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:26:42] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:26:50] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:26:57] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:27:04] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:27:11] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:27:18] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:27:26] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:27:33] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:27:41] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:27:47] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:27:58] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:28:07] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:28:15] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:28:23] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:28:33] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:28:41] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:28:49] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:28:58] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:29:07] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:29:14] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:29:22] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:29:29] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:29:38] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:29:46] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:29:53] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:30:00] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:30:09] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:30:17] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:30:25] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:30:34] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:30:45] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:30:55] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:31:07] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:31:20] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:31:30] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:31:39] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:31:47] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:31:54] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:32:02] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:32:09] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:32:17] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:32:24] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:32:32] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:32:39] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:32:47] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:32:55] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:33:03] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:33:11] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:33:18] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:33:27] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:33:34] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:33:43] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:33:52] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:33:59] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:34:07] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:34:14] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:34:22] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:34:30] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:34:38] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:34:46] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:34:54] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:35:03] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:35:11] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:35:20] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-14 23:35:25] [UPLOAD] Último chunk recibido, procesando archivo completo
+[2024-11-14 23:35:25] [UPLOAD] Archivo renombrado correctamente: /home/drm/videos/tradingenlazona.mp4
+[2024-11-14 23:35:25] [UPLOAD] VideoId generado: 6025bfdfcca4a915d3b6de3f65010331
+[2024-11-14 23:35:25] [UPLOAD] Generando clave de encriptación
+[2024-11-14 23:35:25] [UPLOAD] Generando clave de encriptación para videoId: 6025bfdfcca4a915d3b6de3f65010331
+[2024-11-14 23:35:25] [UPLOAD] Creando directorio: /home/drm/public_html/dashboard/processed_videos/6025bfdfcca4a915d3b6de3f65010331/
+[2024-11-14 23:35:25] [UPLOAD] Clave de encriptación generada
+[2024-11-14 23:35:25] [UPLOAD] Archivo de clave creado: /home/drm/public_html/dashboard/processed_videos/6025bfdfcca4a915d3b6de3f65010331/enc.key
+[2024-11-14 23:35:25] [UPLOAD] Archivo keyinfo creado: /home/drm/public_html/dashboard/processed_videos/6025bfdfcca4a915d3b6de3f65010331/enc.keyinfo
+[2024-11-14 23:35:25] [UPLOAD] Clave de encriptación generada exitosamente
+[2024-11-14 23:35:25] [UPLOAD] Preparando consulta SQL: INSERT INTO videos (id_video, nombre_video, url_video, fecha, estado) VALUES (?, ?, ?, ?, 'PROCESSING')
+[2024-11-14 23:35:25] [UPLOAD] Ejecutando consulta SQL
+[2024-11-14 23:35:25] [UPLOAD] Datos insertados correctamente en la base de datos
+[2024-11-14 23:35:25] [UPLOAD] Esperando 5 segundos antes de iniciar el procesamiento
+[2024-11-14 23:35:28] [UPLOAD] Iniciando procesamiento de video en segundo plano
+[2024-11-14 23:35:28] [UPLOAD] Procesamiento de video iniciado
+[2024-11-14 23:35:28] [UPLOAD] Respuesta final: {"status":"success","fileName":"tradingenlazona.mp4","fileSize":114864880,"uploadDate":"2024-11-14 23:35:25","videoId":"6025bfdfcca4a915d3b6de3f65010331","estado":"PROCESSING"}
+[2024-11-14 23:35:28] [PROCESS] Script cargando...
+[2024-11-14 23:35:58] [PROCESS] Script iniciado...
+[2024-11-14 23:35:58] [PROCESS] Verificando archivos de entrada:
+[2024-11-14 23:35:58] [PROCESS] Archivo de entrada existe: Sí
+[2024-11-14 23:35:58] [PROCESS] Directorio de segmentos existe: Sí
+[2024-11-14 23:35:58] [PROCESS] Ejecutando comando FFmpeg (HLS): /usr/bin/ffmpeg -v debug -i '/home/drm/videos/tradingenlazona.mp4' -c:v libx264 -c:a aac -hls_time 10 -hls_key_info_file '/home/drm/public_html/dashboard/processed_videos/6025bfdfcca4a915d3b6de3f65010331/enc.keyinfo' -hls_playlist_type vod -hls_segment_filename '/home/drm/public_html/dashboard/processed_videos/6025bfdfcca4a915d3b6de3f65010331/segment_%03d.ts' -hls_base_url 'https://drm.eweo.com/dashboard/processed_videos/6025bfdfcca4a915d3b6de3f65010331/' '/home/drm/public_html/dashboard/processed_videos/6025bfdfcca4a915d3b6de3f65010331/playlist.m3u8'
+[2024-11-14 23:38:35] [PROCESS] Salida de FFmpeg (HLS): Array
+[2024-11-14 23:38:35] [PROCESS] Ejecutando comando FFmpeg (Miniatura): /usr/bin/ffmpeg -v debug -i '/home/drm/videos/tradingenlazona.mp4' -vf "select='eq(pict_type\,I)*gte(n\,3)',scale=200:-1" -frames:v 1 '/home/drm/public_html/portadas/6025bfdfcca4a915d3b6de3f65010331.jpg'
+[2024-11-14 23:38:35] [PROCESS] Verificando archivos de salida:
+[2024-11-14 23:38:35] [PROCESS] Archivo m3u8 existe: Sí
+[2024-11-14 23:38:35] [PROCESS] Número de segmentos TS: 97
+[2024-11-14 23:38:35] [PROCESS] Video procesado exitosamente
+[2024-11-14 23:38:35] [PROCESS] ..................................................................................
+[2024-11-15 01:21:55] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:21:58] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:22:02] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:22:05] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:22:09] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:22:13] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:22:17] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:22:20] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:22:24] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:22:28] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:22:31] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:22:36] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:22:39] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:22:43] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:22:46] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:22:50] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:22:54] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:22:58] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:23:01] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:23:05] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:23:09] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:23:13] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:23:16] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:23:20] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:23:23] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:23:27] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:23:31] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:23:35] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:23:39] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:23:42] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:23:46] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:23:50] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:23:54] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:23:57] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:24:01] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:24:04] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:24:08] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:24:12] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:24:16] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:24:19] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:24:23] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:24:26] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:24:31] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:24:34] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:24:38] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:24:41] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:24:45] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:24:49] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:24:53] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:24:56] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:25:00] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:25:04] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:25:07] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:25:11] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:25:15] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:25:19] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:25:22] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:25:26] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:25:29] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:25:34] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:25:37] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:25:41] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:25:45] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:25:48] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:25:52] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:25:56] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:25:59] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:26:03] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:26:07] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:26:11] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:26:14] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:26:18] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:26:22] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:26:25] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:26:29] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:26:33] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:26:36] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:26:40] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:26:43] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:26:47] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:26:51] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:26:55] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:26:58] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:27:02] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:27:05] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:27:09] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:27:13] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:27:16] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:27:20] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:27:24] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:27:28] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:27:31] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:27:35] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:27:38] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:27:42] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:27:46] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:27:50] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:27:53] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:27:57] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:28:00] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:28:04] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:28:08] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:28:12] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:28:15] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:28:19] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:28:22] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:28:26] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:28:30] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:28:34] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:28:37] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:28:41] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2024-11-15 01:28:45] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}

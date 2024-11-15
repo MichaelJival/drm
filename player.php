@@ -24,39 +24,61 @@ $videoId = $_GET['id'] ?? 0;
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css">
     <style>
+    .video {
+            width: 100% !important;
+            height: 100% !important;
+            position: absolute !important;
+        }
+
+     
+        @media screen and (min-width: 768px) {
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background-color: black;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5); 
         }
+
+        .video {
+            width: 100% !important;
+            height: 100% !important;
+            position: absolute !important;
+        }
+
+
         .video-container {
             position: relative;
             width: 100% !important;
             height: 100% !important;
-            background-color: black;
         }
         .video {
             width: 100% !important;
             height: 100% !important;
-            margin-top: 0px !important;
             position: absolute !important;
         }
         .controls {
             position: absolute;
             bottom: 38px !important;
-            left: 15%;
+            left: 18%;
             transform: translateX(-50%);
             display: flex;
             gap: 10px;
             font-size: 12px;
             color: white;
-            /*background-color: rgba(0, 0, 0, 0.5);*/
             border-radius: 5px;
             padding: 5px;
+            gap: 35px !important;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        .video-container:hover .controls, .show-controls .controls {
+            opacity: 1;
+            pointer-events: auto;
         }
         .controls button {
             background: none;
@@ -65,21 +87,93 @@ $videoId = $_GET['id'] ?? 0;
             cursor: pointer;
             font-size: 18px;
         }
+        .seconds {
+            font-size: 14px;
+        }
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;        
+            z-index: 2;
+        }
+        .play-button i {
+            color: white;
+            font-size: 40px;
+            margin-left: 5px;
+        }
+
+    }
+
+    @media (max-width: 767px) {
+    
+        .controls,  .play-button, .play-button i, .controls button, .seconds {
+            display: none;
+            visibility: hidden;
+            
+        }
+    
+}
     </style>
 </head>
 <body>
     <div class="video-container">
         <video class="video" id="video" controls></video>
         <div class="controls">
-            <button title="Rebobinar 5 segundos" onclick="skipBack(10)"><i class="fa-sharp fa-regular fa-rotate-left"></i></button>
-            <button title="Adelantar 5 segundos" onclick="skipAhead(10)"><i class="fa-sharp fa-regular fa-rotate-right"></i></button></button>
+            <button title="Rebobinar 5 segundos" onclick="skipBack(5)">
+                <i class="fa-sharp fa-regular fa-rotate-left"></i>
+                <span class="seconds"> 5s</span>
+            </button>
+            <button title="Adelantar 5 segundos" onclick="skipAhead(5)">
+                <i class="fa-sharp fa-regular fa-rotate-right"></i>
+                <span class="seconds">5s</span>
+            </button>
+        </div>
+        <div class="play-button" id="playButton">
+            <i class="fas fa-play"></i>
         </div>
     </div>
 
     <script>
         const videoId = "<?php echo $videoId; ?>";
         const videoElement = document.getElementById('video');
+        const playButton = document.getElementById('playButton');
         let halfwayNotified = false;
+
+        if ('disablePictureInPicture' in HTMLVideoElement.prototype) {
+            videoElement.disablePictureInPicture = true;
+        }
+
+        videoElement.addEventListener('click', togglePlayPause);
+        playButton.addEventListener('click', togglePlayPause);
+
+        function togglePlayPause() {
+            if (videoElement.paused) {
+                videoElement.play();
+            } else {
+                videoElement.pause();
+            }
+            updatePlayButton();
+        }
+
+        function updatePlayButton() {
+            if (videoElement.paused) {
+                playButton.style.opacity = 1;
+            } else {
+                playButton.style.opacity = 0;
+            }
+        }
+
+        videoElement.addEventListener('play', updatePlayButton);
+        videoElement.addEventListener('pause', updatePlayButton);
 
         document.addEventListener('DOMContentLoaded', function() {
             if (!videoId) {
@@ -120,12 +214,14 @@ $videoId = $_GET['id'] ?? 0;
                 hls.loadSource(videoSrc);
                 hls.attachMedia(videoElement);
                 hls.on(Hls.Events.MANIFEST_PARSED, () => {
-                    videoElement.currentTime = 2; // Establece el tiempo inicial en el segundo 2
+                    videoElement.currentTime = 2;
+                    updatePlayButton(); // Forzamos la actualización para asegurar que el estado inicial es correcto
                     console.log('Video listo para reproducirse');
                 });
             } else if (videoElement.canPlayType('application/vnd.apple.mpegurl')) {
                 videoElement.src = videoSrc;
                 videoElement.addEventListener('loadedmetadata', () => {
+                    updatePlayButton();
                     console.log('Video listo para reproducirse');
                 });
             } else {
