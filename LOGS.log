@@ -3366,3 +3366,230 @@
 [2024-11-02 16:02:33] [VIDEO] [DECRYPT] Archivo enviado mediante readfile()
 [2024-11-02 16:02:33] [VIDEO] [DECRYPT] Video servido en: 0.69ms - Original: 5435 bytes - Comprimido: 399 bytes 
 [2024-11-02 16:02:33] [VIDEO] [DECRYPT] Reduccion: 92.658693652254%
+[2024-11-16 13:34:13] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:34:13] [VIDEO] [DECRYPT] Generated cache key: a6095a6f
+[2024-11-16 13:34:13] [VIDEO] [DECRYPT] Cache hit found for key: a6095a6f
+[2024-11-16 13:34:13] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:34:13] [VIDEO] [DECRYPT] Video served from cache in 1.19ms
+[2024-11-16 13:34:38] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:34:38] [VIDEO] [DECRYPT] Generated cache key: e96e9108
+[2024-11-16 13:34:38] [VIDEO] [DECRYPT] Cache hit found for key: e96e9108
+[2024-11-16 13:34:38] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:34:38] [VIDEO] [DECRYPT] Video served from cache in 1.78ms
+[2024-11-16 13:34:43] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:34:43] [VIDEO] [DECRYPT] Generated cache key: 6904bc8d
+[2024-11-16 13:34:43] [VIDEO] [DECRYPT] Cache hit found for key: 6904bc8d
+[2024-11-16 13:34:43] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:34:43] [VIDEO] [DECRYPT] Video served from cache in 2.11ms
+[2024-11-16 13:34:46] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:34:46] [VIDEO] [DECRYPT] Generated cache key: ce5aba06
+[2024-11-16 13:34:46] [VIDEO] [DECRYPT] Cache hit found for key: ce5aba06
+[2024-11-16 13:34:46] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:34:46] [VIDEO] [DECRYPT] Video served from cache in 0.86ms
+[2024-11-16 13:36:22] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:36:22] [VIDEO] [DECRYPT] Generated cache key: 1e4cdb86
+[2024-11-16 13:36:22] [VIDEO] [DECRYPT] Cache hit found for key: 1e4cdb86
+[2024-11-16 13:36:22] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:36:22] [VIDEO] [DECRYPT] Video served from cache in 1.6ms
+[2024-11-16 13:36:26] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:36:26] [VIDEO] [DECRYPT] Generated cache key: 71ad0930
+[2024-11-16 13:36:26] [VIDEO] [DECRYPT] Cache hit found for key: 71ad0930
+[2024-11-16 13:36:26] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:36:26] [VIDEO] [DECRYPT] Video served from cache in 1.53ms
+[2024-11-16 13:36:29] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:36:29] [VIDEO] [DECRYPT] Generated cache key: 9b815024
+[2024-11-16 13:36:29] [VIDEO] [DECRYPT] Cache hit found for key: 9b815024
+[2024-11-16 13:36:29] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:36:29] [VIDEO] [DECRYPT] Video served from cache in 0.91ms
+[2024-11-16 13:36:34] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:36:34] [VIDEO] [DECRYPT] Generated cache key: b7b6ee75
+[2024-11-16 13:36:34] [VIDEO] [DECRYPT] Cache hit found for key: b7b6ee75
+[2024-11-16 13:36:34] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:36:34] [VIDEO] [DECRYPT] Video served from cache in 1.31ms
+[2024-11-16 13:36:37] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:36:37] [VIDEO] [DECRYPT] Generated cache key: 2ff1f4b0
+[2024-11-16 13:36:37] [VIDEO] [DECRYPT] Cache hit found for key: 2ff1f4b0
+[2024-11-16 13:36:37] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:36:37] [VIDEO] [DECRYPT] Video served from cache in 0.89ms
+[2024-11-16 13:36:41] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:36:41] [VIDEO] [DECRYPT] Generated cache key: e27f896a
+[2024-11-16 13:36:41] [VIDEO] [DECRYPT] Cache hit found for key: e27f896a
+[2024-11-16 13:36:41] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:36:41] [VIDEO] [DECRYPT] Video served from cache in 0.9ms
+[2024-11-16 13:36:44] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:36:44] [VIDEO] [DECRYPT] Generated cache key: caa6339a
+[2024-11-16 13:36:44] [VIDEO] [DECRYPT] Cache hit found for key: caa6339a
+[2024-11-16 13:36:44] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:36:44] [VIDEO] [DECRYPT] Video served from cache in 0.78ms
+[2024-11-16 13:36:48] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:36:48] [VIDEO] [DECRYPT] Generated cache key: 218eea60
+[2024-11-16 13:36:48] [VIDEO] [DECRYPT] Cache hit found for key: 218eea60
+[2024-11-16 13:36:48] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:36:48] [VIDEO] [DECRYPT] Video served from cache in 1.01ms
+[2024-11-16 13:36:51] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:36:51] [VIDEO] [DECRYPT] Generated cache key: 048dd268
+[2024-11-16 13:36:51] [VIDEO] [DECRYPT] Cache hit found for key: 048dd268
+[2024-11-16 13:36:51] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:36:51] [VIDEO] [DECRYPT] Video served from cache in 1.09ms
+[2024-11-16 13:37:29] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:37:29] [VIDEO] [DECRYPT] Generated cache key: 38e0165e
+[2024-11-16 13:37:29] [VIDEO] [DECRYPT] Cache hit found for key: 38e0165e
+[2024-11-16 13:37:29] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:37:29] [VIDEO] [DECRYPT] Video served from cache in 1.21ms
+[2024-11-16 13:37:38] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:37:38] [VIDEO] [DECRYPT] Generated cache key: 78292897
+[2024-11-16 13:37:38] [VIDEO] [DECRYPT] Cache hit found for key: 78292897
+[2024-11-16 13:37:38] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:37:38] [VIDEO] [DECRYPT] Video served from cache in 0.95ms
+[2024-11-16 13:37:49] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:37:49] [VIDEO] [DECRYPT] Generated cache key: b34ad5bc
+[2024-11-16 13:37:49] [VIDEO] [DECRYPT] Cache hit found for key: b34ad5bc
+[2024-11-16 13:37:49] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:37:49] [VIDEO] [DECRYPT] Video served from cache in 1.2ms
+[2024-11-16 13:38:00] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:38:00] [VIDEO] [DECRYPT] Generated cache key: cb1865e7
+[2024-11-16 13:38:00] [VIDEO] [DECRYPT] Cache hit found for key: cb1865e7
+[2024-11-16 13:38:00] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:38:00] [VIDEO] [DECRYPT] Video served from cache in 1.73ms
+[2024-11-16 13:39:31] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:39:31] [VIDEO] [DECRYPT] Generated cache key: 218eea60
+[2024-11-16 13:39:31] [VIDEO] [DECRYPT] Cache hit found for key: 218eea60
+[2024-11-16 13:39:31] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:39:31] [VIDEO] [DECRYPT] Video served from cache in 0.82ms
+[2024-11-16 13:39:35] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:39:35] [VIDEO] [DECRYPT] Generated cache key: e27f896a
+[2024-11-16 13:39:35] [VIDEO] [DECRYPT] Cache hit found for key: e27f896a
+[2024-11-16 13:39:35] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:39:35] [VIDEO] [DECRYPT] Video served from cache in 0.48ms
+[2024-11-16 13:39:57] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:39:57] [VIDEO] [DECRYPT] Generated cache key: 38e0165e
+[2024-11-16 13:39:57] [VIDEO] [DECRYPT] Cache hit found for key: 38e0165e
+[2024-11-16 13:39:57] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:39:57] [VIDEO] [DECRYPT] Video served from cache in 0.65ms
+[2024-11-16 13:40:01] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:40:01] [VIDEO] [DECRYPT] Generated cache key: cb1865e7
+[2024-11-16 13:40:01] [VIDEO] [DECRYPT] Cache hit found for key: cb1865e7
+[2024-11-16 13:40:01] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:40:01] [VIDEO] [DECRYPT] Video served from cache in 0.71ms
+[2024-11-16 13:40:04] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:40:04] [VIDEO] [DECRYPT] Generated cache key: fa285d77
+[2024-11-16 13:40:04] [VIDEO] [DECRYPT] Cache hit found for key: fa285d77
+[2024-11-16 13:40:04] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:40:04] [VIDEO] [DECRYPT] Video served from cache in 1.08ms
+[2024-11-16 13:40:06] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:40:06] [VIDEO] [DECRYPT] Generated cache key: 37d059bf
+[2024-11-16 13:40:06] [VIDEO] [DECRYPT] Cache hit found for key: 37d059bf
+[2024-11-16 13:40:06] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:40:06] [VIDEO] [DECRYPT] Video served from cache in 1.07ms
+[2024-11-16 13:40:07] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:40:07] [VIDEO] [DECRYPT] Generated cache key: b9af3abc
+[2024-11-16 13:40:07] [VIDEO] [DECRYPT] Cache hit found for key: b9af3abc
+[2024-11-16 13:40:07] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:40:07] [VIDEO] [DECRYPT] Video served from cache in 0.92ms
+[2024-11-16 13:42:16] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:42:16] [VIDEO] [DECRYPT] Generated cache key: d1f9f792
+[2024-11-16 13:42:16] [VIDEO] [DECRYPT] Cache hit found for key: d1f9f792
+[2024-11-16 13:42:16] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:42:16] [VIDEO] [DECRYPT] Video served from cache in 1.39ms
+[2024-11-16 13:42:21] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:42:21] [VIDEO] [DECRYPT] Generated cache key: 290d1823
+[2024-11-16 13:42:21] [VIDEO] [DECRYPT] Cache hit found for key: 290d1823
+[2024-11-16 13:42:21] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:42:21] [VIDEO] [DECRYPT] Video served from cache in 1.19ms
+[2024-11-16 13:42:29] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:42:29] [VIDEO] [DECRYPT] Generated cache key: 1e4cdb86
+[2024-11-16 13:42:29] [VIDEO] [DECRYPT] Cache hit found for key: 1e4cdb86
+[2024-11-16 13:42:29] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:42:29] [VIDEO] [DECRYPT] Video served from cache in 1.11ms
+[2024-11-16 13:42:32] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:42:32] [VIDEO] [DECRYPT] Generated cache key: 71ad0930
+[2024-11-16 13:42:32] [VIDEO] [DECRYPT] Cache hit found for key: 71ad0930
+[2024-11-16 13:42:32] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:42:32] [VIDEO] [DECRYPT] Video served from cache in 0.91ms
+[2024-11-16 13:42:35] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:42:35] [VIDEO] [DECRYPT] Generated cache key: 9b815024
+[2024-11-16 13:42:35] [VIDEO] [DECRYPT] Cache hit found for key: 9b815024
+[2024-11-16 13:42:35] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:42:35] [VIDEO] [DECRYPT] Video served from cache in 0.5ms
+[2024-11-16 13:42:36] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:42:36] [VIDEO] [DECRYPT] Generated cache key: b7b6ee75
+[2024-11-16 13:42:36] [VIDEO] [DECRYPT] Cache hit found for key: b7b6ee75
+[2024-11-16 13:42:36] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:42:36] [VIDEO] [DECRYPT] Video served from cache in 0.72ms
+[2024-11-16 13:42:38] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:42:38] [VIDEO] [DECRYPT] Generated cache key: 2ff1f4b0
+[2024-11-16 13:42:38] [VIDEO] [DECRYPT] Cache hit found for key: 2ff1f4b0
+[2024-11-16 13:42:38] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:42:38] [VIDEO] [DECRYPT] Video served from cache in 0.48ms
+[2024-11-16 13:42:39] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:42:39] [VIDEO] [DECRYPT] Generated cache key: e27f896a
+[2024-11-16 13:42:39] [VIDEO] [DECRYPT] Cache hit found for key: e27f896a
+[2024-11-16 13:42:39] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:42:39] [VIDEO] [DECRYPT] Video served from cache in 0.43ms
+[2024-11-16 13:42:40] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:42:40] [VIDEO] [DECRYPT] Generated cache key: caa6339a
+[2024-11-16 13:42:40] [VIDEO] [DECRYPT] Cache hit found for key: caa6339a
+[2024-11-16 13:42:40] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:42:40] [VIDEO] [DECRYPT] Video served from cache in 0.56ms
+[2024-11-16 13:42:41] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:42:41] [VIDEO] [DECRYPT] Generated cache key: 218eea60
+[2024-11-16 13:42:41] [VIDEO] [DECRYPT] Cache hit found for key: 218eea60
+[2024-11-16 13:42:41] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:42:41] [VIDEO] [DECRYPT] Video served from cache in 0.51ms
+[2024-11-16 13:42:42] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:42:42] [VIDEO] [DECRYPT] Generated cache key: 048dd268
+[2024-11-16 13:42:42] [VIDEO] [DECRYPT] Cache hit found for key: 048dd268
+[2024-11-16 13:42:42] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:42:42] [VIDEO] [DECRYPT] Video served from cache in 0.64ms
+[2024-11-16 13:43:07] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:43:07] [VIDEO] [DECRYPT] Generated cache key: 048dd268
+[2024-11-16 13:43:07] [VIDEO] [DECRYPT] Cache hit found for key: 048dd268
+[2024-11-16 13:43:07] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:43:07] [VIDEO] [DECRYPT] Video served from cache in 1.09ms
+[2024-11-16 13:43:15] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:43:15] [VIDEO] [DECRYPT] Generated cache key: 30a4f6ff
+[2024-11-16 13:43:15] [VIDEO] [DECRYPT] Cache hit found for key: 30a4f6ff
+[2024-11-16 13:43:15] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:43:15] [VIDEO] [DECRYPT] Video served from cache in 1.12ms
+[2024-11-16 13:44:31] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:44:31] [VIDEO] [DECRYPT] Generated cache key: a7275909
+[2024-11-16 13:44:31] [VIDEO] [DECRYPT] Cache hit found for key: a7275909
+[2024-11-16 13:44:31] [VIDEO] [DECRYPT] Cache file sizes - Gzip: 667B, Brotli: 495B
+[2024-11-16 13:44:31] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:44:31] [VIDEO] [DECRYPT] Video served from cache in 1.56ms
+[2024-11-16 13:44:45] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:44:45] [VIDEO] [DECRYPT] Generated cache key: e8da3d5e
+[2024-11-16 13:44:45] [VIDEO] [DECRYPT] Cache hit found for key: e8da3d5e
+[2024-11-16 13:44:45] [VIDEO] [DECRYPT] Cache file sizes - Gzip: 509B, Brotli: 402B
+[2024-11-16 13:44:45] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:44:45] [VIDEO] [DECRYPT] Video served from cache in 1.68ms
+[2024-11-16 13:44:51] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:44:51] [VIDEO] [DECRYPT] Generated cache key: 30a4f6ff
+[2024-11-16 13:44:51] [VIDEO] [DECRYPT] Cache hit found for key: 30a4f6ff
+[2024-11-16 13:44:51] [VIDEO] [DECRYPT] Cache file sizes - Gzip: 474B, Brotli: 391B
+[2024-11-16 13:44:51] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:44:51] [VIDEO] [DECRYPT] Video served from cache in 0.52ms
+[2024-11-16 13:44:57] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:44:57] [VIDEO] [DECRYPT] Generated cache key: 5f93d2c3
+[2024-11-16 13:44:57] [VIDEO] [DECRYPT] Cache hit found for key: 5f93d2c3
+[2024-11-16 13:44:57] [VIDEO] [DECRYPT] Cache file sizes - Gzip: 675B, Brotli: 536B
+[2024-11-16 13:44:57] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:44:57] [VIDEO] [DECRYPT] Video served from cache in 1.29ms
+[2024-11-16 13:45:06] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:45:06] [VIDEO] [DECRYPT] Generated cache key: 9ec943c6
+[2024-11-16 13:45:06] [VIDEO] [DECRYPT] Cache hit found for key: 9ec943c6
+[2024-11-16 13:45:06] [VIDEO] [DECRYPT] Cache file sizes - Gzip: 466B, Brotli: 377B
+[2024-11-16 13:45:06] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:45:06] [VIDEO] [DECRYPT] Video served from cache in 1.29ms
+[2024-11-16 13:45:09] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:45:09] [VIDEO] [DECRYPT] Generated cache key: 705ac4d8
+[2024-11-16 13:45:09] [VIDEO] [DECRYPT] Cache hit found for key: 705ac4d8
+[2024-11-16 13:45:09] [VIDEO] [DECRYPT] Cache file sizes - Gzip: 594B, Brotli: 465B
+[2024-11-16 13:45:09] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:45:09] [VIDEO] [DECRYPT] Video served from cache in 1.35ms
+[2024-11-16 13:45:11] [VIDEO] [DECRYPT] Starting video decryption process
+[2024-11-16 13:45:11] [VIDEO] [DECRYPT] Generated cache key: 1c1e8976
+[2024-11-16 13:45:11] [VIDEO] [DECRYPT] Cache hit found for key: 1c1e8976
+[2024-11-16 13:45:11] [VIDEO] [DECRYPT] Cache file sizes - Gzip: 503B, Brotli: 407B
+[2024-11-16 13:45:11] [VIDEO] [DECRYPT] Serving Brotli compressed version
+[2024-11-16 13:45:11] [VIDEO] [DECRYPT] Video served from cache in 1.33ms
