@@ -126,7 +126,7 @@ $videoId = $_GET['id'] ?? 0;
 </head>
 <body>
     <div class="video-container">
-        <video class="video" id="video" controls></video>
+        <video class="video" id="video" controls autoplay allowfullscreen ></video>
         <div class="controls">
             <button title="Rebobinar 5 segundos" onclick="skipBack(5)">
                 <i class="fa-sharp fa-regular fa-rotate-left"></i>
@@ -247,6 +247,9 @@ $videoId = $_GET['id'] ?? 0;
                     videoId: videoId
                 }, '*');
             });
+
+                    
+
         }
 
         function skipAhead(seconds) {
