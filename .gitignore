@@ -8,6 +8,6 @@ icon/
 cache-bk/
 cache/
 cache.old
-LOGS.log-bk
-LOGS.log
+/home/drm/public_html/dashboard/LOGS.log-bk
+/home/drm/public_html/dashboard/LOG.log
 
