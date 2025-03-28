@@ -9,15 +9,36 @@ define('CACHE_EXPIRY', 86400); // 24 horas
 define('LOG_FILE', '/home/drm/public_html/LOGS.log');
 define('ENABLE_LOGGING', true);
 
+// Generar un ID único para esta ejecución del script
+$executionId = uniqid();
+
 /**
  * Función para registrar mensajes de log con formato detallado
  */
 function logMessage($message, $type = 'INFO') {
+    global $executionId;
+    
     if (!ENABLE_LOGGING) return;
     
     $timestamp = date('Y-m-d H:i:s');
-    $logEntry = "[$timestamp] [VIDEO] [DECRYPT] $message\n";
+    $logEntry = "[$timestamp] [VIDEO] [DECRYPT] [$executionId] $message\n";
     file_put_contents(LOG_FILE, $logEntry, FILE_APPEND);
+}
+
+/**
+ * Función para prevenir ejecuciones duplicadas en la misma solicitud
+ */
+function preventDuplicateExecution($cacheKey) {
+    static $processedKeys = [];
+    
+    // Si ya procesamos esta clave en esta ejecución, detener
+    if (isset($processedKeys[$cacheKey])) {
+        return false; // Ya se procesó esta solicitud
+    }
+    
+    // Marcar esta clave como procesada
+    $processedKeys[$cacheKey] = true;
+    return true; // Primera vez que se procesa
 }
 
 /**
@@ -84,8 +105,37 @@ function decryptVideo() {
         
         // Generar clave de caché más corta para mejor manejo de archivos
         $cacheKey = substr(md5($data['content']), 0, 8);
+        
+        // Prevenir procesamiento duplicado
+        if (!preventDuplicateExecution($cacheKey)) {
+            logMessage("Solicitud duplicada detectada para: $cacheKey - omitiendo", 'INFO');
+            return;
+        }
+        
         $originalFile = CACHE_DIR . "/$cacheKey.m3u8";
-        $gzipFile = CACHE_DIR . "/$cacheKey.m3u8.gz"; 
+        $gzipFile = CACHE_DIR . "/$cacheKey.gz"; 
+        
+        // Crear archivo de bloqueo para evitar procesamiento simultáneo
+        $lockFile = CACHE_DIR . "/$cacheKey.lock";
+        $lockAcquired = false;
+        
+        // Obtener bloqueo exclusivo con tiempo de espera
+        $lockHandle = fopen($lockFile, 'c+');
+        if ($lockHandle) {
+            $waitUntil = time() + 5; // Esperar máximo 5 segundos
+            while (time() < $waitUntil) {
+                if (flock($lockHandle, LOCK_EX | LOCK_NB)) {
+                    $lockAcquired = true;
+                    break;
+                }
+                usleep(200000); // Esperar 200ms antes de reintentar
+            }
+        }
+        
+        if (!$lockAcquired) {
+            logMessage("No se pudo adquirir bloqueo para: $cacheKey - otra instancia está procesando", 'WARN');
+            // Continuar sin bloqueo, pero evitará algunas condiciones de carrera
+        }
         
         logMessage("Iniciando carga del video: $originalFile");
         
@@ -174,6 +224,7 @@ function decryptVideo() {
         // Configurar headers comunes
         header('Content-Type: application/vnd.apple.mpegurl');
         header('Cache-Control: max-age=86400');
+        header('X-Cache-Key: ' . $cacheKey); // Para depuración
         
         // Servir el contenido
         if ($compressedFile !== null && file_exists($compressedFile)) {
@@ -196,12 +247,19 @@ function decryptVideo() {
             logMessage("Video servido en: {$executionTime}ms - Sin compresión: $contentSize bytes");
         }
         
+        // Liberar bloqueo si lo obtuvimos
+        if ($lockAcquired && isset($lockHandle)) {
+            flock($lockHandle, LOCK_UN);
+            fclose($lockHandle);
+            @unlink($lockFile);
+        }
+        
         // Limpieza de memoria
         $originalContent = null;
         gc_collect_cycles();
         
         // Posible limpieza de caché
-        cleanupCache();
+        cleanupCache(0.005); // Reducir probabilidad a 0.5%
         
     } catch (Exception $e) {
         $executionTime = round((microtime(true) - $startTime) * 1000, 2);
