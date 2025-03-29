@@ -6277,3 +6277,72 @@
 [2024-11-15 14:12:57] [PROCESS] Número de segmentos TS: 36
 [2024-11-15 14:12:57] [PROCESS] Video procesado exitosamente
 [2024-11-15 14:12:57] [PROCESS] ..................................................................................
+[2025-03-29 13:55:30] [UPLOAD] Iniciando script de carga
+[2025-03-29 12:55:30] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2025-03-29 13:55:33] [UPLOAD] Iniciando script de carga
+[2025-03-29 12:55:33] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2025-03-29 13:55:36] [UPLOAD] Iniciando script de carga
+[2025-03-29 12:55:36] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2025-03-29 13:55:39] [UPLOAD] Iniciando script de carga
+[2025-03-29 12:55:39] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2025-03-29 13:55:42] [UPLOAD] Iniciando script de carga
+[2025-03-29 12:55:42] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2025-03-29 13:55:45] [UPLOAD] Iniciando script de carga
+[2025-03-29 12:55:45] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2025-03-29 13:55:48] [UPLOAD] Iniciando script de carga
+[2025-03-29 12:55:48] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2025-03-29 13:55:51] [UPLOAD] Iniciando script de carga
+[2025-03-29 12:55:51] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2025-03-29 13:55:54] [UPLOAD] Iniciando script de carga
+[2025-03-29 12:55:54] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2025-03-29 13:55:58] [UPLOAD] Iniciando script de carga
+[2025-03-29 12:55:58] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2025-03-29 13:56:00] [UPLOAD] Iniciando script de carga
+[2025-03-29 12:56:00] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2025-03-29 13:56:03] [UPLOAD] Iniciando script de carga
+[2025-03-29 12:56:03] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2025-03-29 13:56:07] [UPLOAD] Iniciando script de carga
+[2025-03-29 12:56:07] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2025-03-29 13:56:10] [UPLOAD] Iniciando script de carga
+[2025-03-29 12:56:10] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2025-03-29 13:56:13] [UPLOAD] Iniciando script de carga
+[2025-03-29 12:56:13] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2025-03-29 13:56:16] [UPLOAD] Iniciando script de carga
+[2025-03-29 12:56:16] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2025-03-29 13:56:19] [UPLOAD] Iniciando script de carga
+[2025-03-29 12:56:19] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2025-03-29 13:56:21] [UPLOAD] Iniciando script de carga
+[2025-03-29 12:56:21] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2025-03-29 13:56:24] [UPLOAD] Iniciando script de carga
+[2025-03-29 12:56:24] [UPLOAD] Respuesta final: {"status":"success","message":"Chunk recibido"}
+[2025-03-29 13:56:27] [UPLOAD] Iniciando script de carga
+[2025-03-29 12:56:27] [UPLOAD] Último chunk recibido, procesando archivo completo
+[2025-03-29 12:56:27] [UPLOAD] Archivo renombrado correctamente: /home/drm/videos/CUENTA.mp4
+[2025-03-29 12:56:27] [UPLOAD] VideoId generado: 2efebeb61db9145023ef132778b17b72
+[2025-03-29 12:56:27] [UPLOAD] Generando clave de encriptación
+[2025-03-29 12:56:27] [UPLOAD] Generando clave de encriptación para videoId: 2efebeb61db9145023ef132778b17b72
+[2025-03-29 12:56:27] [UPLOAD] Creando directorio: /home/drm/public_html/dashboard/processed_videos/2efebeb61db9145023ef132778b17b72/
+[2025-03-29 12:56:27] [UPLOAD] Clave de encriptación generada
+[2025-03-29 12:56:27] [UPLOAD] Archivo de clave creado: /home/drm/public_html/dashboard/processed_videos/2efebeb61db9145023ef132778b17b72/enc.key
+[2025-03-29 12:56:27] [UPLOAD] Archivo keyinfo creado: /home/drm/public_html/dashboard/processed_videos/2efebeb61db9145023ef132778b17b72/enc.keyinfo
+[2025-03-29 12:56:27] [UPLOAD] Clave de encriptación generada exitosamente
+[2025-03-29 12:56:27] [UPLOAD] Preparando consulta SQL: INSERT INTO videos (id_video, nombre_video, url_video, fecha, estado) VALUES (?, ?, ?, ?, 'PROCESSING')
+[2025-03-29 12:56:27] [UPLOAD] Ejecutando consulta SQL
+[2025-03-29 12:56:27] [UPLOAD] Datos insertados correctamente en la base de datos
+[2025-03-29 12:56:27] [UPLOAD] Esperando 5 segundos antes de iniciar el procesamiento
+[2025-03-29 12:56:30] [UPLOAD] Iniciando procesamiento de video en segundo plano
+[2025-03-29 12:56:30] [UPLOAD] Procesamiento de video iniciado
+[2025-03-29 12:56:30] [UPLOAD] Respuesta final: {"status":"success","fileName":"CUENTA.mp4","fileSize":20830576,"uploadDate":"2025-03-29 12:56:27","videoId":"2efebeb61db9145023ef132778b17b72","estado":"PROCESSING"}
+[2025-03-29 12:56:30] [PROCESS] Script cargando...
+[2025-03-29 12:57:00] [PROCESS] Script iniciado...
+[2025-03-29 12:57:00] [PROCESS] Verificando archivos de entrada:
+[2025-03-29 12:57:00] [PROCESS] Archivo de entrada existe: Sí
+[2025-03-29 12:57:00] [PROCESS] Directorio de segmentos existe: Sí
+[2025-03-29 12:57:00] [PROCESS] Ejecutando comando FFmpeg (HLS): /usr/bin/ffmpeg -v debug -i '/home/drm/videos/CUENTA.mp4' -c:v libx264 -c:a aac -hls_time 10 -hls_key_info_file '/home/drm/public_html/dashboard/processed_videos/2efebeb61db9145023ef132778b17b72/enc.keyinfo' -hls_playlist_type vod -hls_segment_filename '/home/drm/public_html/dashboard/processed_videos/2efebeb61db9145023ef132778b17b72/segment_%03d.ts' -hls_base_url 'https://drm.eweo.com/dashboard/processed_videos/2efebeb61db9145023ef132778b17b72/' '/home/drm/public_html/dashboard/processed_videos/2efebeb61db9145023ef132778b17b72/playlist.m3u8'
+[2025-03-29 12:58:11] [PROCESS] Salida de FFmpeg (HLS): Array
+[2025-03-29 12:58:11] [PROCESS] Ejecutando comando FFmpeg (Miniatura): /usr/bin/ffmpeg -v debug -i '/home/drm/videos/CUENTA.mp4' -vf "select='eq(pict_type\,I)*gte(n\,3)',scale=200:-1" -frames:v 1 '/home/drm/public_html/portadas/2efebeb61db9145023ef132778b17b72.jpg'
+[2025-03-29 12:58:12] [PROCESS] Verificando archivos de salida:
+[2025-03-29 12:58:12] [PROCESS] Archivo m3u8 existe: Sí
+[2025-03-29 12:58:12] [PROCESS] Número de segmentos TS: 74
+[2025-03-29 12:58:12] [PROCESS] Video procesado exitosamente
+[2025-03-29 12:58:12] [PROCESS] ..................................................................................
