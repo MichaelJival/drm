@@ -102,9 +102,18 @@ function decryptVideo() {
             logMessage("Datos JSON incompletos o inválidos", 'ERROR');
             throw new Exception("Datos incompletos o inválidos");
         }
+
+        // Añade este código temporal en api.php o decrypt.php
+        $data = json_decode(file_get_contents('php://input'), true);
+        file_put_contents("/home/drm/public_html/debug_json.txt", 
+        "Video ID: " . $_GET['id'] . "\n" .
+        "Content primeros 300 chars: " . substr($data['content'], 0, 300) . "\n" .
+        "IV: " . $data['iv'] . "\n\n", 
+        FILE_APPEND);
         
         // Generar clave de caché más corta para mejor manejo de archivos
-        $cacheKey = substr(md5($data['content']), 0, 8);
+        $cacheKey = hash('crc32c', $data['content']);
+        
         
         // Prevenir procesamiento duplicado
         if (!preventDuplicateExecution($cacheKey)) {
@@ -270,6 +279,8 @@ function decryptVideo() {
         echo json_encode(["error" => $e->getMessage()]);
     }
 }
+
+
 
 // Ejecutar la función principal
 decryptVideo();
