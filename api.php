@@ -28,7 +28,7 @@ switch ($action) {
         getVideoInfo($classId);
         break;
     case 'decrypt':
-        require_once 'decrypt4.php';
+        require_once 'decrypt.php';
         decryptVideo();
         break;
     default:
