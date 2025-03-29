@@ -7,7 +7,7 @@ define('CACHE_DIR', '/home/drm/public_html/cache');
 define('ENCRYPTION_KEY', '5aad9b549e86812c95542e0714c1b2b7');
 define('CACHE_EXPIRY', 86400); // 24 horas
 define('LOG_FILE', '/home/drm/public_html/LOGS.log');
-define('ENABLE_LOGGING', true);
+define('ENABLE_LOGGING', false);
 
 // Generar un ID único para esta ejecución del script
 $executionId = uniqid();
@@ -102,15 +102,7 @@ function decryptVideo() {
             logMessage("Datos JSON incompletos o inválidos", 'ERROR');
             throw new Exception("Datos incompletos o inválidos");
         }
-
-        // Añade este código temporal en api.php o decrypt.php
-        $data = json_decode(file_get_contents('php://input'), true);
-        file_put_contents("/home/drm/public_html/debug_json.txt", 
-        "Video ID: " . $_GET['id'] . "\n" .
-        "Content primeros 300 chars: " . substr($data['content'], 0, 300) . "\n" .
-        "IV: " . $data['iv'] . "\n\n", 
-        FILE_APPEND);
-        
+       
         // Generar clave de caché más corta para mejor manejo de archivos
         $cacheKey = hash('crc32c', $data['content']);
         
