@@ -1,0 +1,1 @@
+#EXT-X-KEY:METHOD=AES-128,URI="https://drm.eweo.com/api.php?action=key&kid=bbc78850a8851afb3db965ff7dcfb2df",

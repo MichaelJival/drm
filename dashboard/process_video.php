@@ -77,7 +77,7 @@ try {
     logMessage("Directorio de segmentos existe: " . (is_dir($segmentDir) ? "Sí" : "No"));
 
 
-    $command1 = sprintf(
+    /*$command1 = sprintf(
         "%s -v debug -i %s -c:v libx264 -c:a aac -hls_time 10 -hls_key_info_file %s -hls_playlist_type vod -hls_segment_filename %s -hls_base_url %s %s",
         escapeshellcmd(FFMPEG_PATH),
         escapeshellarg($inputFile),
@@ -85,7 +85,26 @@ try {
         escapeshellarg($segmentPattern),
         escapeshellarg($baseUrl),
         escapeshellarg($m3u8File)
-        );
+        );*/
+
+
+    $command1 = sprintf(
+    "%s -v debug -i %s -c:v libx264 -vf scale=1920:1080 -c:a aac -hls_time 10 -hls_key_info_file %s -hls_playlist_type vod -hls_segment_filename %s -hls_base_url %s %s",
+    escapeshellcmd(FFMPEG_PATH),
+    escapeshellarg($inputFile),
+    escapeshellarg($keyinfoFile),
+    escapeshellarg($segmentPattern),
+    escapeshellarg($baseUrl),
+    escapeshellarg($m3u8File)
+    );
+
+
+
+
+
+
+
+
 
         logMessage("Ejecutando comando FFmpeg (HLS): " . $command1);
         exec($command1 . " 2>&1", $output1, $returnVar1);

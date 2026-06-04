@@ -19,35 +19,9 @@ session_start();
     exit;
 }*/
 
-/*$action = $_GET['action'] ?? '';
-$classId = $_GET['id'] ?? '';
-
-switch ($action) {
-    case 'getVideoInfo':
-        require_once 'getVideoInfo.php';
-        getVideoInfo($classId);
-        break;
-    case 'decrypt':
-        require_once 'decryptbasico.php';
-        decryptVideo();
-        break;
-    default:
-        http_response_code(400);
-        echo json_encode(["error" => "Invalid action"]);
-        break;
-}*/
-
 $action = $_GET['action'] ?? '';
 $classId = $_GET['id'] ?? '';
 $keyId = $_GET['kid'] ?? '';
-
-
-// Verificar que la solicitud provenga del reproductor
-$referer = $_SERVER['HTTP_REFERER'] ?? '';
-if (!preg_match('/^https:\/\/drm\.eweo\.com\/player\.php/', $referer)) {
-    http_response_code(403);
-    exit;
-}
 
 switch ($action) {
     case 'getVideoInfo':
@@ -67,3 +41,7 @@ switch ($action) {
         echo json_encode(["error" => "Invalid action"]);
         break;
 }
+
+
+//Y necesitarías modificar la URL en el manifiesto HLS a algo como:
+//`#EXT-X-KEY:METHOD=AES-128,URI="api.php?action=key&kid=5a51912dafd5281aa74d5d32dce303d9",IV=0x57bb17202cd782f38a5c039bfd9ac926`

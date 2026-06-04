@@ -180,16 +180,34 @@ $videoId = $_GET['id'] ?? 0;
                 return;
             }
 
-            // URL real del playlist HLS descifrado (manifest.php). Necesario para
-            // HLS nativo de Safari/iOS/macOS, que no reproduce desde blob URL.
-            const videoSrc = 'https://drm.eweo.com/manifest.php?id=' + encodeURIComponent(videoId);
-            initializePlayer(videoSrc);
+            fetch(`https://drm.eweo.com/dashboard/processed_videos/${videoId}/${videoId}.json`)
+            .then(response => response.json())
+            .then(data => {
+                return fetch('api.php?action=decrypt', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        content: data.encrypted,
+                        iv: data.iv
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error al descifrar el contenido');
+                }
+                return response.text();
+            })
+            .then(decryptedContent => {
+                const videoSrc = URL.createObjectURL(new Blob([decryptedContent], { type: 'application/vnd.apple.mpegurl' }));
+                initializePlayer(videoSrc);
+            })
+            .catch(error => console.error('Error al obtener la fuente del video:', error));
         });
 
         function initializePlayer(videoSrc) {
-            // hls.js primero (Chrome/Edge/Firefox/Android, y Safari con MSE).
-            // HLS nativo solo como fallback (iPhone, sin MSE): se le pasa la URL
-            // real de manifest.php, no un blob, para que Safari pueda reproducir.
             if (Hls.isSupported()) {
                 const hls = new Hls();
                 hls.loadSource(videoSrc);
@@ -197,14 +215,13 @@ $videoId = $_GET['id'] ?? 0;
                 hls.on(Hls.Events.MANIFEST_PARSED, () => {
                     videoElement.currentTime = 2;
                     updatePlayButton(); // Forzamos la actualización para asegurar que el estado inicial es correcto
-                    console.log('Video listo para reproducirse (hls.js)');
+                    console.log('Video listo para reproducirse');
                 });
             } else if (videoElement.canPlayType('application/vnd.apple.mpegurl')) {
                 videoElement.src = videoSrc;
                 videoElement.addEventListener('loadedmetadata', () => {
-                    try { videoElement.currentTime = 2; } catch (e) {}
                     updatePlayButton();
-                    console.log('Video listo para reproducirse (HLS nativo)');
+                    console.log('Video listo para reproducirse');
                 });
             } else {
                 console.error('HLS no es soportado en este navegador');
