@@ -12,3 +12,18 @@ cache.old
 /home/drm/public_html/dashboard/LOGS.log
 LOGS.log
 LOGS.log
+
+# --- datos/binarios (no versionar; respaldar aparte) ---
+portadas/
+segments/
+*.mp4
+*.gif
+test_output.mp4
+dashboard/noise.jpg
+dashboard/cover.jpg
+LOG_FILE
+debug_json.txt
+logfile.txt
+errores.log
+errores.txt
+*.log
